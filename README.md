@@ -1,5 +1,15 @@
 # XYplorer Help    --By MMengyiyu
 
+
+
+**下载地址获取**
+
+[百度网盘下载](https://pan.baidu.com/s/1UZUU2HmHh58wEKzLHjRsoA)
+
+提取码:p8nm 
+
+
+
 ## 1. 使用经历
 
 期待着有像Chrome一样多标签的文件管理器，之前听说过win10要出多标签的Explorer，但从1803等到win10 1809就等来个Dark win10黑暗主题，太伤心了。同时原生Explorer慢也卡，实在受不了。使用过老是出莫名其妙问题的Clover,使用多个窗格的Q-Dir,然而使用效果太差了。其他的几个老牌文件管理器我也不是太喜欢，于是，在巧合之前发现了XYplorer这款文件管理器。
@@ -213,9 +223,13 @@ Perfect！就是这样。不管window设置中默认设置怎么变，这种wind
 #### 2.2.10 在地址栏进行搜索/算术
 
 地址栏搜索
+
 a.在活动窗口为XYplorer时，按下快捷键ALT + D进入地址栏
+
 b.打出一个问号?
+
 c.后接搜索内容
+
 d.回车
 
 ![Arithmetic On Address Bar.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Arithmetic%20On%20Address%20Bar.png)
@@ -225,8 +239,11 @@ d.回车
 #### 2.2.11 搜索功能：重复文件查找
 
 比如我有这么一个文件："F:\下载库\IDMDownloads\Everything-1.4.1.924.x64-Setup.exe"
+
 比如我有这么一个文件"F:\下载库\Downloads\Everything-1.4.1.924.x64-Setup.exe"
+
 我只需要在活动路径为下载库下搜索
+
 搜索重复文件效果如GIF：
 
 ![Search Duplicate Files.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Search%20Duplicate%20Files.gif)
@@ -301,6 +318,7 @@ d.回车
 ### 2.5 备份与还原
 
 启动&退出->保存设置，这样设置有什么用呢？
+
 如果你要重装系统或者换个新版本的XYplorer，这时候就可以把配置文件先保存起来：
 
 
@@ -326,7 +344,8 @@ d.回车
 
 
 还原时需注意几个要点：(程序要常驻使用管理员身份运行)
-**a. 把旧版本删除前，进入配置(F9)->其他->外壳集成->XYplorer是默认文件管理器勾选取消。**一定要取消，不然要全靠原生文件夹上的地址栏输入路径来进入文件夹。
+
+**a. 把旧版本删除前，进入配置(F9)->其他->外壳集成->XYplorer是默认文件管理器勾选取消。** 一定要取消，不然要全靠原生文件夹上的地址栏输入路径来进入文件夹。
 
 
 
@@ -360,7 +379,7 @@ e. 文件->特殊设置->载入设置->选择.ini文件导入。OK
 
 ### 启动XYplorer的全局快捷键的小技巧
 
-![Quick Launch Tips.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Quick Launch Tips.png)
+![Quick Launch Tips.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Quick%20Launch%20Tips.png)
 
 
 
@@ -373,6 +392,7 @@ e. 文件->特殊设置->载入设置->选择.ini文件导入。OK
 因此楼主还是提供19.10
 
 链接：https://pan.baidu.com/s/1D9Nc4kxIOQJoqxkMByibBg 
+
 提取码：l2lk 
 
 
@@ -380,9 +400,13 @@ e. 文件->特殊设置->载入设置->选择.ini文件导入。OK
 ### 2018/12/25 - 新增特性：夜间模式(Dark Mode)
 
 提供19.50版本可用的XYplorer(出处：http://www.dayanzai.me/xyplorer.html)
+
 此版本有时候进入配置(F9)会卡死。其他时候都正常。
+
 提供网盘：
+
 链接：https://pan.baidu.com/s/1UZUU2HmHh58wEKzLHjRsoA 
+
 提取码：p8nm 
 
 
@@ -416,6 +440,7 @@ Method Two:
 #### 1. 介绍
 
 纸文件夹方便集中管理各种文件路径。支持历史，最近文件夹，活动表，标签页，目录，收藏夹，文件(可执行应用；视频文件；音频文件；图像文件等) 。
+
 你可以拿纸文件夹集中管理比如"制作一份视频"或者"一份程序解决方案"所需的材料清单。(多种项目方案材料都可以集中管理。)
 
 
@@ -456,19 +481,26 @@ Method Two:
 
 规则：
 编辑纸文件夹可以使用文件路径。文件路径可以是历史，最近文件夹，活动表，标签页，目录，收藏夹，文件(可执行应用；视频文件；音频文件；图像文件等) 
+
 有些软件的Paper Folder支持URI。有些则不支持，有些支持其他特性。这里XYplorer日常使用都是文件路径。其他高级特性不述说。
-比如，C:\Users\vip57\Desktop\Keil uVision5.LNK为绝对路径（包括盘符的绝对路径），这种绝对路径XYplorer是支持的，但，不可以使用不包含盘符的特殊绝对路径，比如：\Users\vip57\Desktop\FlyMcu.exe.lnk
+
+比如，C:\Users\vip57\Desktop\Keil uVision5.LNK为绝对路径（包括盘符的绝对路径），这种绝对路径XYplorer是支持的，但，不可以使用不包含盘符的特殊绝对路径，比如：
+
+\Users\vip57\Desktop\FlyMcu.exe.lnk
 
 
 
 举例：
+
 比如，我添加一个目录F:\Shortcuts和一个应用程序的快捷方式C:\Users\vip57\Desktop\Keil uVision5.LNK
 如图：![Edit1.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Edit1.png)
 
 
 
 保存文件，然后退出记事本。这点很重要。(这样可以释放你编辑的这个文件的使用权)
+
 然后点击纸文件夹工具栏，打开->New2.txt
+
 如图：![Edit.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Edit.gif)
 
 这是我们就可以看到添加的目录和快捷方式。
@@ -484,6 +516,7 @@ Method Two:
 ##### 2.5 后期维护纸文件夹维护
 
 New2.txt的纸文件夹就是编辑这个New2.txt
+
 你可以把不想要的文件路径添加/删除/更新。这个维护很容易我就不解释了。那么我来说明下纸文件夹的好处！请看接下来的应用案例。
 
 
@@ -531,6 +564,7 @@ Project B: 假设这个Project需要长时间的制作
 ### 2018/12/30 - 展开视图(Branch View)
 
 F:\a1\a2\a3\a4\a5\a6\a7\a8\text.txt
+
 打开这个text.txt难道要打开一层又一层文件夹，到最后一层才能打开吗？
 ![Branch View.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Branch%20View.gif)
 
