@@ -14,7 +14,7 @@
 
 ### 2.1 主界面介绍
 
-Main Windows.png
+![Main Windows.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Main%20Windows.png)
 
 
 
@@ -28,13 +28,13 @@ Main Windows.png
 
 #### 2.2.1 双窗格(Dual Pane)-单窗格切换
 
-Dual Pane.gif
+![Dual Pane.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Dual%20Pane.gif)
 
 
 
 #### 2.2.2 多个标签栏(New Tab)快捷打开&关闭
 
-New Tab On&Off.gif
+![New Tab On&Off.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/New%20Tab%20On%26Off.gif)
 
 鼠标双击关闭录制GIF忘了录进去，到时候修改配置后你们也可以自己尝试
 
@@ -46,17 +46,17 @@ ALT按住，同时鼠标移动到图片上就行了（活动窗口下使用）
 
 Method One:
 
-Show Hover Box.gif
+![Show Hover Box.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Show%20Hover%20Box.gif)
 
 
 
 Method Two: F9->进入配置->显示悬停框->应用到...->需要预览的文件格式
 
-Hover Box Configuration.png
+![Hover Box Configuration.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Hover%20Box%20Configuration.png)
 
 设置后也可以达到快速预览的效果
 
-Show Hover Box2.gif
+![Show Hover Box2.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Show%20Hover%20Box2.gif)
 
 
 
@@ -66,13 +66,13 @@ Show Hover Box2.gif
 
 注: 什么是活动窗口(Active Window)?
 
-Active Window.gif
+![Active Window.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Active%20Window.gif)
 
 
 
 #### 2.2.4 方便的鼠标快捷(快捷返回后上一级路径)
 
-Double-Click.gif
+![Double-Click.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Double-Click.gif)
 
 不知道你感受到在GIF中，XYplorer切换起来的顺滑感觉没？
 
@@ -82,7 +82,7 @@ Double-Click.gif
 
 比如，我进入这个路径：F:\音乐库\Music\Taylor Swift - Red (Exclusive Deluxe Edition) (2012) [FLAC]\CD1时，注意到左边的树Tree绿色跟踪了没？就是这种跟踪。有什么好处呢？当你想再次进入以前进入过的CD1时可以通过Tree追踪过的文件目录来进入
 
-Tip On Tree Return.gif
+![Tip On Tree Return.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Tip%20On%20Tree%20Return.gif)
 
 
 
@@ -90,13 +90,13 @@ Tip On Tree Return.gif
 
 Lable&Tag
 
-Add Lable&Tag.gif
+![Add Lable&Tag.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Add%20Lable&Tag.gif)
 
 
 
 Comment
 
-Add Comment.gif
+![Add Comment.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Add%20Comment.gif)
 
 
 
@@ -108,22 +108,22 @@ Add Comment.gif
 
 比如我收藏的文件夹都是绿色显示的，树目录也会显示的，隐藏文件好像黄色的彩笔背景色+紫色还是红色（具体看设置）
 
-Color Filters1.png
+![Color Filters1.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Color%20Filters1.png)
 
 Settings To Color Filters1.png
 
 
 
-Color Filters2.png
+![Color Filters2.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Color%20Filters2.png)
 
-Color Filters3.png
+![Color Filters3.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Color%20Filters3.png)
 
 
 
 不喜欢绿色背景?
 配置->颜色和风格->颜色过滤器：
 
-Settings To Color Filters2.png
+![Settings To Color Filters2.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Settings%20To%20Color%20Filters2.png)
 
 
 
@@ -131,7 +131,7 @@ Settings To Color Filters2.png
 
 基于这样一个使用背景：比如我想收藏F:\同步库\我的坚果云供使用时快速切换
 
-Favorite Folder.gif
+![Favorite Folder.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Favorite%20Folder.gif)
 
 
 
@@ -143,7 +143,7 @@ Favorite Folder.gif
 使用存在的问题：
 比如我的看图文件是Honeyview.exe,然而我关联我图像格式后，打开还是弹出类似微软的提示选择格式框，这是该怎么办呢？
 
-Without File Associations.gif
+![Without File Associations.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Without%20File%20Associations.gif)
 
 解决的方法是：看下面的说明吧
 
@@ -162,11 +162,11 @@ Without File Associations.gif
 ani;bmp;gif;ico;jpe;jpeg;jpg;pcx;png;psd;tga;tif;tiff;wmf>C:\Program Files\Honeyview\Honeyview.exe
 添加如下图：
 
-Customize File Associations.png
+![Customize File Associations.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Customize%20File%20Associations.png)
 
 
 
-Customize File Associations2.png
+![Customize File Associations2.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Customize%20File%20Associations2.png)
 
 然后点击确定。
 
@@ -185,7 +185,7 @@ txt;rtf>C:\Program Files (x86)\Notepad++\notepad++.exe
 文件格式>文件路径
 文件路径的小方法：对着应用软件ICON图标按住SHIFT+鼠标右键就可以看到:
 
-Tip To Get File Path.png
+![Tip To Get File Path.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Tip%20To%20Get%20File%20Path.png)
 
 
 
@@ -200,7 +200,7 @@ Tip To Get File Path.png
 但是有了视频关联，就不会出现这种问题，只要你是用XYplorer就可以了。
 再举个例子：
 
-Issue On Resetting Default File Associations.png
+![Issue On Resetting Default File Associations.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Issue On Resetting Default File Associations.png)
 
 
 
@@ -218,7 +218,7 @@ b.打出一个问号?
 c.后接搜索内容
 d.回车
 
-Arithmetic On Address Bar.png
+![Arithmetic On Address Bar.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Arithmetic%20On%20Address%20Bar.png)
 
 
 
@@ -229,7 +229,7 @@ Arithmetic On Address Bar.png
 我只需要在活动路径为下载库下搜索
 搜索重复文件效果如GIF：
 
-Search Duplicate Files.gif
+![Search Duplicate Files.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Search%20Duplicate%20Files.gif)
 
 破解版搜索文件变久了后可以会卡。在小范围搜索推荐使用，比如搜索当前文件夹的文件。
 
@@ -237,13 +237,13 @@ Search Duplicate Files.gif
 
 搜索技巧：地址栏,输入?+搜索关键字即可快速搜索。
 
-Search Tip.png
+![Search Tip.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Search%20Tip.png)
 
 
 
 #### 2.2.12 路径导航栏(Breadcrumb Bar)
 
-Breadcrumb Bar.png
+![Breadcrumb Bar.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Breadcrumb%20Bar.png)
 
 
 
@@ -265,25 +265,25 @@ F8        切换导航面板
 
 工具->配置（F9）
 
-Configuration1.png
+![Configuration1.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Configuration1.png)
 
-Configuration2.png
+![Configuration2.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Configuration2.png)
 
-Configuration3.png
+![Configuration3.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Configuration3.png)
 
-Configuration4.png
+![Configuration4.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Configuration4.png)
 
-Configuration5.png
+![Configuration5.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Configuration5.png)
 
-Configuration6.png
+![Configuration6.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Configuration6.png)
 
-Configuration7.png
+![Configuration7.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Configuration7.png)
 
 
 
 为本计算机的所有用户下要默认文件程序为XYplorer记得一定要开启常驻管理员运行。
 
-Setting For Administer Running.png
+![Setting For Administer Running.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Setting For Administer Running.png)
 
 
 
@@ -300,9 +300,9 @@ Setting For Administer Running.png
 如果你要重装系统或者换个新版本的XYplorer，这时候就可以把配置文件先保存起来：
 *备份步骤如下*：
 
-Backup1.png
+![Backup1.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Backup1.png)
 
-Backup2.png
+![Backup2.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Backup2.png)
 
 
 
@@ -310,11 +310,11 @@ Backup2.png
 
 在工具栏：文件->特殊设置->载入配置->选择对应的.ini文件
 
-Restore.png
+![Restore.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Restore.png)
 
 还原效果测试：
 
-Test of Restoring.png
+![Test of Restoring.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Test of Restoring.png)
 
 
 
@@ -341,7 +341,7 @@ e.文件->特殊设置->载入设置->选择.ini文件导入。OK
 
 ### 启动XYplorer的全局快捷键的小技巧
 
-Quick Launch Tips.png
+![Quick Launch Tips.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Quick Launch Tips.png)
 
 
 
@@ -368,13 +368,11 @@ Quick Launch Tips.png
 
 
 
-#### 
-
-Dark Mode.png
+![Dark Mode.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Dark Mode.png)
 
 在工具栏"夜间模式"按钮的添加方式如GIF图所示：
 
-Add Dark Mode Button.gif
+![Add Dark Mode Button.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Add Dark Mode Button.gif)
 
 
 
@@ -384,13 +382,13 @@ Solution to this problem
 
 Method One:
 
-Columns Problem On List.png
+![Columns Problem On List.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Columns Problem On List.png)
 
 
 
 Method Two:
 
-Autosize Columns2.gif
+![Autosize Columns2.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Autosize Columns2.gif)
 
 
 
@@ -415,17 +413,17 @@ Autosize Columns2.gif
 
   对工具栏右键自定义工具栏
 
-  Applied Paper Folder 1.png
+  ![Applied Paper Folder 1.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Applied Paper Folder 1.png)
 
 ##### 2.2 新建纸文件夹
 
 快速创建纸文件夹
 
-步骤1: Paper Folder1.png
+步骤1: ![Paper Folder1.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Paper Folder1.png)
 
 
 
-步骤2: Paper Folder2.png
+步骤2: ![Paper Folder2.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Paper Folder2.png)
 
 可以看到Paper Folder是一个以.txt结尾的TEXT文件，因此编辑该文件使用的是记事本/Notepad++/EditPlus etc.
 
@@ -446,13 +444,13 @@ Autosize Columns2.gif
 
 举例：
 比如，我添加一个目录F:\Shortcuts和一个应用程序的快捷方式C:\Users\vip57\Desktop\Keil uVision5.LNK
-如图：Edit1.png
+如图：![Edit1.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Edit1.png)
 
 
 
 保存文件，然后退出记事本。这点很重要。(这样可以释放你编辑的这个文件的使用权)
 然后点击纸文件夹工具栏，打开->New2.txt
-如图：Edit.gif
+如图：![Edit.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Edit.gif)
 
 这是我们就可以看到添加的目录和快捷方式。
 
@@ -460,7 +458,7 @@ Autosize Columns2.gif
 
 ##### 2.4 收藏纸文件夹
 
-如图：Toggle Favorite Paper Folder.gif
+如图：![Toggle Favorite Paper Folder.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Toggle Favorite Paper Folder.gif)
 
 
 
@@ -488,7 +486,7 @@ New2.txt的纸文件夹就是编辑这个New2.txt
 
 ##### 3.1 Project A: 基于STM32的毕业设计
 
-如图：Project A_1.png
+如图：![Project A_1.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Project A_1.png)
 
 这样就方便我管理毕业设计项目，同时，如果标签页不够，可以ALT+T打开多个同样的纸文件夹。
 
@@ -515,7 +513,7 @@ Project B: 假设这个Project需要长时间的制作
 
 F:\a1\a2\a3\a4\a5\a6\a7\a8\text.txt
 打开这个text.txt难道要打开一层又一层文件夹，到最后一层才能打开吗？
-Branch View.gif
+![Branch View.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Branch View.gif)
 
 
 
