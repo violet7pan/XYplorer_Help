@@ -2,11 +2,23 @@
 
 
 
-**下载地址获取**
+## 0. 下载地址
+
+**0.1 下载地址获取**
 
 [百度网盘下载](https://pan.baidu.com/s/1UZUU2HmHh58wEKzLHjRsoA)
 
 提取码:p8nm 
+
+
+
+0.2 HTML加载缓慢可以下载README.md自行阅读，同时由于是使用Markdown格式，推荐使用Typora，阅读时记得在菜单栏->View->Outline，将Outline功能开启。分级大纲方便阅读
+
+
+
+0.3 对应我在吾爱破解的原帖：
+
+[【首发+原创教程】XYplorer日常使用完美代替Win10原生文件管理](https://www.52pojie.cn/thread-843769-1-1.html)
 
 
 
