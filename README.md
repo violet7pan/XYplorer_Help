@@ -200,7 +200,7 @@ txt;rtf>C:\Program Files (x86)\Notepad++\notepad++.exe
 但是有了视频关联，就不会出现这种问题，只要你是用XYplorer就可以了。
 再举个例子：
 
-![Issue On Resetting Default File Associations.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Issue On Resetting Default File Associations.png)
+![Issue On Resetting Default File Associations.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Issue%20On%20Resetting%20Default%20File%20Associations.png)
 
 
 
@@ -249,15 +249,18 @@ d.回车
 
 ### 2.3 常用的快捷操作
 
-ALT + T : 打开新标签(New Tab)
-ALT + W：关闭当前标签
-F6：进入地址栏
-在XYplorer空白处双击鼠标左键：返回当前文件地址路径的上一级
-CLRL + F : 内置搜索栏        配合CLRL + SHIFT + F移动到内置搜索栏的对话框
-CLRL + 鼠标移动到图片出，自动预览图片内容
-ALT + D：返回地址栏
-F8        切换导航面板
-好多好多快捷键自己探索吧。
+- ALT + T : 打开新标签(New Tab)
+- ALT + W：关闭当前标签
+- F6：进入地址栏
+- 在XYplorer空白处双击鼠标左键：返回当前文件地址路径的上一级
+- CLRL + F : 内置搜索栏        配合CLRL + SHIFT + F移动到内置搜索栏的对话框
+- CLRL + 鼠标移动到图片出，自动预览图片内容
+- ALT + D：返回地址栏
+- F8 : 切换导航面板
+
+
+
+​	好多好多快捷键自己探索吧。
 
 
 
@@ -283,14 +286,15 @@ F8        切换导航面板
 
 为本计算机的所有用户下要默认文件程序为XYplorer记得一定要开启常驻管理员运行。
 
-![Setting For Administer Running.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Setting For Administer Running.png)
+![Setting For Administer Running.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Setting%20For%20Administer%20Running.png)
 
 
 
 那么用管理员运行有什么好处？(不喜欢看为什么就跳过，不强求)
-1.使XYplorer的全局快捷键在具有管理员权限的窗口也能响应。(活动窗口在非XYplorer时，也能响应XYplorer的全局快捷键)
-2.为所有用户提供XYplorer的使用权限。这意味着你使用Administer用户也可以使用XYplorer。
-3涉及修改(Modify)C盘相关文件操作的命令可以被安全，正常地执行。
+
+1. 使XYplorer的全局快捷键在具有管理员权限的窗口也能响应。(活动窗口在非XYplorer时，也能响应XYplorer的全局快捷键)
+2. 为所有用户提供XYplorer的使用权限。这意味着你使用Administer用户也可以使用XYplorer。
+3. 涉及修改(Modify)C盘相关文件操作的命令可以被安全，正常地执行。
 
 
 
@@ -298,6 +302,9 @@ F8        切换导航面板
 
 启动&退出->保存设置，这样设置有什么用呢？
 如果你要重装系统或者换个新版本的XYplorer，这时候就可以把配置文件先保存起来：
+
+
+
 *备份步骤如下*：
 
 ![Backup1.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Backup1.png)
@@ -314,16 +321,28 @@ F8        切换导航面板
 
 还原效果测试：
 
-![Test of Restoring.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Test of Restoring.png)
+![Test of Restoring.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Test%20of%20Restoring.png)
 
 
 
 还原时需注意几个要点：(程序要常驻使用管理员身份运行)
-**a.把旧版本删除前，进入配置(F9)->其他->外壳集成->XYplorer是默认文件管理器勾选取消。**一定要取消，不然要全靠原生文件夹上的地址栏输入路径来进入文件夹。
-b.在a步骤后，一定要备份到其他文件夹。然后删除旧的XYplorer
-c.新的XYplorer解压到你想要放到的目录
-d.别急着还原，打开新的XYplorer，进入配置(F9)->其他->外壳集成->XYplorer是默认文件管理器勾选勾上。
-e.文件->特殊设置->载入设置->选择.ini文件导入。OK
+**a. 把旧版本删除前，进入配置(F9)->其他->外壳集成->XYplorer是默认文件管理器勾选取消。**一定要取消，不然要全靠原生文件夹上的地址栏输入路径来进入文件夹。
+
+
+
+b. 在a步骤后，一定要备份到其他文件夹。然后删除旧的XYplorer
+
+
+
+c. 新的XYplorer解压到你想要放到的目录
+
+
+
+d. 别急着还原，打开新的XYplorer，进入配置(F9)->其他->外壳集成->XYplorer是默认文件管理器勾选勾上。
+
+
+
+e. 文件->特殊设置->载入设置->选择.ini文件导入。OK
 
 
 
@@ -368,11 +387,11 @@ e.文件->特殊设置->载入设置->选择.ini文件导入。OK
 
 
 
-![Dark Mode.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Dark Mode.png)
+![Dark Mode.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Dark%20Mode.png)
 
 在工具栏"夜间模式"按钮的添加方式如GIF图所示：
 
-![Add Dark Mode Button.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Add Dark Mode Button.gif)
+![Add Dark Mode Button.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Add%20Dark%20Mode%20Button.gif)
 
 
 
@@ -382,13 +401,13 @@ Solution to this problem
 
 Method One:
 
-![Columns Problem On List.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Columns Problem On List.png)
+![Columns Problem On List.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Columns%20Problem%20On%20List.png)
 
 
 
 Method Two:
 
-![Autosize Columns2.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Autosize Columns2.gif)
+![Autosize Columns2.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Autosize%20Columns2.gif)
 
 
 
@@ -413,17 +432,17 @@ Method Two:
 
   对工具栏右键自定义工具栏
 
-  ![Applied Paper Folder 1.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Applied Paper Folder 1.png)
+  ![Applied Paper Folder 1.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Applied%20Paper%20Folder%201.png)
 
 ##### 2.2 新建纸文件夹
 
 快速创建纸文件夹
 
-步骤1: ![Paper Folder1.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Paper Folder1.png)
+步骤1: ![Paper Folder1.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Paper%20Folder1.png)
 
 
 
-步骤2: ![Paper Folder2.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Paper Folder2.png)
+步骤2: ![Paper Folder2.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Paper%20Folder2.png)
 
 可以看到Paper Folder是一个以.txt结尾的TEXT文件，因此编辑该文件使用的是记事本/Notepad++/EditPlus etc.
 
@@ -458,7 +477,7 @@ Method Two:
 
 ##### 2.4 收藏纸文件夹
 
-如图：![Toggle Favorite Paper Folder.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Toggle Favorite Paper Folder.gif)
+如图：![Toggle Favorite Paper Folder.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Toggle%20Favorite%20Paper%20Folder.gif)
 
 
 
@@ -486,7 +505,7 @@ New2.txt的纸文件夹就是编辑这个New2.txt
 
 ##### 3.1 Project A: 基于STM32的毕业设计
 
-如图：![Project A_1.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Project A_1.png)
+如图：![Project A_1.png](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Project%20A_1.png)
 
 这样就方便我管理毕业设计项目，同时，如果标签页不够，可以ALT+T打开多个同样的纸文件夹。
 
@@ -513,7 +532,7 @@ Project B: 假设这个Project需要长时间的制作
 
 F:\a1\a2\a3\a4\a5\a6\a7\a8\text.txt
 打开这个text.txt难道要打开一层又一层文件夹，到最后一层才能打开吗？
-![Branch View.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Branch View.gif)
+![Branch View.gif](https://github.com/MMengyiyu/XYplorer_Help/raw/master/img/Branch%20View.gif)
 
 
 
