@@ -30,9 +30,10 @@ Copy下列代码格式，根据自身情况替换路径：
 
 `#e:: ;win+e 打开XYplorer`
 
-`Run C:\Program Files\XYplorer\XYplorer.exe `
+`Run C:\Program Files\XYplorer\XYplorer.exe
 
-'Return'
+Return`
+
 
 
 
