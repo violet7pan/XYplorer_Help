@@ -102,6 +102,9 @@ Win + R  -> shell:startup
 > ...剩下的设置自行百度吧。GUI画面的tasksch.msc操作很简单了。如果还是无法自启动.ahk，把它放到桌面手动启动吧。
 
 
-
-
+方法四：
+使用Startup Delayer
+下载地址
+https://www.r2.com.au/page/products/download/startup-delayer/
+下载后自行添加启动项
 
