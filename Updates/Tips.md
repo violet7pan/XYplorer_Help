@@ -133,7 +133,7 @@ C:.
 
 
 
-在地址栏分别输入<code>::msg <xypath></code>、<code>::msg <xydata></code>、<code>::msg <xyicons></code>、<code>::msg <xyscripts></code>、<code>::msg <xypaper></code>、<code>::msg <xycatalogs></code>、<code>::msg <xynewitems></code>、、<code>::msg <curpath></code>，结论如下，
+在地址栏分别输入<code>::msg \<xypath\></code>、<code>::msg \<xydata\></code>、<code>::msg \<xyicons\></code>、<code>::msg \<xyscripts\></code>、<code>::msg \<xypaper\></code>、<code>::msg \<xycatalogs\></code>、<code>::msg \<xynewitems\></code>、、<code>::msg \<curpath\></code>，结论如下，
 
 ```
 <xypath> = C:\PortableApps\XYplorer
@@ -146,7 +146,7 @@ C:.
 <curpath> = F:\PictureLib
 ```
 
-<code>::msg <curname></code>的输出需要选中一个文件，比如鼠标选中<code>F:\PictureLib\a.png</code>，那么输出
+<code>::msg \<curname\></code>的输出需要选中一个文件，比如鼠标选中<code>F:\PictureLib\a.png</code>，那么输出
 
 ```
 F:\PictureLib\a.png
