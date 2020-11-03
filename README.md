@@ -6,11 +6,9 @@
 
 **0.1 下载地址获取**
 
-[百度网盘下载](https://pan.baidu.com/s/1UZUU2HmHh58wEKzLHjRsoA)
+[XYplorer-19.5_Old](https://pan.baidu.com/s/1UZUU2HmHh58wEKzLHjRsoA) 提取码:p8nm 
 
-提取码:p8nm 
-
-
+[XYplorer(资源管理器 )v21.20.0200 便携注册版 - 果核剥壳](https://www.ghpym.com/xyplorer-2.html)，以后最新版都可以在果核剥壳中寻找。
 
 0.2 HTML加载缓慢可以下载README.md自行阅读，同时由于是使用Markdown格式，推荐使用Typora，阅读时记得在菜单栏->View->Outline，将Outline功能开启。分级大纲方便阅读
 

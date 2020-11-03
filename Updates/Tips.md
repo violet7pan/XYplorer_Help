@@ -69,7 +69,9 @@ XYplorer中使用QuickLook，是否可以使用空格键？
 
 
 
-# 按钮的高级用法 - <span id="explorer_button">[案例1]使用Windows文件管理器打开XYplorer当前路径</span>
+# <span id="further_use_of_button">按钮的高级用法</span>
+
+## <span id="explorer_button">[案例1]使用Windows文件管理器打开XYplorer当前路径</span>
 
 -使用效果如下，
 
@@ -158,7 +160,7 @@ F:\PictureLib\a.png
 
 
 
-# [案例2]CMD集成到按钮
+## [案例2]CMD集成到按钮
 
 
 
@@ -189,7 +191,7 @@ $comspec = ("%osbitness%" == 64) ? "%windir%\System32\cmd.exe" : "%windir%\SysWO
     }
 ```
 
-按钮的添加方法在“按钮的高级用法”[[?](#explorer_button)]部分有讲到。
+按钮的添加方法在“按钮的高级用法”[[?](#further_use_of_button)]部分有讲到。
 
 使用评价：
 
@@ -287,7 +289,13 @@ Explore和Explorer Path的区别：前者打开这个文件；后者打开这个
 
 参考：[Everything and XYplorer - My Everything Integration Settings - XYplorer Beta Club](https://www.xyplorer.com/xyfc/viewtopic.php?t=20506)
 
-没有必要纠结Scripts文件来调用`Everything's command-line ES`服务来搜索，复杂麻烦而且没使用使用Everything来得快。你可以跟我一样，添加一个Everything按钮。
+没有必要纠结Scripts文件来调用`Everything's command-line ES`服务来搜索，复杂麻烦而且没使用Everything来得快。你可以跟我一样，添加一个Everything按钮。
 
 这里有个以前用过目前弃用的Scripts的链接：[Everything for xyplorer - XYplorer Beta Club](https://www.xyplorer.com/xyfc/viewtopic.php?f=7&t=21480)
+
+
+
+# XYplorer的备份和还原
+
+留个坑
 
