@@ -69,7 +69,7 @@ XYplorer中使用QuickLook，是否可以使用空格键？
 
 
 
-# 使用Windows文件管理器打开XYplorer当前路径
+# 按钮的高级用法 - <span id="explorer_button">[案例1]使用Windows文件管理器打开XYplorer当前路径</span>
 
 -使用效果如下，
 
@@ -153,4 +153,141 @@ F:\PictureLib\a.png
 ```
 
 什么都不选中，则输出空白（即什么都没有）。
+
+
+
+
+
+# [案例2]CMD集成到按钮
+
+
+
+![Cmd-1](img/Cmd-1.png)
+
+按钮信息如下，
+
+```
+Cmd as Admin
+<xyicons>\Cmd.ico
+
+$comspec = ("%osbitness%" == 64) ? "%windir%\System32\cmd.exe" : "%windir%\SysWOW64\cmd.exe";
+    $cscript = ("%osbitness%" == 64) ? "%windir%\System32\cscript.exe" : "%windir%\SysWOW64\cscript.exe";
+
+    $vbsFile = "%TEMP%\~OpenElevatedCMD.vbs";
+
+    $vbsContent = <<<>>>
+        Set UAC = CreateObject("Shell.Application")
+        UAC.ShellExecute "$comspec", "/k pushd ""<curpath>""", "", "runas", 1
+>>>;
+
+    writefile($vbsFile, trim($vbsContent));
+
+    if (get("trigger") == "1") { // Left click -> Admin
+        run """$cscript"" ""$vbsFile"" //nologo", , 0, 0;
+    } elseif (get("trigger") == "2") { // Right click -> No admin
+        run """$comspec"" /k pushd ""<curpath>""";
+    }
+```
+
+按钮的添加方法在“按钮的高级用法”[[?](#explorer_button)]部分有讲到。
+
+使用评价：
+
+这个cmd其实也不是很好用。
+
+偶尔我还是会<kbd>Win + R</kbd>来启动cmd，进入cmd，切换盘符（比如<code>f:</code><kbd>Enter</kbd>)，然后在XYplorer某个目录下<kbd>Alt + D</kbd> <kbd>Ctrl + C</kbd>复制路径回到cmd粘贴。
+
+当然，你也可以先把cmd集成到Windows右键的Context中，然后[将windows右键菜单添加到XYplorer](https://zhuanlan.zhihu.com/p/70331585)。我不想折腾了，要命了。
+
+或者，你完全可以使用XYplorer集成的Windows文件管理按钮[[?](#explorer_button)]，使用Windows自带的文件管理右键来cmd[[?](https://www.cnblogs.com/dream4567/p/10693588.html)]。
+
+
+
+
+
+
+
+# 树的使用
+
+树的配置主要在`View`、`Tools->Customize Tree`、`Configuration(F9)->Tree and List`，少部分可以通过键入关键字"Tree"到`Configuration(F9)->左下角Jump to Setting`进行寻找、
+
+菜单栏`Windows->Show Tree(Shift + F8)`，打开Tree记录功能。
+
+`View->Mini Tree`：只显示选项卡(Tab)的路径的树，由于不需要显示无关目录的树，所以速度更快。
+
+由于Tree会记录文件浏览历史，在退出XYplorer前，`View->Reset Tree(Ctrl + Shift + F4)`，如果路径历史过多，影响加载速度。
+
+在Tree开启的情况下，每一次浏览目录，侧边的Tree都会追踪记录，所以你可以很容易看到当前目录和历史目录的层次结构。
+
+`Tools->Customize Tree->Tree Path Tracking`：开启树追踪标记
+
+![TreeUse-1](img/TreeUse-1.png)
+
+`View->Lock Tree`：开启后，记住（冻结为）上一次树结构的状态，接下来无论怎样浏览目录，树的追踪记录都看不到。开启期间，应该是不会有目录追踪记录的。当关闭后，恢复树的追踪记录功能，并更新为当前目录的树结构。使用建议：需要树功能，XYplorer运行卡的情况下可锁定。我的使用方法：关闭Mini Tree，Reset Tree，Lock Tree。把Tree的侧边栏空间压缩，只保留很小的地方，如图
+
+![TreeUse-1](img/TreeUse-2.png)
+
+之所以这样做，是因为我需要快速浏览C/D/E/F，并且在Tree侧边栏**右键**可以弹出**收藏夹列表**。
+
+
+
+# XYplorer的搜索问题及最佳搜索替换工具Everything
+
+## XYplorer的搜索
+
+-XYplorer的搜索体现在四处
+
+1.`Edit->Find Files(Ctrl +F)`
+
+需要指定搜索目录，关键字。其他过滤条件可选。但搜索速度慢。
+
+2.`Edit->Quick Search(F3)`
+
+没什么用
+
+3.Live Filter Box。
+
+使用方式：`Window->Show Live Filter Box`。在地址栏最右侧可以看到，如图
+
+![LiveFilterBox-1](img/LiveFilterBox-1.png)
+
+<kbd>Ctrl + Alt + X</kbd>进入，搜索关键字。
+
+该功能用于当前目录下筛选文件（极其适合目录文件过量的情况下进行筛选）
+
+假设我们需要帅选出<code>C:\Windows\SysWOW64\certcli.dll</code>，你只知道关键字"cert"，在Live Filter Box键入"cert"后，
+
+![LiveFilterBox-2](img/LiveFilterBox-2.png)
+
+这是一次模拟筛选，该功能场景范围过窄但好用。
+
+4.在当前目录输入目标文件的关键字母，可以快速选中匹配文件（Windows也有）
+
+## Everything内容打开到XYplorer侧
+
+`Options->General->Context Menu`，如图
+
+![Everything-1](img/Everything-1.png)
+
+Explore:
+
+```
+$exec("你的XYplorer目录\XYplorer.exe" "%1")
+```
+
+Explore Path:
+
+```
+$exec("你的XYplorer目录\XYplorer.exe" /select="%1")
+```
+
+![Everything-2](img/Everything-2.png)
+
+Explore和Explorer Path的区别：前者打开这个文件；后者打开这个文件所在的父目录。
+
+参考：[Everything and XYplorer - My Everything Integration Settings - XYplorer Beta Club](https://www.xyplorer.com/xyfc/viewtopic.php?t=20506)
+
+没有必要纠结Scripts文件来调用`Everything's command-line ES`服务来搜索，复杂麻烦而且没使用使用Everything来得快。你可以跟我一样，添加一个Everything按钮。
+
+这里有个以前用过目前弃用的Scripts的链接：[Everything for xyplorer - XYplorer Beta Club](https://www.xyplorer.com/xyfc/viewtopic.php?f=7&t=21480)
 
