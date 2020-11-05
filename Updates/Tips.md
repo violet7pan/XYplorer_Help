@@ -401,7 +401,7 @@ fvs.dat						//fvs:folder view settings. 该.dat保存文件夹视图设置信�
 ks.dat						//ks:keyboard shortcuts. 该.dat保存键盘快捷键设置信息
 Language.ini				//XYplorer读取并根据该配置文件信息决定选择使用哪个语言作为界面交互语言。
 lastini.dat
-//如果存在,则该.dat用于决定让XYplorer载入哪个.ini信息，该.dat保存的值为XYplorer,那么XYplorer就会载入XYplorer
+//如果存在,则该.dat用于决定让XYplorer载入哪个.ini信息，该.dat保存的值为XYplorer,那么XYplorer就会载入XYplorer.ini
 tag.dat						//该.dat保存标注(tags)信息,这个标注信息应该包括标签(Label),注释(Comment),标签(tag)信息。
 udc.dat						//udc:user-defined commands. 该.dat保存用户自定义命令信息
 XYplorer.ini				//保存配置信息，该配置文件不可随意覆盖，XYplorer会调用它，如果随便覆盖它可能会出现版本使用到期。
@@ -410,7 +410,7 @@ XYplorer.ini				//保存配置信息，该配置文件不可随意覆盖，XYplo
 XYplorer/Data目录下文件夹信息介绍，
 
 ```
-AutoBackup	//开启自动备份设置后，里面会保存catalog,fvs,tag,udc的dat文件,但不保存ks.dat,还会保存XYplorer.ini.该文件这些数据信息文件会在触发"Saving Settings"进行更新。因此迁移到全新的XYplorer时,不能只复制这里的数据信息到新的XYplorer
+AutoBackup	/*开启自动备份设置后，里面会保存catalog,fvs,tag,udc的dat文件,但不保存ks.dat,还会保存XYplorer.ini.该文件这些数据信息文件会在触发"Saving Settings"进行更新。该目录的文件可迁移到全新的XYplorer时,但记得把ks.dat也复制到新的XYplore/Data下*/
 Catalogs	//存放catalog.dat
 FindTemplates//参考下面英语介绍
 Icons		//<xyicons>表示的目录就是Icons目录,用户可以把Xyplorer需要用到的icon保存在这里
@@ -454,7 +454,8 @@ XYplorer.ini    main settings file (lastini.dat, if it exists, decides which ini
 
 ```
 action.dat[重要]	fvs.dat[重要]	ks.dat[重要]	Language.ini	tag.dat[重要]		udc.dat[重要]		XYplorer.ini[必要]	Catalogs目录[重要]
-Scripts目录[重要]	NewItems目录[可选]	Icons目录[可选]		Panes[可选]	Temp[不可选]	AutoBackup[可选]
+Scripts目录[重要]	NewItems目录[可选]	Icons目录[可选]		Panes目录[可选]	Temp目录[可选]	AutoBackup目录[可选]
+Layout目录[可有,可选]		FindTemplates目录[可选]		Paper目录[可选]
 ```
 
 如果你的配置文件不是以`XYplorer.ini`名为的，你还需要保存`lastini.ini`文件。
