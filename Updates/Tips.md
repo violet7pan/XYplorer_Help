@@ -1,6 +1,6 @@
 在介绍过程中，所有技巧均按XYplorer英文版进行说明，中文版的用户请自行对照。
 
-# 20191011 
+# <em>20191011 </em>
 
 # 使用过程中出现崩溃的原因和解决方法
 
@@ -21,7 +21,70 @@
 * 选中非最后一个标签页，然后新建标签页
 * 尽量少用`设置(Configuration(F9))`按钮，如果要用，记得在File -> Save Setting，否则会丢失本次打开的使用记录。
 
-# 20200311
+
+
+# <em>20200311</em>
+
+# <span id="scripts">关于Scripts的一些事</span>
+
+XYplorer使用`Visual Basic 6`开发的，并且编译为本地代码(Native code)，以获取更快的运行速度[[?](https://www.xyplorer.com/xyfc/viewtopic.php?t=6350)]。
+
+`XYplorer Script`用什么程序语言写成的，我们不得而知，不过Script借用了许多来自php特性(比如字符串的连接可以<code>.</code>来完成)。就像我们学习新的语言一样，它应该有规则和例子供beginner来学习，这里我们可以参考XYplorer目录下的`XYplorer.chm`中`Index`选项卡输入并搜索`Scripting`和`Scripting Commands`的部分。
+
+下面是`XYplorer Native  Variables`的部分实例：
+
+设当前XYplorer目录位于<code>C:\PortableApps\XYplorer</code>;设当前目录位于<code>F:\PictureLib</code>
+
+目录结构如下，
+
+```
+C:\PortableApps\XYplorer>tree
+Folder PATH listing for volume OS
+Volume serial number is 080B-2E29
+C:.
+└─Data
+    ├─AutoBackup
+    ├─Catalogs
+    ├─FindTemplates
+    ├─Icons
+    ├─NewItems
+    │  └─New folder
+    ├─Panes
+    │  ├─1
+    │  │  └─t
+    │  └─2
+    │      └─t
+    ├─Paper
+    ├─Scripts
+    │  └─Everything
+    ├─Temp
+    └─Thumbnails
+```
+
+在地址栏分别输入<code>::msg \<xypath\></code>、<code>::msg \<xydata\></code>、<code>::msg \<xyicons\></code>、<code>::msg \<xyscripts\></code>、<code>::msg \<xypaper\></code>、<code>::msg \<xycatalogs\></code>、<code>::msg \<xynewitems\></code>、、<code>::msg \<curpath\></code>，结论如下，
+
+```
+<xypath> = C:\PortableApps\XYplorer
+<xydata> = C:\PortableApps\XYplorer\Data
+<xyicons> = C:\PortableApps\XYplorer\Data\Icons
+<xyscripts> = C:\PortableApps\XYplorer\Data\Scripts
+<xypaper> = C:\PortableApps\XYplorer\Data\Paper
+<xycatalogs> = C:\PortableApps\XYplorer\Data\Catalogs
+<xynewitems> = C:\PortableApps\XYplorer\Data\NewItems
+<curpath> = F:\PictureLib
+```
+
+<code>::msg \<curname\></code>的输出需要选中一个文件，比如鼠标选中<code>F:\PictureLib\a.png</code>，那么输出
+
+```
+F:\PictureLib\a.png
+```
+
+什么都不选中，则输出空白（即什么都没有）。
+
+更多XYplorer Native  Variables介绍，请参考`XYplorer.chm->左上方Inbox->输入XYplorer Native  Variables`。
+
+
 
 # 在XYplorer中使用QuickLook
 
@@ -101,60 +164,9 @@ Explorer
 run "C:\Windows\explorer.exe" <curpath>
 ```
 
+`<xyicons>`介绍请参考[关于Scripts的一些事](#scripts)
+
 -END
-
--XYplorer小知识
-
-设当前XYplorer目录位于<code>C:\PortableApps\XYplorer</code>;设当前目录位于<code>F:\PictureLib</code>
-
-目录结构：
-
-```
-C:\PortableApps\XYplorer>tree
-Folder PATH listing for volume OS
-Volume serial number is 080B-2E29
-C:.
-└─Data
-    ├─AutoBackup
-    ├─Catalogs
-    ├─FindTemplates
-    ├─Icons
-    ├─NewItems
-    │  └─New folder
-    ├─Panes
-    │  ├─1
-    │  │  └─t
-    │  └─2
-    │      └─t
-    ├─Paper
-    ├─Scripts
-    │  └─Everything
-    ├─Temp
-    └─Thumbnails
-```
-
-
-
-在地址栏分别输入<code>::msg \<xypath\></code>、<code>::msg \<xydata\></code>、<code>::msg \<xyicons\></code>、<code>::msg \<xyscripts\></code>、<code>::msg \<xypaper\></code>、<code>::msg \<xycatalogs\></code>、<code>::msg \<xynewitems\></code>、、<code>::msg \<curpath\></code>，结论如下，
-
-```
-<xypath> = C:\PortableApps\XYplorer
-<xydata> = C:\PortableApps\XYplorer\Data
-<xyicons> = C:\PortableApps\XYplorer\Data\Icons
-<xyscripts> = C:\PortableApps\XYplorer\Data\Scripts
-<xypaper> = C:\PortableApps\XYplorer\Data\Paper
-<xycatalogs> = C:\PortableApps\XYplorer\Data\Catalogs
-<xynewitems> = C:\PortableApps\XYplorer\Data\NewItems
-<curpath> = F:\PictureLib
-```
-
-<code>::msg \<curname\></code>的输出需要选中一个文件，比如鼠标选中<code>F:\PictureLib\a.png</code>，那么输出
-
-```
-F:\PictureLib\a.png
-```
-
-什么都不选中，则输出空白（即什么都没有）。
 
 
 
@@ -202,10 +214,6 @@ Alternative Solution 1(比较笨(～￣(OO)￣)ブ):  偶尔我还是会<kbd>Win
 Alternative Solution 2(我未测试过): 你也可以先把cmd集成到Windows右键的Context中，然后[将windows右键菜单添加到XYplorer](https://zhuanlan.zhihu.com/p/70331585)，XYplorer中使用Windows右键ContextMenu调用cmd。我不想折腾了，要命了。
 
 Alternative Solution 3(推荐): 你完全可以使用XYplorer集成的Windows文件管理器按钮打开Explorer.exe[[?](#explorer_button)]，使用Windows自带的文件管理器空白处右键运行cmd[[?](https://www.cnblogs.com/dream4567/p/10693588.html)]。
-
-
-
-
 
 
 
@@ -293,7 +301,53 @@ Explore和Explorer Path的区别：前者打开这个文件；后者打开这个
 
 这里有个以前用过目前弃用的Scripts的链接：[Everything for xyplorer - XYplorer Beta Club](https://www.xyplorer.com/xyfc/viewtopic.php?f=7&t=21480)
 
+## XYplorer间接调用Everything
 
+仅在当前目录下搜索（搜索的目标包括当前目录和当前目录的所有子目录)，示意图如下，
+
+![LimitedlySearchByEverything-1](img/LimitedlySearchByEverything-1.gif)
+
+具体显示步骤如下，
+
+1.创建脚本文件。菜单栏`Scripting->Go to Scripts Folder`来到\<xyscripts\>的目录下，创建名为`EverythingCurpathSearch.xys`脚本文件，内容如下，记得修改everything目录
+
+版本一[可选，推荐]
+
+```
+	$everything = "D:\PortableApps\Everything\everything.exe";		//填写everything.exe路径
+	runret ("cmd /c ".$everything." -path "."""<curpath>""");
+```
+
+以上每行语句都有一个<kbd>Tab</kbd>哦。
+
+版本二[可选]
+
+版本二特别注意：<span style="color:red">搜索的关键词首尾不能分别带有"。也就是没办法进行准确搜索</span>。比如`"Common Files"`
+
+```
+	$everything = "D:\PortableApps\Everything\everything.exe";		//填写everything.exe路径
+	$args = input("当前文件下搜索,请输入关键词:");
+	runret ("cmd /c ".$everything." -path "."""<curpath>"""." -s "."""$args""");
+```
+
+2.绑定热键。菜单栏`User->Manage Commands...(Ctril + Alt + F9)`
+
+![LimitedlySearchByEverything-2](img/LimitedlySearchByEverything-2.png)
+
+```
+Cpation:CurpathSearch
+Script Files:<xyscripts>/EverythingCurpathSearch.xys
+```
+
+这样就设置完成了。开始使用吧，在XYplorer当前Tab所在当前目录下按<kbd>Alt+2</kbd>，键入你想要搜索的key words，然后<kbd>Enter</kbd>即可。
+
+Script编写思路：通过命令行调用everything，everything想要完成当前目录搜索，需要知道主程序的外部接口[[?](https://www.voidtools.com/support/everything/command_line_options/)]，需要获取当前目录和用户键入值。
+
+Script中runret()可参考`XYplorer.chm`
+
+![Scripting_command-runret-1](img/Scripting_command-runret-1.png)
+
+编写的脚本很简陋，其目的主要是为了打开Everything，并自动化地添加上当前目录。如果有兴趣的同学们可以自行研究下XYplorer Script，熟悉流程控制语句和常用的Script Command就可以进行更高逻辑的功能实现了。
 
 # XYplorer的备份和还原
 
