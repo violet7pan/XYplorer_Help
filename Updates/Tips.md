@@ -25,6 +25,67 @@
 
 # <em>20200311</em>
 
+# 按钮和用户自定义命令区别
+
+> Buttons are meant for the mouse. UDCs are meant for the keys.[[?](https://www.xyplorer.com/xyfc/viewtopic.php?t=14505)]
+
+
+
+# 工具栏的摆放和使用
+
+
+
+# 用户自定义命令的使用
+
+## 设置快捷键调用Notepad
+
+创建`OpenWithNotepad.xys`存放在XYplorer/Data/Scripts目录下，内容如下，
+
+```
+	if (<curitem> != "" && filetype(<curitem>) != "Nofile") {
+		run notepad "<curitem>";
+	}
+```
+
+添加命令方法：`User->Manage Commands...->Category:Load Script File->New-Add New Command`填写Caption和Script File
+
+`Assign Keyboard Shortcut... `，我设置的<kbd>Alt + 3</kbd>。
+
+![UserDefinedCommands-2](img/UserDefinedCommands-2.png)
+
+```
+Caption:Open With Notepad
+Scripts Files:<xyscripts>\OpenWithNotepad.xys
+```
+
+使用方法：选中文件，<kbd>Alt + 3</kbd>速度调用`notepad`打开文本。
+
+## 设置快捷键调用Explorer
+
+设置方法同上，创建`OpenWithExplorer`存放在XYplorer/Data/Scripts目录下，内容如下，
+
+```
+	if (<curitem> == "") {
+		run "C:\Windows\explorer.exe" <curpath>
+	} else {
+		if (filetype(<curitem>) == "Nofile") {	//选中的是目录
+		run "C:\Windows\explorer.exe" <curitem>
+	}
+		else {	
+			run "C:\Windows\explorer.exe" <curpath>
+		}
+	}
+```
+
+我分配的快捷键是<kbd>Ctrl + Alt + E</kbd>
+
+```
+Caption:Open With Explorer
+Scripts Files:<xyscripts>\OpenWithExplorer.xys
+```
+
+
+
 # <span id="scripts">关于Scripts的一些事</span>
 
 XYplorer使用`Visual Basic 6`开发的，并且编译为本地代码(Native code)，以获取更快的运行速度[[?](https://www.xyplorer.com/xyfc/viewtopic.php?t=6350)]。
@@ -176,7 +237,11 @@ run "C:\Windows\explorer.exe" <curpath>
 
 ## [案例2]CMD集成到按钮
 
+官网已经把Cmd的按钮集成到工具栏了，你现在可以在自定义工具栏中的列表中找到它，
 
+![Cmd-2](img/Cmd-2.png)
+
+这个Cmd更完善点，也提供了热键<kbd>Ctrl + Alt + P</kbd>。不过下面我还是给出用户自定义Cmd按钮的方法。
 
 ![Cmd-1](img/Cmd-1.png)
 
@@ -235,11 +300,15 @@ Alternative Solution 3(推荐): 你完全可以使用XYplorer集成的Windows文
 
 ![TreeUse-1](img/TreeUse-1.png)
 
-`View->Lock Tree`：开启后，记住（冻结为）上一次树结构的状态，接下来无论怎样浏览目录，树的追踪记录都看不到。开启期间，应该是不会有目录追踪记录的。当关闭后，恢复树的追踪记录功能，并更新为当前目录的树结构。使用建议：需要树功能，XYplorer运行卡的情况下可锁定。我的使用方法：关闭Mini Tree，Reset Tree，Lock Tree。把Tree的侧边栏空间压缩，只保留很小的地方，如图
+`View->Lock Tree`：开启后，记住（冻结为）上一次树结构的状态，接下来无论怎样浏览目录，树的追踪记录都看不到。开启期间，应该是不会有目录追踪记录的。当关闭后，恢复树的追踪记录功能，并更新为当前目录的树结构。使用建议：需要树功能，XYplorer运行卡的情况下可锁定。
+
+我的使用方法：关闭Mini Tree，Reset Tree，Lock Tree。把Tree的侧边栏空间压缩，只保留很小的地方，如图
 
 ![TreeUse-1](img/TreeUse-2.png)
 
 之所以这样做，是因为我需要快速浏览C/D/E/F，并且在Tree侧边栏**右键**可以弹出**收藏夹列表**。
+
+如果你需要使用树的功能，请一定要把XYplorer界面左右两侧拉长，如果不拉长，使用起来很没有体验。两侧拉长还有一个重要的理由：但你的文件夹视图是“详情视图”时，每一个文件的描述列：有文件名、修改时间、创建时间、后缀名、文件夹大小等，想要把这些列的信息全，那么你就必须拉长。
 
 
 
@@ -412,7 +481,7 @@ XYplorer/Data目录下文件夹信息介绍，
 ```
 AutoBackup	/*开启自动备份设置后，里面会保存catalog,fvs,tag,udc的dat文件,但不保存ks.dat,还会保存XYplorer.ini.该文件这些数据信息文件会在触发"Saving Settings"进行更新。该目录的文件可迁移到全新的XYplorer时,但记得把ks.dat也复制到新的XYplore/Data下*/
 Catalogs	//存放catalog.dat
-FindTemplates//参考下面英语介绍
+FindTemplates	//参考下面英语介绍
 Icons		//<xyicons>表示的目录就是Icons目录,用户可以把Xyplorer需要用到的icon保存在这里
 NewItems	//XYplorer空白处右键New->New Item的内容
 Paper		//纸文件夹保存目录,保存的文件以.txt形式保存
@@ -453,8 +522,8 @@ XYplorer.ini    main settings file (lastini.dat, if it exists, decides which ini
 综合上面的介绍，在进行迁移或备份用户数据时，可以选择保存Data文件夹或者保存以下用户数据文件：
 
 ```
-action.dat[重要]	fvs.dat[重要]	ks.dat[重要]	Language.ini	tag.dat[重要]		udc.dat[重要]		XYplorer.ini[必要]	Catalogs目录[重要]
-Scripts目录[重要]	NewItems目录[可选]	Icons目录[可选]		Panes目录[可选]	Temp目录[可选]	AutoBackup目录[可选]
+action.dat[重要]	fvs.dat[重要]	ks.dat[重要]	Language.ini[重要]	tag.dat[重要]		udc.dat[重要]		XYplorer.ini[必要]	Catalogs目录[重要]
+Scripts目录[重要]	NewItems目录[可选]	Icons目录[可选]		Panes目录[可选]		Temp目录[可选]	AutoBackup目录[可选]
 Layout目录[可有,可选]		FindTemplates目录[可选]		Paper目录[可选]
 ```
 
