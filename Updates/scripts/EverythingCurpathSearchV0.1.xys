@@ -1,0 +1,4 @@
+	$everything = "D:\PortableApps\Everything\everything.exe";		//填写everything.exe路径
+	$args = input("当前文件下搜索,请输入关键词:");
+	runret ("cmd /c ".$everything." -path "."""<curpath>"""." -s "."""$args""");
+	//runret ("cmd /c ".$everything." -path "."""<curpath>"""." -s "."""<$args>""");

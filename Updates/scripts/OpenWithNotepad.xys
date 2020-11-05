@@ -1,0 +1,3 @@
+	if (<curitem> != "" && filetype(<curitem>) != "Nofile") {
+		run notepad "<curitem>";
+	}

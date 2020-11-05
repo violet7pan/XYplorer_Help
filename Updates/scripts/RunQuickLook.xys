@@ -1,0 +1,3 @@
+	if (<curitem> != "") {
+		run "<xypath>\..\QuickLook\QuickLook.exe" "<curitem>";
+	}

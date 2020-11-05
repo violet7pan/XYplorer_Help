@@ -1,0 +1,10 @@
+	if (<curitem> == "") {
+		run "C:\Windows\explorer.exe" <curpath>
+	} else {
+		if (filetype(<curitem>) == "Nofile") {	//选中的是目录
+		run "C:\Windows\explorer.exe" <curitem>
+	}
+		else {	
+			run "C:\Windows\explorer.exe" <curpath>
+		}
+	}
