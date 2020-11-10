@@ -41,7 +41,7 @@ XY使用`Visual Basic 6`开发的，并且编译为本地代码(Native code)，�
 
 `XYplorer Script`用什么程序语言写成的，我们不得而知，不过Script借用了许多来自php特性(比如字符串的连接可以<code>.</code>来完成)。就像我们学习新的语言一样，它应该有规则和例子供beginner来学习。
 
-具体用法和示例在`XYplorer.chm->Content选项卡->Advanced Topics->`**<span style="color:red">Scripting</span>**和**<span style="color:red">Scripting Commands</span>**的部分。如何寻找这部分呢？在XYplorer菜单栏`Help->Cotents and Index(F1)`中，其中<kbd>F1</kbd>调用的是XYplorer目录下的`XYplorer.chm`(若无，可以在本GitHub Page中下载)，或者`Help->Help on Scripting Commands`切出帮助文档。
+具体用法和示例在`XYplorer.chm->Content选项卡->Advanced Topics->`<span style="color:red">Scripting</span>和<span style="color:red">Scripting Commands</span>的部分。如何寻找这部分呢？在XYplorer菜单栏`Help->Cotents and Index(F1)`中，其中<kbd>F1</kbd>调用的是XYplorer目录下的`XYplorer.chm`(若无，可以在本GitHub Page中下载)，或者`Help->Help on Scripting Commands`切出帮助文档。
 
 下面是`XYplorer Native  Variables`的部分实例：
 
@@ -648,9 +648,9 @@ FindTemplates目录[可选]		Paper目录[可选]
 
 ## 备份什么文件才能保证数据不丢失并且换了新版也还继续用?
 
-:weary:我说了这么多，你直接**<span style="color:red">保存Data文件夹</span>**就好了，迁移时直接Copy这个Data到新的XYplorer目录下即可。
+:weary:我说了这么多，你直接<span style="color:red">保存Data文件夹</span>就好了，迁移时直接Copy这个Data到新的XYplorer目录下即可。
 
-强调一遍，**<span style="color:red">喜欢使用标签的同学们，一定要保存好tag.dat，里面装了你使用标签的数据信息，切记！</span>**
+强调一遍，<span style="color:red">喜欢使用标签的同学们，一定要保存好tag.dat，里面装了你使用标签的数据信息，切记！</span>
 
 ![BackupTags-1](Image/BackupTags-1.png)
 
@@ -803,7 +803,7 @@ RegExpPattern > ReplaceWith     (case-insensitive: a=A)
 RegExpPattern > ReplaceWith\    (case-sensitive)
 ```
 
-特别注意: <span style="color:red">`>`前后都需要补一个空格<kbd>spacebar</kbd></span>，否则不管匹配的正则表达式是正确的，也会出错。
+特别注意: <span style="color:red">>前后都需要补一个空格</span>，否则不管匹配的正则表达式是正确的，也会出错。
 
 可以先去[正则表达式在线测试 | 菜鸟工具](http://c.runoob.com/front-end/854)测试下匹配结果：
 
