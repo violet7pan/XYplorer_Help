@@ -10,7 +10,7 @@
 
 第四，本文参考来源主要包括Google搜索、XYplorer Beta Club、官网帮助文档。
 
-
+有时，为了书写方便，我会把XYplorer简称为XY。
 
 # <em>20191011 </em>
 
@@ -33,17 +33,177 @@
 
 
 
-# <em>20200311</em>
+# <em>20200311 ~ Now</em>
+
+# <span id="scripts">关于Scripts的一些事</span>
+
+XY使用`Visual Basic 6`开发的，并且编译为本地代码(Native code)，以获取更快的运行速度[[?](https://www.xyplorer.com/xyfc/viewtopic.php?t=6350)]。
+
+`XYplorer Script`用什么程序语言写成的，我们不得而知，不过Script借用了许多来自php特性(比如字符串的连接可以<code>.</code>来完成)。就像我们学习新的语言一样，它应该有规则和例子供beginner来学习。
+
+具体用法和示例在`XYplorer.chm->Content选项卡->Advanced Topics->`**<span style="color:red">Scripting</span>**和**<span style="color:red">Scripting Commands</span>**的部分。如何寻找这部分呢？在XYplorer菜单栏`Help->Cotents and Index(F1)`中，其中<kbd>F1</kbd>调用的是XYplorer目录下的`XYplorer.chm`(若无，可以在本GitHub Page中下载)，或者`Help->Help on Scripting Commands`切出帮助文档。
+
+下面是`XYplorer Native  Variables`的部分实例：
+
+设当前XY目录位于<code>C:\PortableApps\XYplorer</code>;设当前目录位于<code>F:\PictureLib</code>
+
+目录结构如下，
+
+```
+C:\PortableApps\XYplorer>tree
+Folder PATH listing for volume OS
+Volume serial number is 080B-2E29
+C:.
+└─Data
+    ├─AutoBackup
+    ├─Catalogs
+    ├─FindTemplates
+    ├─Icons
+    ├─NewItems
+    │  └─New folder
+    ├─Panes
+    │  ├─1
+    │  │  └─t
+    │  └─2
+    │      └─t
+    ├─Paper
+    ├─Scripts
+    │  └─Everything
+    ├─Temp
+    └─Thumbnails
+```
+
+在地址栏分别输入<code>::msg \<xypath\></code>、<code>::msg \<xydata\></code>、<code>::msg \<xyicons\></code>、<code>::msg \<xyscripts\></code>、<code>::msg \<xypaper\></code>、<code>::msg \<xycatalogs\></code>、<code>::msg \<xynewitems\></code>、、<code>::msg \<curpath\></code>，结论如下，
+
+```
+<xypath> = C:\PortableApps\XYplorer
+<xydata> = C:\PortableApps\XYplorer\Data
+<xyicons> = C:\PortableApps\XYplorer\Data\Icons
+<xyscripts> = C:\PortableApps\XYplorer\Data\Scripts
+<xypaper> = C:\PortableApps\XYplorer\Data\Paper
+<xycatalogs> = C:\PortableApps\XYplorer\Data\Catalogs
+<xynewitems> = C:\PortableApps\XYplorer\Data\NewItems
+<curpath> = F:\PictureLib
+```
+
+<code>::msg \<curname\></code>的输出需要选中一个文件，比如鼠标选中<code>F:\PictureLib\a.png</code>，那么输出
+
+```
+F:\PictureLib\a.png
+```
+
+什么都不选中，则输出空白（即什么都没有）。
+
+更多XYplorer Native  Variables介绍，请参考`XYplorer.chm->左上方Inbox->输入XYplorer Native  Variables`。
+
+
+
+# File Icons
+
+![FileIcon-1](Image/FileIcon-1.png)
+
+File Icons的配置在`XYplorer.ini`中：以下内容就摘自此文件
+
+```ini
+[FileIcons]
+Count=17
+1=+readme.*>Papirus-Team-Papirus-Mimetypes-Text-x-readme.ico
+2={:Image}>Papirus-Team-Papirus-Mimetypes-Image-x-generic.ico
+3=+xys>Papirus-Team-Papirus-Mimetypes-Text-x-script.ico
+4=+sql>Papirus-Team-Papirus-Mimetypes-App-x-sqlite-2.ico
+5=+h>Papirus-Team-Papirus-Mimetypes-Text-x-chdr.ico
+6=+readme.txt>Papirus-Team-Papirus-Mimetypes-Text-x-readme.ico
+7=+c>Papirus-Team-Papirus-Mimetypes-Text-x-csrc.ico
+8=+txt>Note Pad.ico
+9=+md>Text Editor Typora.ico
+10=+hex>Papirus-Team-Papirus-Mimetypes-Text-x-hex.ico
+11=py>Python.ico
+12=+java>Papirus-Team-Papirus-Mimetypes-Text-x-java.ico
+13=+log>Papirus-Team-Papirus-Mimetypes-Text-x-log.ico
+14=+cpp>Papirus-Team-Papirus-Mimetypes-Text-x-c-plus-plus-src.ico
+15=+css>Papirus-Team-Papirus-Mimetypes-Text-css.ico
+16=+py>Papirus-Team-Papirus-Mimetypes-Text-x-python.ico
+17=+makefile>Papirus-Team-Papirus-Mimetypes-Text-x-makefile.ico
+```
+
+效果大概就是这样子的：
+
+![FileIcon-2](Image/FileIcon-2.png)
+
+使用基本语法：
+
+```x
+匹配规则>图标路径
+```
+
+比如，
+
+```
+txt;ini;xml>xxx.ico //图标位于<xyicons>/xxx.ico。匹配文件格式是.txt, .ini, .xml
+```
+
+从帮助文档(F1)摘出来的：
+
+```
+%computer%    matches the Computer special folder
+%desktop%     matches the Desktop special folder
+%personal%    matches the Personal special folder
+%user%        matches the User special folder
+%net%         matches the Network special folder
+%recycler%    matches the Recycle Bin special folder
+E:\           matches drive E:\
+E:\*\         matches all folders in E:\
+E:\ /r        matches all folders in E:\ and E: itself
+E:\Jobs\*\    matches all folders in E:\Jobs\
+[F-L]:\*\     matches all folders on drives F-L
+*\            matches all folders that have no specific icon
+**\           same as above for the current tree folder
+pics\         matches all folders named "pics"
+E:\*          matches all files in E:\
+pics\*        matches all files in folders named "pics"
+pics*\*       matches all files in folders beginning with "pics"
+*.jpg;*.png   matches all JPG and PNG files
+*.fnd         matches all FND files and is used for Search Results
+*.            matches all files with no extension 
+*?            matches all files of unknown file type
+*23*          matches all files containing "23" in the name
+*2013*.txt    matches all TXT files containing "2013" in the name
+readme.txt    matches all files named "readme.txt"
+<xyicons>\*   matches all files in the default Icons folder
+\\Wagner\     matches server "Wagner"
+```
+
+问：我的文件夹都已经自定义图标了，这个`File Icons`设置的图标会不会覆盖Window设置的图标呢？
+
+答：符合条件的File Icons会替换Windows设置的图标的。不过可以加下参数保留Windows设置的图标。
+
+在帮助文档中已经给出了答案：
+
+![FileIcon-3](Image/FileIcon-3.png)
+
+![FileIcon-4](Image/FileIcon-4.png)
+
+# 如何找出需要的命名?
+
+![ListAllCommands-1](Image/ListAllCommands-1.png)
+
+
 
 # 按钮和用户自定义命令区别
 
+工具栏上的都是按钮，这些按钮中，用户自定义的按钮(`User Button`)都是没办法分配快捷键的。
+
+如果需要使用快捷键关联什么操作，那就需要使用用户自定义命令(User-Defined Commands)。
+
 > Buttons are meant for the mouse. UDCs are meant for the keys.[[?](https://www.xyplorer.com/xyfc/viewtopic.php?t=14505)]
-
-
 
 # 工具栏的摆放和使用
 
+一个合理的工具栏按钮摆放，可以提高使用效率。这是我的工具栏按钮摆放(2020/11/10)：
 
+![ToolbarPArrangement-1](Image/ToolbarPArrangement-1.png)
+
+我的电脑 | 前、后退、上一级、撤销等 | 收藏、添加Tags | 文件属性、打开方式、是否显示系统文件，隐藏文件 |  Visual过滤 | Pane | Color过滤器 | 设置 夜间模式 | View功能 | 用户按钮
 
 # 用户自定义命令的使用
 
@@ -96,68 +256,7 @@ Scripts Files:<xyscripts>\OpenWithExplorer.xys
 
 
 
-# <span id="scripts">关于Scripts的一些事</span>
-
-XYplorer使用`Visual Basic 6`开发的，并且编译为本地代码(Native code)，以获取更快的运行速度[[?](https://www.xyplorer.com/xyfc/viewtopic.php?t=6350)]。
-
-`XYplorer Script`用什么程序语言写成的，我们不得而知，不过Script借用了许多来自php特性(比如字符串的连接可以<code>.</code>来完成)。就像我们学习新的语言一样，它应该有规则和例子供beginner来学习。
-
-具体用法和示例在`XYplorer.chm->Content选项卡->Advanced Topics->Scripting和Scripting Commands`的部分。如何寻找这部分呢？在XYplorer菜单栏`Help->Cotents and Index(F1)`中，其中<kbd>F1</kbd>调用的是XYplorer目录下的`XYplorer.chm`(若无，可以在本GitHub Page中下载)。
-
-下面是`XYplorer Native  Variables`的部分实例：
-
-设当前XYplorer目录位于<code>C:\PortableApps\XYplorer</code>;设当前目录位于<code>F:\PictureLib</code>
-
-目录结构如下，
-
-```
-C:\PortableApps\XYplorer>tree
-Folder PATH listing for volume OS
-Volume serial number is 080B-2E29
-C:.
-└─Data
-    ├─AutoBackup
-    ├─Catalogs
-    ├─FindTemplates
-    ├─Icons
-    ├─NewItems
-    │  └─New folder
-    ├─Panes
-    │  ├─1
-    │  │  └─t
-    │  └─2
-    │      └─t
-    ├─Paper
-    ├─Scripts
-    │  └─Everything
-    ├─Temp
-    └─Thumbnails
-```
-
-在地址栏分别输入<code>::msg \<xypath\></code>、<code>::msg \<xydata\></code>、<code>::msg \<xyicons\></code>、<code>::msg \<xyscripts\></code>、<code>::msg \<xypaper\></code>、<code>::msg \<xycatalogs\></code>、<code>::msg \<xynewitems\></code>、、<code>::msg \<curpath\></code>，结论如下，
-
-```
-<xypath> = C:\PortableApps\XYplorer
-<xydata> = C:\PortableApps\XYplorer\Data
-<xyicons> = C:\PortableApps\XYplorer\Data\Icons
-<xyscripts> = C:\PortableApps\XYplorer\Data\Scripts
-<xypaper> = C:\PortableApps\XYplorer\Data\Paper
-<xycatalogs> = C:\PortableApps\XYplorer\Data\Catalogs
-<xynewitems> = C:\PortableApps\XYplorer\Data\NewItems
-<curpath> = F:\PictureLib
-```
-
-<code>::msg \<curname\></code>的输出需要选中一个文件，比如鼠标选中<code>F:\PictureLib\a.png</code>，那么输出
-
-```
-F:\PictureLib\a.png
-```
-
-什么都不选中，则输出空白（即什么都没有）。
-
-更多XYplorer Native  Variables介绍，请参考`XYplorer.chm->左上方Inbox->输入XYplorer Native  Variables`。
-
-
+# <span id="scripts">
 
 # 在XYplorer中使用QuickLook
 
@@ -249,11 +348,13 @@ run "C:\Windows\explorer.exe" <curpath>
 
 ## [案例2]CMD集成到按钮
 
-官网已经把Cmd的按钮集成到工具栏了，你现在可以在自定义工具栏中的列表中找到它，
+XY官网已经把**Cmd的按钮集成到工具栏了**，并且提供了热键<kbd>Ctrl + Alt + P</kbd>。
+
+你现在可以在自定义工具栏中的列表中找到它，
 
 ![Cmd-2](Image/Cmd-2.png)
 
-这个Cmd更完善点，也提供了热键<kbd>Ctrl + Alt + P</kbd>。不过下面我还是给出用户自定义Cmd按钮的方法。
+不过下面我还是给出用户自定义Cmd按钮的方法。
 
 ![Cmd-1](Image/Cmd-1.png)
 
@@ -286,7 +387,7 @@ $comspec = ("%osbitness%" == 64) ? "%windir%\System32\cmd.exe" : "%windir%\SysWO
 
 使用评价：
 
-这个cmd其实也不是很好用。
+这个cmd其实也不是很好用，也没有快捷键可以调用按钮，再加上XY官网已经集成了Cmd按钮。下面还是会给出一些替代方案。
 
 Alternative Solution 1(比较笨(～￣(OO)￣)ブ):  偶尔我还是会<kbd>Win + R</kbd>来启动cmd，进入cmd，切换盘符（比如<code>f:</code><kbd>Enter</kbd>)，然后在XYplorer某个目录下<kbd>Alt + D</kbd> <kbd>Ctrl + C</kbd>复制路径回到cmd粘贴。
 
@@ -318,9 +419,9 @@ Alternative Solution 3(推荐): 你完全可以使用XYplorer集成的Windows文
 
 ![TreeUse-1](Image/TreeUse-2.png)
 
-之所以这样做，是因为我需要快速浏览C/D/E/F，并且在Tree侧边栏**右键**可以弹出**收藏夹列表**。
+之所以这样做，是因为我需要快速浏览C/D/E/F，对显示树结构的目录需求不是很大，并且在Tree侧边栏**右键**可以弹出**收藏夹列表**。
 
-如果你需要使用树的功能，请一定要把XYplorer界面左右两侧拉长，如果不拉长，使用起来很没有体验。两侧拉长还有一个重要的理由：但你的文件夹视图是“详情视图”时，每一个文件的描述列：有文件名、修改时间、创建时间、后缀名、文件夹大小等，想要把这些列的信息全，那么你就必须拉长。
+如果你需要使用树的功能，请一定要把XYplorer界面左右两侧拉长，如果不拉长，使用起来很没有体验。两侧拉长还有一个重要的理由：但你的文件夹视图是“详情视图”时，每一个文件的描述列：文件名、修改时间、创建时间、后缀名、文件夹大小等，想要把这些列的信息全，那么你就必须拉长。
 
 
 
@@ -380,11 +481,11 @@ Explore和Explorer Path的区别：前者打开这个文件；后者打开这个
 
 参考：[Everything and XYplorer - My Everything Integration Settings - XYplorer Beta Club](https://www.xyplorer.com/xyfc/viewtopic.php?t=20506)
 
-没有必要纠结Scripts文件来调用`Everything's command-line ES`服务来搜索，复杂麻烦而且没使用Everything来得快。你可以跟我一样，添加一个Everything按钮。
+这里有个以前用过目前弃用的Scripts的链接：[Everything for xyplorer - XYplorer Beta Club](https://www.xyplorer.com/xyfc/viewtopic.php?f=7&t=21480)。如果你感兴趣，可以尝试一下。
 
-这里有个以前用过目前弃用的Scripts的链接：[Everything for xyplorer - XYplorer Beta Club](https://www.xyplorer.com/xyfc/viewtopic.php?f=7&t=21480)
+当然，纠结Scripts文件来调用`Everything's command-line ES`服务来搜索是没有必要的，复杂麻烦而且没直接使用Everything来得快。你可以跟我一样，添加一个Everything按钮，或者设置一个热键调用XY（请参考[XYplorer间接调用Everything](#invoke_everything)）。
 
-## XYplorer间接调用Everything
+## <span id="invoke_everything">XYplorer间接调用Everything</span>
 
 仅在当前目录下搜索（搜索的目标包括当前目录和当前目录的所有子目录)，示意图如下，
 
@@ -430,13 +531,15 @@ Script中runret()可参考`XYplorer.chm`
 
 ![Scripting_command-runret-1](Image/Scripting_command-runret-1.png)
 
-编写的脚本很简陋，其目的主要是为了打开Everything，并自动化地添加上当前目录。如果有兴趣的同学们可以自行研究下XYplorer Script，熟悉流程控制语句和常用的Script Command就可以进行更高逻辑的功能实现了。
+编写的脚本很简陋，其目的主要是为了打开Everything，并自动化地添加上当前目录。
+
+如果有兴趣的同学们可以自行研究下XYplorer Script(See [关于Scripts的一些事](#scripts))，熟悉流程控制语句和常用的Script Command就可以进行更高逻辑的功能实现了。
 
 # XYplorer的备份和还原
 
-## 文件夹结构以及备份要点
-
 说到这个问题，我们先得了解下XYplorer的目录结构。
+
+## 文件夹结构 | Folder Hierarchy
 
 -文件夹结构(Folder Structure)[可选读,可跳过]
 
@@ -476,16 +579,15 @@ D:\PortableApps\XYplorer\Data>DIR
 XYplorer/Data目录下文件信息介绍，
 
 ```
-action.dat					//撤销或重做历史记录
-ChineseSimplified.lng		//中文语言文件
-fvs.dat						//fvs:folder view settings. 该.dat保存文件夹视图设置信息
-ks.dat						//ks:keyboard shortcuts. 该.dat保存键盘快捷键设置信息
-Language.ini				//XYplorer读取并根据该配置文件信息决定选择使用哪个语言作为界面交互语言。
-lastini.dat
-//如果存在,则该.dat用于决定让XYplorer载入哪个.ini信息，该.dat保存的值为XYplorer,那么XYplorer就会载入XYplorer.ini
-tag.dat						//该.dat保存标注(tags)信息,这个标注信息应该包括标签(Label),注释(Comment),标签(tag)信息。
-udc.dat						//udc:user-defined commands. 该.dat保存用户自定义命令信息
-XYplorer.ini				//保存配置信息，该配置文件不可随意覆盖，XYplorer会调用它，如果随便覆盖它可能会出现版本使用到期。
+action.dat	//撤销或重做历史记录
+ChineseSimplified.lng	//中文语言文件
+fvs.dat	//fvs:folder view settings. 该.dat保存文件夹视图设置信息
+ks.dat	//ks:keyboard shortcuts. 该.dat保存键盘快捷键设置信息
+Language.ini	//XYplorer读取并根据该配置文件信息决定选择使用哪个语言作为界面交互语言。
+lastini.dat	//如果存在,则该.dat用于决定让XYplorer载入哪个.ini信息，该.dat保存的值为XYplorer,那么XYplorer就会载入XYplorer.ini
+tag.dat	//该.dat保存标注(tags)信息,这个标注信息应该包括标签(Label),注释(Comment),标签(tag)信息。
+udc.dat	//udc:user-defined commands. 该.dat保存用户自定义命令信息
+XYplorer.ini	//保存配置信息，该配置文件不可随意覆盖，XYplorer会调用它，如果随便覆盖它可能会出现版本使用到期。
 ```
 
 XYplorer/Data目录下文件夹信息介绍，
@@ -534,14 +636,23 @@ XYplorer.ini    main settings file (lastini.dat, if it exists, decides which ini
 综合上面的介绍，在进行迁移或备份用户数据时，可以选择保存Data文件夹或者保存以下用户数据文件：
 
 ```
-action.dat[重要]	fvs.dat[重要]	ks.dat[重要]	Language.ini[重要]	tag.dat[重要]		udc.dat[重要]		XYplorer.ini[必要]	Catalogs目录[重要]
-Scripts目录[重要]	NewItems目录[可选]	Icons目录[可选]		Panes目录[可选]		Temp目录[可选]	AutoBackup目录[可选]
-Layout目录[可有,可选]		FindTemplates目录[可选]		Paper目录[可选]
+action.dat[重要]	fvs.dat[重要]	ks.dat[重要]	Language.ini[重要]
+tag.dat[重要]		udc.dat[重要]		XYplorer.ini[必要]	Catalogs目录[重要]
+Scripts目录[重要]	
+NewItems目录[可选]	Icons目录[可选]		Panes目录[可选]		
+Temp目录[可选]	AutoBackup目录[可选]	Layout目录[可有,可选]		
+FindTemplates目录[可选]		Paper目录[可选]
 ```
 
 如果你的配置文件不是以`XYplorer.ini`名为的，你还需要保存`lastini.ini`文件。
 
-看我说了这么多，你直接**保存Data文件夹**就好了，迁移时直接Copy这个Data到新的XYplorer目录下即可。![img](Image/embarrassed.png)
+## 备份什么文件才能保证数据不丢失并且换了新版也还继续用?
+
+:weary:我说了这么多，你直接**<span style="color:red">保存Data文件夹</span>**就好了，迁移时直接Copy这个Data到新的XYplorer目录下即可。
+
+强调一遍，**<span style="color:red">喜欢使用标签的同学们，一定要保存好tag.dat，里面装了你使用标签的数据信息，切记！</span>**
+
+![BackupTags-1](Image/BackupTags-1.png)
 
 ## 单项用户数据保存和载入
 
@@ -641,7 +752,7 @@ F:\Downloads\[VCB-Studio] Shokugeki no Souma][Ma10p_1080p][x265_flac]Subtitles�
 
 我的替换要求是:
 
-`[VCB-Studio] Shokugeki no Souma [xx][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass`替换为`[VCB-Studio] Shokugeki no Souma [xx][Ma10p_1080p][x265_flac].ass`，即`.TC-CASO&SumiSora`需要替换为`""`。
+`[VCB-Studio] Shokugeki no Souma [xx][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass`替换为`[VCB-Studio] Shokugeki no Souma [xx][Ma10p_1080p][x265_flac].ass`，即`.TC-CASO&SumiSora`需要替换为`""`(即内容为空白，体现在替换内容中就是什么内容都不输入)。
 
 选中所有相关文件，然后菜单栏`File->Rename Special->Search and Replace...`
 
@@ -702,11 +813,11 @@ RegExpPattern > ReplaceWith\    (case-sensitive)
 
 ```
 「[\s\S]+」 > 
-// \s是匹配所有空白符，包括换行，\S是皮非空白符，包括换行。
+// \s是匹配所有空白符，包括换行，\S是匹配非空白符，包括换行。
 // [\s\S]匹配所有,但只匹配一个满足条件的字符
 // +是限定符，用于指定它前面的表达式的匹配次数
 // [\s\S]+表示多次匹配所有字符,匹配多个满足条件的字符
-//「[\s\S]+」匹配以「开头和」结尾以及它们之间的所有字符
+//「[\s\S]+」匹配以'「'开头和'」'结尾以及它们之间的所有字符
 ```
 
 ![RegExpRename-2](Image/RegExpRename-2.png)
