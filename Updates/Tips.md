@@ -1,14 +1,24 @@
-在介绍过程中，所有技巧均按XYplorer英文版进行说明，中文版的用户请自行对照。
+# 事先说明
+
+在介绍过程中，所有技巧均按**XYplorer英文版**进行说明，中文版的用户请自行对照。因为*许多参考和官网文档都是英文的*，我翻译过来还要用中文来写每个界面的按钮，太麻烦了也不利于深度使用。
+
+第一，本文阅读最好连同Updates目录一起下载到本地，使用Typora进行阅读，阅读时打开“大纲”功能，选择你需要的章节阅读。
+
+第二，更新频率和内容。不定期更新，也可能不更新。同时更新的内容大多都是个人长期使用过程中遇到的问题和需求。
+
+第三，解惑。可以Google或者参考官方帮助文档，按<kbd>F1</kbd>呼出，若无法呼出，请下载`XYplorer.chm`。
+
+第四，本文参考来源主要包括Google搜索、XYplorer Beta Club、官网帮助文档。
+
+
 
 # <em>20191011 </em>
 
 # 使用过程中出现崩溃的原因和解决方法
 
-
-
 出现崩溃现象效果如下图
 
-![](img/Crack.jpg)
+![](Image/Crack.jpg)
 
 会出现一个Coffee的俯视图。
 
@@ -51,7 +61,7 @@
 
 `Assign Keyboard Shortcut... `，我设置的<kbd>Alt + 3</kbd>。
 
-![UserDefinedCommands-2](img/UserDefinedCommands-2.png)
+![UserDefinedCommands-2](Image/UserDefinedCommands-2.png)
 
 ```
 Caption:Open With Notepad
@@ -60,7 +70,7 @@ Scripts Files:<xyscripts>\OpenWithNotepad.xys
 
 使用方法：选中文件，<kbd>Alt + 3</kbd>速度调用`notepad`打开文本。
 
-## 设置快捷键调用Explorer
+## <span id="explorer_ks">设置快捷键调用Explorer</span>
 
 设置方法同上，创建`OpenWithExplorer`存放在XYplorer/Data/Scripts目录下，内容如下，
 
@@ -163,7 +173,7 @@ run "你的QuickLook目录\QuickLook.exe" "<curitem>";
 
 2.然后，按下图完成设置，
 
-![](img/QuickLook-1.png)
+![](Image/QuickLook-1.png)
 
 我这里分配的按键<kbd>Alt+1</kbd>
 
@@ -175,11 +185,11 @@ Script File内容如下
 
 3.最后，请关闭语法检查，具体方法如下，
 
-![](img/QuickLook-2.png)
+![](Image/QuickLook-2.png)
 
 若未关闭语法检查，使用QuickLook配合快捷键会出现这样的错误，
 
-![](img/QuickLook-3.png)
+![](Image/QuickLook-3.png)
 
 4.方法介绍完了，使用时，先选中要预览的文件，然后<kbd>Alt+1</kbd>即可。
 
@@ -201,23 +211,23 @@ XYplorer中使用QuickLook，是否可以使用空格键？
 
 -使用效果如下，
 
-![](img/Explorer-1.png)-具体方法如下，
+![](Image/Explorer-1.png)-具体方法如下，
 
 1.提取图标。提取工具[IcoFX3(下载地址若失效，自行下载)](https://ghpym.lanzous.com/b00zelckd)[可选]
 
-![IcoFx-1](img/IcoFx-1.png)
+![IcoFx-1](Image/IcoFx-1.png)
 
-![IcoFx-1](img/IcoFx-2.png)
+![IcoFx-1](Image/IcoFx-2.png)
 
-![IcoFx-1](img/IcoFx-3.png)
+![IcoFx-1](Image/IcoFx-3.png)
 
 2.添加按钮
 
-![AddButton-1](img/AddButton-1.png)
+![AddButton-1](Image/AddButton-1.png)
 
-![AddButton-2](img/AddButton-2.png)
+![AddButton-2](Image/AddButton-2.png)
 
-![AddButton-3](img/AddButton-3.png)
+![AddButton-3](Image/AddButton-3.png)
 
 内容信息如下
 
@@ -226,6 +236,8 @@ Explorer
 <xyicons>\Explorer.ico
 run "C:\Windows\explorer.exe" <curpath>
 ```
+
+这个脚本不完善，仅限打开当前目录。需要功能更全的Explorer脚本，可以使用[设置快捷键调用Explorer](#explorer_ks)的脚本。
 
 `<xyicons>`介绍请参考[关于Scripts的一些事](#scripts)
 
@@ -239,11 +251,11 @@ run "C:\Windows\explorer.exe" <curpath>
 
 官网已经把Cmd的按钮集成到工具栏了，你现在可以在自定义工具栏中的列表中找到它，
 
-![Cmd-2](img/Cmd-2.png)
+![Cmd-2](Image/Cmd-2.png)
 
 这个Cmd更完善点，也提供了热键<kbd>Ctrl + Alt + P</kbd>。不过下面我还是给出用户自定义Cmd按钮的方法。
 
-![Cmd-1](img/Cmd-1.png)
+![Cmd-1](Image/Cmd-1.png)
 
 按钮信息如下，
 
@@ -298,13 +310,13 @@ Alternative Solution 3(推荐): 你完全可以使用XYplorer集成的Windows文
 
 `Tools->Customize Tree->Tree Path Tracking`：开启树追踪标记
 
-![TreeUse-1](img/TreeUse-1.png)
+![TreeUse-1](Image/TreeUse-1.png)
 
 `View->Lock Tree`：开启后，记住（冻结为）上一次树结构的状态，接下来无论怎样浏览目录，树的追踪记录都看不到。开启期间，应该是不会有目录追踪记录的。当关闭后，恢复树的追踪记录功能，并更新为当前目录的树结构。使用建议：需要树功能，XYplorer运行卡的情况下可锁定。
 
 我的使用方法：关闭Mini Tree，Reset Tree，Lock Tree。把Tree的侧边栏空间压缩，只保留很小的地方，如图
 
-![TreeUse-1](img/TreeUse-2.png)
+![TreeUse-1](Image/TreeUse-2.png)
 
 之所以这样做，是因为我需要快速浏览C/D/E/F，并且在Tree侧边栏**右键**可以弹出**收藏夹列表**。
 
@@ -330,7 +342,7 @@ Alternative Solution 3(推荐): 你完全可以使用XYplorer集成的Windows文
 
 使用方式：`Window->Show Live Filter Box`。在地址栏最右侧可以看到，如图
 
-![LiveFilterBox-1](img/LiveFilterBox-1.png)
+![LiveFilterBox-1](Image/LiveFilterBox-1.png)
 
 <kbd>Ctrl + Alt + X</kbd>进入，搜索关键字。
 
@@ -338,7 +350,7 @@ Alternative Solution 3(推荐): 你完全可以使用XYplorer集成的Windows文
 
 假设我们需要筛选出<code>C:\Windows\SysWOW64\certcli.dll</code>，你只知道关键字"cert"，在Live Filter Box键入"cert"后，
 
-![LiveFilterBox-2](img/LiveFilterBox-2.png)
+![LiveFilterBox-2](Image/LiveFilterBox-2.png)
 
 这是一次模拟筛选，该功能场景范围过窄但好用。
 
@@ -348,7 +360,7 @@ Alternative Solution 3(推荐): 你完全可以使用XYplorer集成的Windows文
 
 `Options->General->Context Menu`，如图
 
-![Everything-1](img/Everything-1.png)
+![Everything-1](Image/Everything-1.png)
 
 Explore:
 
@@ -362,7 +374,7 @@ Explore Path:
 $exec("你的XYplorer目录\XYplorer.exe" /select="%1")
 ```
 
-![Everything-2](img/Everything-2.png)
+![Everything-2](Image/Everything-2.png)
 
 Explore和Explorer Path的区别：前者打开这个文件；后者打开这个文件所在的父目录。
 
@@ -376,7 +388,7 @@ Explore和Explorer Path的区别：前者打开这个文件；后者打开这个
 
 仅在当前目录下搜索（搜索的目标包括当前目录和当前目录的所有子目录)，示意图如下，
 
-![LimitedlySearchByEverything-1](img/LimitedlySearchByEverything-1.gif)
+![LimitedlySearchByEverything-1](Image/LimitedlySearchByEverything-1.gif)
 
 具体显示步骤如下，
 
@@ -403,7 +415,7 @@ Explore和Explorer Path的区别：前者打开这个文件；后者打开这个
 
 2.绑定热键。菜单栏`User->Manage Commands...(Ctril + Alt + F9)`
 
-![LimitedlySearchByEverything-2](img/LimitedlySearchByEverything-2.png)
+![LimitedlySearchByEverything-2](Image/LimitedlySearchByEverything-2.png)
 
 ```
 Cpation:CurpathSearch
@@ -416,7 +428,7 @@ Script编写思路：通过命令行调用everything，everything想要完成当
 
 Script中runret()可参考`XYplorer.chm`
 
-![Scripting_command-runret-1](img/Scripting_command-runret-1.png)
+![Scripting_command-runret-1](Image/Scripting_command-runret-1.png)
 
 编写的脚本很简陋，其目的主要是为了打开Everything，并自动化地添加上当前目录。如果有兴趣的同学们可以自行研究下XYplorer Script，熟悉流程控制语句和常用的Script Command就可以进行更高逻辑的功能实现了。
 
@@ -529,7 +541,7 @@ Layout目录[可有,可选]		FindTemplates目录[可选]		Paper目录[可选]
 
 如果你的配置文件不是以`XYplorer.ini`名为的，你还需要保存`lastini.ini`文件。
 
-看我说了这么多，你直接**保存Data文件夹**就好了，迁移时直接Copy这个Data到新的XYplorer目录下即可。![img](img/embarrassed.png)
+看我说了这么多，你直接**保存Data文件夹**就好了，迁移时直接Copy这个Data到新的XYplorer目录下即可。![img](Image/embarrassed.png)
 
 ## 单项用户数据保存和载入
 
@@ -559,7 +571,7 @@ Layout目录[可有,可选]		FindTemplates目录[可选]		Paper目录[可选]
 
 -如何载入Catalog信息？
 
-![LoadCatalog-1](img/LoadCatalog-1.png)
+![LoadCatalog-1](Image/LoadCatalog-1.png)
 
 a或b都可用于载入Catalog信息。
 
@@ -588,6 +600,144 @@ Layout保存和加载通过`Window->Save Layout As... / Load Layout`。
 2.直接在原版本XYplorer菜单栏`Help->Online Support->Check for Updates`进行升级。在21.20.0200以前版本每次升级都不会出现版本到期的现象，不过这一次升级到21.20.0200却出现了版本到期。因此使用方法1稳妥。
 
 -END
+
+
+
+# 批量命名
+
+## 案例1 寻找指定字符串进行替换
+
+需求背景：保证视频文件名(不含后缀)与外挂字幕文件名(不含后缀)一致，Potplayer播放时就会自动载入字幕，为了完成这样的需求，需要改动网上下载到的字幕文件名。
+
+我现有如下文件:
+
+```
+F:\Downloads\[VCB-Studio] Shokugeki no Souma][Ma10p_1080p][x265_flac]Subtitles繁体>dir ./b
+[VCB-Studio] Shokugeki no Souma [01][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [02][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [03][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [04][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [05][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [06][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [07][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [08][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [09][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [10][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [11][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [12][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [13][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [14][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [15][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [16][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [17][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [18][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [19][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [20][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [21][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [22][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [23][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+[VCB-Studio] Shokugeki no Souma [24][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass
+```
+
+我的替换要求是:
+
+`[VCB-Studio] Shokugeki no Souma [xx][Ma10p_1080p][x265_flac].TC-CASO&SumiSora.ass`替换为`[VCB-Studio] Shokugeki no Souma [xx][Ma10p_1080p][x265_flac].ass`，即`.TC-CASO&SumiSora`需要替换为`""`。
+
+选中所有相关文件，然后菜单栏`File->Rename Special->Search and Replace...`
+
+具体操作如下:
+
+![SearchAndReplace-1](Image/SearchAndReplace-1.png)
+
+你还可以预览下结果:
+
+![SearchAndReplace-2](Image/SearchAndReplace-2.png)
+
+语法格式：
+
+```
+before/now		//文件中含有的"before"替换为"now"
+```
+
+'/'的作用为:  
+
+> define a string to be replaced by another string, both strings separated by '/'.
+
+## 案例2 替换字符串中某个范围的内容
+
+比如有以下文件，需要把`「`和`」`之间的内容去掉，该如何操作
+
+```
+问题儿童都来自异世界？ -01 「問題児たちが箱庭にやって来たようですよ？」 BDrip x264-ank.kna.mkv_20201106_184156.071.jpg
+问题儿童都来自异世界？ -01 「問題児たちが箱庭にやって来たようですよ？」 BDrip x264-ank.kna.mkv_20201106_184206.959.jpg
+问题儿童都来自异世界？ -04 「黒ウサギがエロイヤらしい奴に狙われたようですよ？」 BDrip x264-ank.mkv_20201107_233735.989.jpg
+问题儿童都来自异世界？ -04 「黒ウサギがエロイヤらしい奴に狙われたようですよ？」 BDrip x264-ank.mkv_20201107_235627.895.jpg
+问题儿童都来自异世界？ -04 「黒ウサギがエロイヤらしい奴に狙われたようですよ？」 BDrip x264-ank.mkv_20201107_235634.839.jpg
+问题儿童都来自异世界？ -05 「誓いは星の彼方にだそうですよ？」 BDrip x264-ank.kna.mkv_20201108_164005.740.jpg
+问题儿童都来自异世界？ -05 「誓いは星の彼方にだそうですよ？」 BDrip x264-ank.kna.mkv_20201108_220102.628.jpg
+问题儿童都来自异世界？ -05 「誓いは星の彼方にだそうですよ？」 BDrip x264-ank.kna.mkv_20201108_220119.796.jpg
+问题儿童都来自异世界？ -05 「誓いは星の彼方にだそうですよ？」 BDrip x264-ank.kna.mkv_20201108_220122.821.jpg
+问题儿童都来自异世界？ -06 「問題児たちがお祭り騒ぎに参加するようですよ？」 BDrip x264-ank.kna.mkv_20201108_220533.452.jpg
+问题儿童都来自异世界？ -06 「問題児たちがお祭り騒ぎに参加するようですよ？」 BDrip x264-ank.kna.mkv_20201108_220540.260.jpg
+问题儿童都来自异世界？ -06 「問題児たちがお祭り騒ぎに参加するようですよ？」 BDrip x264-ank.kna.mkv_20201108_220544.739.jpg
+问题儿童都来自异世界？ -06 「問題児たちがお祭り騒ぎに参加するようですよ？」 BDrip x264-ank.kna.mkv_20201108_220550.478.jpg
+```
+
+需要用到`File->Rename Special->RegExp Rename...`的功能。
+
+两种语法格式如下: 
+
+```
+RegExpPattern > ReplaceWith     (case-insensitive: a=A)
+RegExpPattern > ReplaceWith\    (case-sensitive)
+```
+
+特别注意: <span style="color:red">`>`前后都需要补一个空格<kbd>spacebar</kbd></span>，否则不管匹配的正则表达式是正确的，也会出错。
+
+可以先去[正则表达式在线测试 | 菜鸟工具](http://c.runoob.com/front-end/854)测试下匹配结果：
+
+![RegExpRename-1](Image/RegExpRename-1.png)
+
+接着，我们进行使用`RegExp Rename...`进行替换:
+
+```
+「[\s\S]+」 > 
+// \s是匹配所有空白符，包括换行，\S是皮非空白符，包括换行。
+// [\s\S]匹配所有,但只匹配一个满足条件的字符
+// +是限定符，用于指定它前面的表达式的匹配次数
+// [\s\S]+表示多次匹配所有字符,匹配多个满足条件的字符
+//「[\s\S]+」匹配以「开头和」结尾以及它们之间的所有字符
+```
+
+![RegExpRename-2](Image/RegExpRename-2.png)
+
+预览结果：
+
+![RegExpRename-3](Image/RegExpRename-3.png)
+
+成功完成替换：
+
+![RegExpRename-4](Image/RegExpRename-4.png)
+
+在BDrip前面加上-：
+
+```
+\s+BDrip > -BDrip
+```
+
+结果如下：
+
+![RegExpRename-5](Image/RegExpRename-5.png)
+
+案例结束。
+
+你可以参考[菜单教程的正则表达式](https://www.runoob.com/regexp/regexp-tutorial.html)部分进行学习，并且该网站也提供了[正则表达式在线测试工具](http://c.runoob.com/front-end/854)。
+
+正则表达式重命名(`RegExp Rename...`)是一项很强大的功能，它相较于`Search and Replace...`，有更高的灵活性，可以定制搜索内容的类型和范围，但也提高了使用成本。
+
+此外，XYplorer使用的是`VB5 regex engine`。
+
+> XY uses the VB5 regex engine.[[?](https://www.xyplorer.com/xyfc/viewtopic.php?t=5357)]
 
 
 
