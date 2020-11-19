@@ -470,7 +470,7 @@ Location:
 
 -先创建纸文件夹
 
-从地址栏输入<code><xypaper></code>，回车进入纸文件夹XYplorer\Data\Paper。
+从地址栏输入<code>\<xypaper\></code>，回车进入纸文件夹XYplorer\Data\Paper。
 
 创建纸文件夹，纸文件夹以.txt结尾。我这里创建名为Test.txt。
 
@@ -506,7 +506,7 @@ D:\Work\GitWorks\XYplorer_Help\Updates\Image\Catalog-8.png
 
 -数据文件保存位置
 
-地址栏输入<code><xycatalogs></code>回车即可看到目录数据文件。丢失数据文件，那么目录栏就是空白的了，请保存好。
+地址栏输入<code>\<xycatalogs\></code>回车即可看到目录数据文件。丢失数据文件，那么目录栏就是空白的了，请保存好。
 
 
 
