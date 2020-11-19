@@ -2,7 +2,10 @@
 
 在介绍过程中，所有技巧均按**XYplorer英文版**进行说明，中文版的用户请自行对照。因为*许多参考和官网文档都是英文的*，我翻译过来还要用中文来写每个界面的按钮，太麻烦了也不利于深度使用。
 
-第一，本文阅读最好连同Updates目录一起下载到本地，使用Typora进行阅读，阅读时打开“大纲”功能，选择你需要的章节阅读。
+第一，本文阅读最好连同Updates目录一起下载到本地，使用Typora进行阅读，阅读时打开“大纲”功能，**选择你需要的章节阅读**。
+
+友情提示：下载速度慢的可以去下载一个Tampermonkey插件——[Github 增强 - 高速下载](https://greasyfork.org/en/scripts/412245-github-%E5%A2%9E%E5%BC%BA-%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD)，安装后不管是clone还是下载zip都可以选择分流节点。
+
 
 第二，更新频率和内容。不定期更新，也可能不更新。同时更新的内容大多都是个人长期使用过程中遇到的问题和需求。
 
@@ -11,6 +14,8 @@
 第四，本文参考来源主要包括Google搜索、XYplorer Beta Club、官网帮助文档。
 
 有时，为了书写方便，我会把XYplorer简称为XY。
+
+第五，所有的图片都保存在Image文件夹，不上载到图传是因为鬼知道哪天图片服务器和存储器会不会突然坏掉。
 
 # <em>20191011 </em>
 
@@ -96,9 +101,11 @@ F:\PictureLib\a.png
 
 更多XYplorer Native  Variables介绍，请参考`XYplorer.chm->左上方Inbox->输入XYplorer Native  Variables`。
 
+---
 
 
-# File Icons
+
+# 文件夹图标 | File Icons
 
 ![FileIcon-1](Image/FileIcon-1.png)
 
@@ -183,7 +190,9 @@ readme.txt    matches all files named "readme.txt"
 
 ![FileIcon-4](Image/FileIcon-4.png)
 
-# 如何找出需要的命名?
+
+
+# 如何找出需要的命令?
 
 ![ListAllCommands-1](Image/ListAllCommands-1.png)
 
@@ -197,7 +206,11 @@ readme.txt    matches all files named "readme.txt"
 
 > Buttons are meant for the mouse. UDCs are meant for the keys.[[?](https://www.xyplorer.com/xyfc/viewtopic.php?t=14505)]
 
-# 工具栏的摆放和使用
+
+
+# 工具栏的使用 | Toolbar
+
+## 工具栏的摆放和使用
 
 一个合理的工具栏按钮摆放，可以提高使用效率。这是我的工具栏按钮摆放(2020/11/10)：
 
@@ -205,108 +218,11 @@ readme.txt    matches all files named "readme.txt"
 
 我的电脑 | 前、后退、上一级、撤销等 | 收藏、添加Tags | 文件属性、打开方式、是否显示系统文件，隐藏文件 |  Visual过滤 | Pane | Color过滤器 | 设置 夜间模式 | View功能 | 用户按钮
 
-# 用户自定义命令的使用
-
-## 设置快捷键调用Notepad
-
-创建`OpenWithNotepad.xys`存放在XYplorer/Data/Scripts目录下，内容如下，
-
-```
-	if (<curitem> != "" && filetype(<curitem>) != "Nofile") {
-		run notepad "<curitem>";
-	}
-```
-
-添加命令方法：`User->Manage Commands...->Category:Load Script File->New-Add New Command`填写Caption和Script File
-
-`Assign Keyboard Shortcut... `，我设置的<kbd>Alt + 3</kbd>。
-
-![UserDefinedCommands-2](Image/UserDefinedCommands-2.png)
-
-```
-Caption:Open With Notepad
-Scripts Files:<xyscripts>\OpenWithNotepad.xys
-```
-
-使用方法：选中文件，<kbd>Alt + 3</kbd>速度调用`notepad`打开文本。
-
-## <span id="explorer_ks">设置快捷键调用Explorer</span>
-
-设置方法同上，创建`OpenWithExplorer`存放在XYplorer/Data/Scripts目录下，内容如下，
-
-```
-	if (<curitem> == "") {
-		run "C:\Windows\explorer.exe" <curpath>
-	} else {
-		if (filetype(<curitem>) == "Nofile") {	//选中的是目录
-		run "C:\Windows\explorer.exe" <curitem>
-	}
-		else {	
-			run "C:\Windows\explorer.exe" <curpath>
-		}
-	}
-```
-
-我分配的快捷键是<kbd>Ctrl + Alt + E</kbd>
-
-```
-Caption:Open With Explorer
-Scripts Files:<xyscripts>\OpenWithExplorer.xys
-```
 
 
+## <span id="further_use_of_button">按钮的高级用法</span>
 
-# <span id="scripts">
-
-# 在XYplorer中使用QuickLook
-
-[QuickLook](https://github.com/QL-Win/QuickLook)  [(此处下载)](https://github.com/QL-Win/QuickLook/releases)
-
--具体方法如下，
-
-1.在`你的XYplorer目录\Data\Scripts`下在创建一个`.xys`脚本文件，命名为`Run QuickLook.xys`，内容如下
-
-```
-run "你的QuickLook目录\QuickLook.exe" "<curitem>";
-```
-
-2.然后，按下图完成设置，
-
-![](Image/QuickLook-1.png)
-
-我这里分配的按键<kbd>Alt+1</kbd>
-
-Script File内容如下
-
-```
-<xyscripts>\Run QuickLook.xys
-```
-
-3.最后，请关闭语法检查，具体方法如下，
-
-![](Image/QuickLook-2.png)
-
-若未关闭语法检查，使用QuickLook配合快捷键会出现这样的错误，
-
-![](Image/QuickLook-3.png)
-
-4.方法介绍完了，使用时，先选中要预览的文件，然后<kbd>Alt+1</kbd>即可。
-
--说明事项：
-
-XYplorer中使用QuickLook，是否可以使用空格键？
-
-答：QuickLook在XYplorer使用中，不能使用<kbd>Spacebar</kbd>，因为它是被XYplorer保留[[?](https://www.xyplorer.com/xyfc/viewtopic.php?t=20326)]，因而你无法在XYplorer中使用它。
-
-参考：https://github.com/QL-Win/QuickLook/issues/96
-
-
-
-
-
-# <span id="further_use_of_button">按钮的高级用法</span>
-
-## <span id="explorer_button">[案例1]使用Windows文件管理器打开XYplorer当前路径</span>
+### <span id="explorer_button">[案例1]使用Windows文件管理器打开XYplorer当前路径</span>
 
 -使用效果如下，
 
@@ -346,7 +262,7 @@ run "C:\Windows\explorer.exe" <curpath>
 
 
 
-## [案例2]CMD集成到按钮
+### [案例2]CMD集成到按钮
 
 XY官网已经把**Cmd的按钮集成到工具栏了**，并且提供了热键<kbd>Ctrl + Alt + P</kbd>。
 
@@ -397,7 +313,204 @@ Alternative Solution 3(推荐): 你完全可以使用XYplorer集成的Windows文
 
 
 
-# 树的使用
+---
+
+# 用户自定义命令的使用 | User-Defined Commands
+
+## 设置快捷键调用Notepad
+
+创建`OpenWithNotepad.xys`存放在XYplorer/Data/Scripts目录下，内容如下，
+
+```
+	if (<curitem> != "" && filetype(<curitem>) != "Nofile") {
+		run notepad "<curitem>";
+	}
+```
+
+添加命令方法：`User->Manage Commands...->Category:Load Script File->New-Add New Command`填写Caption和Script File
+
+`Assign Keyboard Shortcut... `，我设置的<kbd>Alt + 3</kbd>。
+
+![UserDefinedCommands-2](Image/UserDefinedCommands-2.png)
+
+```
+Caption:Open With Notepad
+Scripts Files:<xyscripts>\OpenWithNotepad.xys
+```
+
+使用方法：选中文件，<kbd>Alt + 3</kbd>速度调用`notepad`打开文本。
+
+## <span id="explorer_ks">设置快捷键调用Explorer</span>
+
+设置方法同上，创建`OpenWithExplorer`存放在XYplorer/Data/Scripts目录下，内容如下，
+
+```
+	if (<curitem> == "") {
+		run "C:\Windows\explorer.exe" <curpath>
+	} else {
+		if (filetype(<curitem>) == "Nofile") {	//选中的是目录
+		run "C:\Windows\explorer.exe" <curitem>
+	}
+		else {	
+			run "C:\Windows\explorer.exe" <curpath>
+		}
+	}
+```
+
+我分配的快捷键是<kbd>Ctrl + Alt + E</kbd>
+
+```
+Caption:Open With Explorer
+Scripts Files:<xyscripts>\OpenWithExplorer.xys
+```
+
+
+
+## 在XYplorer中使用QuickLook
+
+[QuickLook](https://github.com/QL-Win/QuickLook)  [(此处下载)](https://github.com/QL-Win/QuickLook/releases)
+
+-具体方法如下，
+
+1.在`你的XYplorer目录\Data\Scripts`下在创建一个`.xys`脚本文件，命名为`Run QuickLook.xys`，内容如下
+
+```
+run "你的QuickLook目录\QuickLook.exe" "<curitem>";
+```
+
+2.然后，按下图完成设置，
+
+![](Image/QuickLook-1.png)
+
+我这里分配的按键<kbd>Alt+1</kbd>
+
+Script File内容如下
+
+```
+<xyscripts>\Run QuickLook.xys
+```
+
+3.最后，请关闭语法检查，具体方法如下，
+
+![](Image/QuickLook-2.png)
+
+若未关闭语法检查，使用QuickLook配合快捷键会出现这样的错误，
+
+![](Image/QuickLook-3.png)
+
+4.方法介绍完了，使用时，先选中要预览的文件，然后<kbd>Alt+1</kbd>即可。
+
+-说明事项：
+
+XYplorer中使用QuickLook，是否可以使用空格键？
+
+答：QuickLook在XYplorer使用中，不能使用<kbd>Spacebar</kbd>，因为它是被XYplorer保留[[?](https://www.xyplorer.com/xyfc/viewtopic.php?t=20326)]，因而你无法在XYplorer中使用它。
+
+参考：https://github.com/QL-Win/QuickLook/issues/96
+
+
+
+
+
+# 导航面板目录的使用 | Navigation Panels - Catalog
+
+## 打开侧边栏
+
+F8->Ctrl+F8即可打开。
+
+![Catalog-1](Image/Catalog-1.png)
+
+## 添加目录
+
+Catalog栏是空白的，需要右键`Add New Category...`
+
+![Catalog-2](Image/Catalog-2.png)
+
+自定义名称
+
+![Catalog-3](Image/Catalog-3.png)
+
+确认右边栏就会变成这样
+
+![Catalog-4](Image/Catalog-4.png)
+
+## 添加项目
+
+### 拖动式添加项目
+
+如果你需要添加文件到目录上，那么就把文件拖到“你需要的名称”上。
+
+比如我把一张图片(Catalog-4.png)拖到目录名上，就会出现如下内容，
+
+![Catalog-5](Image/Catalog-5.png)
+
+### 自定义式添加项目
+
+#### 添加脚本
+
+**选中目录名称**，然后右键`Add New Item Here...`(快捷键式<kbd>Insert</kbd>)，可以自定义你要添加的项目。比如刚刚添加的.png文件就是一个项目(Item)。
+
+若我想要添加一个脚本呢？
+
+以下脚本的功能是选中一个文件，然后鼠标左键轻点一下就会复制文件的路径，不过这个文件的路径是以正斜杆`/`分割路径部分的。比如，`D:/Work/GitWorks/XYplorer_Help/Updates/Image/Catalog-5.png`，而不是`D:\Work\GitWorks\XYplorer_Help\Updates\Image\Catalog-5.png`。这么做是为了避免要在字符串中转义反斜杠`\`。
+
+脚本内容如下，
+
+![Catalog-6](Image/Catalog-6.png)
+
+Caption: `Copy Path With Forward-slash to Clipboard `
+
+Location:
+
+```
+::if(<curitem>==""){copytext replace(<curpath>, "\", "/");} else{copytext replace(<curitem>, "\", "/");}
+```
+
+#### 添加纸文件夹
+
+-先创建纸文件夹
+
+从地址栏输入<code><xypaper></code>，回车进入纸文件夹XYplorer\Data\Paper。
+
+创建纸文件夹，纸文件夹以.txt结尾。我这里创建名为Test.txt。
+
+-添加纸文件夹到目录
+
+打开纸文件夹的语法格式:`paper:纸文件夹名`
+
+![Catalog-7](Image/Catalog-7.png)
+
+![Catalog-8](Image/Catalog-8.png)
+
+-添加项目到纸文件夹
+
+![Catalog-9](Image/Catalog-9.png)
+
+![Catalog-10](Image/Catalog-10.png)
+
+-请尽情探索纸文件夹
+
+如果你打开\<xypaper\>/Test.txt，可以发现多处一行内容：
+
+```
+D:\Work\GitWorks\XYplorer_Help\Updates\Image\Catalog-8.png
+```
+
+纸文件夹不仅可以保存文件，还可以保存文件夹，纸文件夹主要用于存放同一个主题的素材。
+
+## 目录数据的保存
+
+-定位当前目录的数据文件
+
+![Catalog-11](Image/Catalog-11.png)
+
+-数据文件保存位置
+
+地址栏输入<code><xycatalogs></code>回车即可看到目录数据文件。丢失数据文件，那么目录栏就是空白的了，请保存好。
+
+
+
+# 树的使用 | Tree
 
 树的配置主要在`View`、`Tools->Customize Tree`、`Configuration(F9)->Tree and List`，少部分可以通过键入关键字"Tree"到`Configuration(F9)->左下角Jump to Setting`进行寻找、
 
@@ -425,7 +538,7 @@ Alternative Solution 3(推荐): 你完全可以使用XYplorer集成的Windows文
 
 
 
-# XYplorer的搜索问题及最佳搜索替换工具Everything
+# XYplorer的搜索问题及最佳搜索替换工具Everything | Search
 
 ## XYplorer的搜索
 
@@ -535,9 +648,11 @@ Script中runret()可参考`XYplorer.chm`
 
 如果有兴趣的同学们可以自行研究下XYplorer Script(See [关于Scripts的一些事](#scripts))，熟悉流程控制语句和常用的Script Command就可以进行更高逻辑的功能实现了。
 
-# XYplorer的备份和还原
+# XYplorer的备份和还原 | Backup & Restore Configuration
 
 说到这个问题，我们先得了解下XYplorer的目录结构。
+
+注："XYplorer的目录结构"部分费时费精力，但可以了解你经常使用功能的对应数据文件的作用。当然你也可跳到[备份什么文件才能保证数据不丢失并且换了新版也还继续用?](#backup)进行阅读。
 
 ## 文件夹结构 | Folder Hierarchy
 
@@ -646,7 +761,7 @@ FindTemplates目录[可选]		Paper目录[可选]
 
 如果你的配置文件不是以`XYplorer.ini`名为的，你还需要保存`lastini.ini`文件。
 
-## 备份什么文件才能保证数据不丢失并且换了新版也还继续用?
+## <span id="backup">备份什么文件才能保证数据不丢失并且换了新版也还继续用?</span>
 
 :weary:我说了这么多，你直接<span style="color:red">**保存Data文件夹**</span>就好了，迁移时直接Copy这个Data到新的XYplorer目录下即可。
 
@@ -714,7 +829,7 @@ Layout保存和加载通过`Window->Save Layout As... / Load Layout`。
 
 
 
-# 批量命名
+# 批量命名 | Rename Special
 
 ## 案例1 寻找指定字符串进行替换
 
