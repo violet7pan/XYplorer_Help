@@ -1,3 +1,5 @@
+
+
 # 事先说明
 
 在介绍过程中，所有技巧均按**XYplorer英文版**进行说明，中文版的用户请自行对照。因为*许多参考和官网文档都是英文的*，我翻译过来还要用中文来写每个界面的按钮，太麻烦了也不利于深度使用。
@@ -342,7 +344,7 @@ Scripts Files:<xyscripts>\OpenWithNotepad.xys
 
 ## <span id="explorer_ks">设置快捷键调用Explorer</span>
 
-设置方法同上，创建`OpenWithExplorer`存放在XYplorer/Data/Scripts目录下，内容如下，
+设置方法同上，创建`OpenWithExplorer.xys`存放在XYplorer/Data/Scripts目录下，内容如下，
 
 ```
 	if (<curitem> == "") {
@@ -821,9 +823,25 @@ Layout保存和加载通过`Window->Save Layout As... / Load Layout`。
 
 为了使原版本的数据信息同步到新版本，你可以有几类操作方法：
 
-1.准备一个全新版本XYplorer,然后把旧版本的Data覆盖到新的XYplorer/Data
+方法1.准备一个全新版本XYplorer,然后把旧版本的Data覆盖到新的XYplorer/Data
 
-2.直接在原版本XYplorer菜单栏`Help->Online Support->Check for Updates`进行升级。在21.20.0200以前版本每次升级都不会出现版本到期的现象，不过这一次升级到21.20.0200却出现了版本到期。因此使用方法1稳妥。
+迁移旧XY的数据目录到新XY，需要遵循以下步骤：
+
+-先将你的Data目录复制一份到桌面（Desktop）。
+
+-**(很重要)**对Desktop/Data/XYplorer.ini进行重命名，可以命名为`MyXYConfig.ini`。
+
+-将Desktop/Data目录复制，然后粘贴到新XY目录下，覆盖新XY/Data目录。
+
+-打开新XY，在新XY菜单栏`File->Settings Special->Load Configuration...`，通过载入配置选项来载入MyXYConfig.ini。
+
+![RestoreConfiguration-1](Image/RestoreConfiguration-1.png)
+
+现在开始解释为什么要这么做：
+
+如果直接将旧XY/Data/XYplorer.ini对新XY/Data/XYplorer.ini覆盖，会发生打开新XY出现许可证失效提示。不但如此，实际上，旧XY的数据也没有载入成功到新XY。
+
+方法2.直接在原版本XYplorer菜单栏`Help->Online Support->Check for Updates`进行升级。在21.20.0200以前版本每次升级都不会出现版本到期的现象，不过这一次升级到21.20.0200却出现了版本到期。因此使用方法1稳妥。
 
 -END
 
