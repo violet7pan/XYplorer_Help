@@ -1,0 +1,2 @@
+	$input="*".input("Search Items By Tags on the current path", “请输入Tags关键字”)."*"; 
+	goto "<curpath>?tags:"$input" /r";
