@@ -180,7 +180,12 @@ Settings To Color Filters1.png
 文件格式>文件路径
 比如不同图像格式之间用;隔开(注意;是英文标号的分号，不是中文分号)
 例如：
-ani;bmp;gif;ico;jpe;jpeg;jpg;pcx;png;psd;tga;tif;tiff;wmf>C:\Program Files\Honeyview\Honeyview.exe
+~~ani;bmp;gif;ico;jpe;jpeg;jpg;pcx;png;psd;tga;tif;tiff;wmf>C:\Program Files\Honeyview\Honeyview.exe~~
+
+```
+{:Image}>C:\Program Files\Honeyview\Honeyview.exe
+```
+
 添加如下图：
 
 ![Customize File Associations.png](Image/Customize%20File%20Associations.png)
@@ -197,7 +202,12 @@ ani;bmp;gif;ico;jpe;jpeg;jpg;pcx;png;psd;tga;tif;tiff;wmf>C:\Program Files\Honey
 文本：
 txt;rtf>C:\Program Files (x86)\Notepad++\notepad++.exe
 视频：
-3g2;3gp;3gp2;3gpp;amr;asf;avi;bdmv;bik;d2v;dat;divx;drc;dsa;dsm;dss;dsv;f4v;flc;fli;flic;flv;ifo;ivf;m1v;m2ts;m2v;m4b;m4p;m4v;mkv;mod;mov;mp2v;mp4;mpe;mpeg;mpg;mpv2;mts;ogm;pss;pva;qt;ram;ratdvd;rm;rmm;rmvb;roq;rpm;smk;swf;tp;tpr;ts;vob;vp6;webm;wm;wmp;wmv>C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe
+~~3g2;3gp;3gp2;3gpp;amr;asf;avi;bdmv;bik;d2v;dat;divx;drc;dsa;dsm;dss;dsv;f4v;flc;fli;flic;flv;ifo;ivf;m1v;m2ts;m2v;m4b;m4p;m4v;mkv;mod;mov;mp2v;mp4;mpe;mpeg;mpg;mpv2;mts;ogm;pss;pva;qt;ram;ratdvd;rm;rmm;rmvb;roq;rpm;smk;swf;tp;tpr;ts;vob;vp6;webm;wm;wmp;wmv>C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe~~
+
+```
+{:Video}>C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe
+```
+
 其他：自己网上搜比如音乐文件的格式，还是其他文件的格式，然后往>前面添加就行了。
 
 
@@ -226,7 +236,12 @@ txt;rtf>C:\Program Files (x86)\Notepad++\notepad++.exe
 
 
 就是这种**默认格式重置问题**于是我添加了这样一条音乐格式
-aac;ac3;aif;aifc;aiff;amr;ape;au;cda;dts;fla;flac;gym;it;m1a;m2a;m3u;m4a;mid;midi;mka;mod;mp2;mp3;mpa;ogg;ogm;ra;rmi;snd;spc;umx;vgm;vgz;voc;wav;wma;xm>F:\Program Files\AIMP\AIMP.exe
+~~aac;ac3;aif;aifc;aiff;amr;ape;au;cda;dts;fla;flac;gym;it;m1a;m2a;m3u;m4a;mid;midi;mka;mod;mp2;mp3;mpa;ogg;ogm;ra;rmi;snd;spc;umx;vgm;vgz;voc;wav;wma;xm>F:\Program Files\AIMP\AIMP.exe~~
+
+```
+{:Audio}>F:\Program Files\AIMP\AIMP.exe
+```
+
 Perfect！就是这样。不管window设置中默认设置怎么变，这种window设置的默认是相对原生Explorer来说的，不会影响到XYplorer
 
 
@@ -336,6 +351,8 @@ d.回车
 
 *备份步骤如下*：
 
+-(2020/11/22)请选择“备份应用程序数据文件夹”
+
 ![Backup1.png](Image/Backup1.png)
 
 ![Backup2.png](Image/Backup2.png)
@@ -343,16 +360,6 @@ d.回车
 
 
 *还原备份*：
-
-在工具栏：文件->特殊设置->载入配置->选择对应的.ini文件
-
-![Restore.png](Image/Restore.png)
-
-还原效果测试：
-
-![Test of Restoring.png](Image/Test%20of%20Restoring.png)
-
-
 
 还原时需注意几个要点：(程序要常驻使用管理员身份运行)
 
@@ -368,7 +375,9 @@ c. 新的XYplorer解压到你想要放到的目录
 
 
 
-d.将备份的Data文件夹目录中的XYplorer.ini修改为MyXYConfig.ini
+d.(极其重要)将备份的Data文件夹目录中的XYplorer.ini修改为MyXYConfig.ini。
+
+注：为了避免覆盖新XY目录的XYplorer.ini，请确保备份的Data目录的XYplorer.ini命名为MyXYConfig.ini，当然你也可以取其他名称。
 
 
 
@@ -377,6 +386,18 @@ e.复制这个备份的Data, 粘贴到新的XY目录下，对Data目录进行替
 
 
 f. 文件->特殊设置->载入设置->选择MyXYConfig.ini文件导入。OK
+
+在工具栏：文件->特殊设置->载入配置->选择对应的.ini文件
+
+![Restore.png](Image/Restore.png)
+
+还原效果测试：
+
+![Test of Restoring.png](Image/Test%20of%20Restoring.png)
+
+
+
+
 
 
 
