@@ -2,25 +2,6 @@
 
 
 
-## 0. 下载地址
-
-**0.1 下载地址获取**
-
-| Caption                                           | Site                                                         |
-| ------------------------------------------------- | ------------------------------------------------------------ |
-| XYplorer-19.5(旧版)                               | https://pan.baidu.com/s/1UZUU2HmHh58wEKzLHjRsoA<br />提取码:p8nm |
-| XYplorer便携注册版-果核剥壳(以后新版都在这里下载) | https://www.ghpym.com/xyplorer-2.html                        |
-
-0.2 HTML加载缓慢可以下载README.md自行阅读，同时由于是使用Markdown格式，推荐使用[Typora](https://typora.io/)，阅读时记得在菜单栏->View->Outline，将Outline功能开启。分级大纲方便阅读
-
-
-
-0.3 对应我在吾爱破解的原帖：
-
-[【首发+原创教程】XYplorer日常使用完美代替Win10原生文件管理](https://www.52pojie.cn/thread-843769-1-1.html)
-
-
-
 ## 1. 使用经历
 
 期待着有像Chrome一样多标签的文件管理器，之前听说过win10要出多标签的Explorer，但从1803等到win10 1809就等来个Dark win10黑暗主题，太伤心了。同时原生Explorer慢也卡，实在受不了。使用过老是出莫名其妙问题的Clover,使用多个窗格的Q-Dir,然而使用效果太差了。其他的几个老牌文件管理器我也不是太喜欢，于是，在巧合之前发现了XYplorer这款文件管理器。
@@ -311,6 +292,8 @@ d.回车
 
 工具->配置（F9）
 
+(2020/11/22)**方便使用和为了防止删除XY时无法正常使用Windows文件管理器，不建议设置XY为默认文件管理器，但推荐在XY固定到任务栏，并添加到右键菜单**。我在Tips.md中给出了从XY打开Windows文件管理器的方法，这种XY兼顾Windows文件管理器的方式，可以说不存在任何兼容性问题，因此强烈建议不设置XY为默认文件管理。
+
 ![Configuration1.png](Image/Configuration1.png)
 
 ![Configuration2.png](Image/Configuration2.png)
@@ -417,7 +400,7 @@ f. 文件->特殊设置->载入设置->选择MyXYConfig.ini文件导入。OK
 
 ![Quick Launch Tips.png](Image/Quick%20Launch%20Tips.png)
 
-关于<kbd>Win+E</kbd>替换为XY的方法请参考[修改Win+E链接到XYplorer.md](./Updates/修改Win+E链接到XYplorer.md)
+(2020/11/22)关于<kbd>Win+E</kbd>替换为XY的方法请参考[修改Win+E链接到XYplorer.md](./Updates/修改Win+E链接到XYplorer.md)
 
 
 
