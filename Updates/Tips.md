@@ -1,5 +1,7 @@
 
 
+
+
 # 事先说明
 
 在介绍过程中，所有技巧均按**XYplorer英文版**进行说明，中文版的用户请自行对照。因为*许多参考和官网文档都是英文的*，我翻译过来还要用中文来写每个界面的按钮，太麻烦了也不利于深度使用。
@@ -352,6 +354,8 @@ F:\StudyLib	//匹配在F盘的StudyLib文件夹
 
 # 文件夹图标 | File Icons
 
+## 配置方法
+
 ![FileIcon-1](Image/FileIcon-1.png)
 
 File Icons的配置在`XYplorer.ini`中：以下内容就摘自此文件
@@ -434,6 +438,17 @@ readme.txt    matches all files named "readme.txt"
 ![FileIcon-3](Image/FileIcon-3.png)
 
 ![FileIcon-4](Image/FileIcon-4.png)
+
+## 图标资源
+
+如何找到Icon资源呢？
+
+| Caption          | Site                                                      |
+| ---------------- | --------------------------------------------------------- |
+| Icon Archive     | https://iconarchive.com/                                  |
+| 我自己收集的到的 | https://pan.baidu.com/s/1q39yFrAQF1v8jTlzPba_fg<br />zdif |
+
+
 
 
 
