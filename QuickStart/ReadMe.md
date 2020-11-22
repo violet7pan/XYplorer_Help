@@ -1,4 +1,4 @@
-# XYplorer Help    --By MMengyiyu
+# XYplorer Help (By MMengyiyu)
 
 
 
@@ -334,7 +334,7 @@ d.回车
 
 *备份步骤如下*：
 
--(2020/11/22)请选择“备份应用程序数据文件夹”
+-(2020/11/22)请选择“备份应用程序数据文件夹” - 该选项其实就是备份XY/Data目录。
 
 ![Backup1.png](Image/Backup1.png)
 
@@ -344,33 +344,23 @@ d.回车
 
 *还原备份*：
 
-还原时需注意几个要点：(程序要常驻使用管理员身份运行)
+(2020/11/22)还原请按如下步骤进行：(程序要常驻使用管理员身份运行)
 
-**a. 把旧版本删除前，进入配置(F9)->其他->外壳集成->XYplorer是默认文件管理器勾选取消。** 一定要取消，不然要全靠原生文件夹上的地址栏输入路径来进入文件夹。
+1. **把旧版本删除前，进入配置(F9)->其他->外壳集成->XYplorer是默认文件管理器勾选取消。** 一定要取消，不然要全靠Windows文件管理器上的地址栏输入路径来进入文件夹。
 
+2. 在第1步骤后，一定要备份Data目录。然后删除旧的XYplorer
 
+3. 新的XYplorer解压到你想要放到的目录
 
-b. 在a步骤后，一定要备份到其他文件夹。然后删除旧的XYplorer
+4. (极其重要)将备份的Data文件夹目录中的XYplorer.ini修改为MyXYConfig.ini。
 
+   注：为了避免覆盖新XY目录的XYplorer.ini，请确保备份的Data目录的XYplorer.ini命名为MyXYConfig.ini，当然你也可以取其他名称。
 
+5. 复制这个备份的Data, 粘贴到新的XY目录下，对Data目录进行替换。
 
-c. 新的XYplorer解压到你想要放到的目录
+6. 打开新XY，然后在菜单栏`文件->特殊设置->载入设置`->选择MyXYConfig.ini文件导入。OK
 
-
-
-d.(极其重要)将备份的Data文件夹目录中的XYplorer.ini修改为MyXYConfig.ini。
-
-注：为了避免覆盖新XY目录的XYplorer.ini，请确保备份的Data目录的XYplorer.ini命名为MyXYConfig.ini，当然你也可以取其他名称。
-
-
-
-e.复制这个备份的Data, 粘贴到新的XY目录下，对Data目录进行替换。
-
-
-
-f. 文件->特殊设置->载入设置->选择MyXYConfig.ini文件导入。OK
-
-在工具栏：文件->特殊设置->载入配置->选择对应的.ini文件
+(2020/11/22)载入图片如下(这里请选择MyXYConfig.ini)
 
 ![Restore.png](Image/Restore.png)
 
