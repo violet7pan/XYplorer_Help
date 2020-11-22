@@ -35,7 +35,7 @@
 
 ### 2.1 主界面介绍
 
-![Main Windows.png](Image/Main Windows.png)
+![Main Windows.png](Image/Main%20Windows.png)
 
 
 
@@ -49,13 +49,13 @@
 
 #### 2.2.1 双窗格(Dual Pane)-单窗格切换
 
-![Dual Pane.gif](Image/Dual Pane.gif)
+![Dual Pane.gif](Image/Dual%20Pane.gif)
 
 
 
 #### 2.2.2 多个标签栏(New Tab)快捷打开&关闭
 
-![New Tab On&Off.gif](Image/New Tab On&Off.gif)
+![New Tab On&Off.gif](Image/New%20Tab%20On&Off.gif)
 
 鼠标双击关闭录制GIF忘了录进去，到时候修改配置后你们也可以自己尝试
 
@@ -67,17 +67,17 @@ ALT按住，同时鼠标移动到图片上就行了（活动窗口下使用）
 
 Method One:
 
-![Show Hover Box.gif](Image/Show Hover Box.gif)
+![Show Hover Box.gif](Image/Show%20Hover%20Box.gif)
 
 
 
 Method Two: F9->进入配置->显示悬停框->应用到...->需要预览的文件格式
 
-![Hover Box Configuration.png](Image/Hover Box Configuration.png)
+![Hover Box Configuration.png](Image/Hover%20Box%20Configuration.png)
 
 设置后也可以达到快速预览的效果
 
-![Show Hover Box2.gif](Image/Show Hover Box2.gif)
+![Show Hover Box2.gif](Image/Show%20Hover%20Box2.gif)
 
 
 
@@ -87,7 +87,7 @@ Method Two: F9->进入配置->显示悬停框->应用到...->需要预览的文�
 
 注: 什么是活动窗口(Active Window)?
 
-![Active Window.gif](Image/Active Window.gif)
+![Active Window.gif](Image/Active%20Window.gif)
 
 
 
@@ -103,7 +103,7 @@ Method Two: F9->进入配置->显示悬停框->应用到...->需要预览的文�
 
 比如，我进入这个路径：F:\音乐库\Music\Taylor Swift - Red (Exclusive Deluxe Edition) (2012) [FLAC]\CD1时，注意到左边的树Tree绿色跟踪了没？就是这种跟踪。有什么好处呢？当你想再次进入以前进入过的CD1时可以通过Tree追踪过的文件目录来进入
 
-![Tip On Tree Return.gif](Image/Tip On Tree Return.gif)
+![Tip On Tree Return.gif](Image/Tip%20On%20Tree%20Return.gif)
 
 
 
@@ -111,13 +111,13 @@ Method Two: F9->进入配置->显示悬停框->应用到...->需要预览的文�
 
 Lable&Tag
 
-![Add Lable&Tag.gif](Image/Add Lable&Tag.gif)
+![Add Lable&Tag.gif](Image/Add%20Lable&Tag.gif)
 
 
 
 Comment
 
-![Add Comment.gif](Image/Add Comment.gif)
+![Add Comment.gif](Image/Add%20Comment.gif)
 
 
 
@@ -129,7 +129,7 @@ Comment
 
 比如我收藏的文件夹都是绿色显示的，树目录也会显示的，隐藏文件好像黄色的彩笔背景色+紫色还是红色（具体看设置）
 
-![Color Filters1.png](Image/Color Filters1.png)
+![Color Filters1.png](Image/Color%20Filters1.png)
 
 Settings To Color Filters1.png
 
