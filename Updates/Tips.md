@@ -42,7 +42,7 @@
 
 # <em>20200311 ~ Now</em>
 
-# <span id="scripts">关于Scripts的一些事</span>
+# [Pin]<span id="scripts">关于Scripts的一些事</span>
 
 XY使用`Visual Basic 6`开发的，并且编译为本地代码(Native code)，以获取更快的运行速度[[?](https://www.xyplorer.com/xyfc/viewtopic.php?t=6350)]。
 
@@ -104,6 +104,249 @@ F:\PictureLib\a.png
 更多XYplorer Native  Variables介绍，请参考`XYplorer.chm->左上方Inbox->输入XYplorer Native  Variables`。
 
 ---
+
+
+
+# 标识符集 | Tags
+
+## 弄清楚Label,Tag,Comment区别
+
+这里要介绍Tags，那么就有必要先说明下关于菜单栏Tags(标签)在英文XY界面菜单栏与中文XY界面的翻译。对应语义如下：
+
+```c
+Tags	//标签
+Tag		//标签
+Label	//标注
+Comment	//备注
+```
+
+其实这个翻译真心容易混淆，还不如英文Label, Tag, Comment来得清晰。
+
+Oxford Advanced Learner's Dict给出的释义：
+
+> Tag 
+>
+> [C] (computing 计) **a set of letters or symbols** that are put before and after a piece of text or data in order to **identify** it or show that it is to be treated in a particular way
+
+可见Tag中包含标识的意义。
+
+我认为菜单栏Tags应该翻译为标识符集，即"a set of tags"的意思。
+
+至于Label与Tag最大的区别在于是否有胶粘剂，Label是带粘合剂的标签，比如我买回来的固态硬盘中，有一个白色标签(Label)：
+
+![Tags-Label](Image/Tags-Label.png)
+
+而Tag对应的例子是你买回来一件衣服，衣服上的价格标签就是Tag。因为Tag没有粘合剂，它是以其他形式附上物品上以辨识和解释物品。很明显，价格标签是通过一串线系上衣服上的，并没有粘合剂。
+
+这样就区分出了Tag和Label，所以你会可以看出XY中Label是色彩标签且粘在文件(Item)上，而Tag是附在文件上的说明，具体表现为Column Tag：
+
+![Tags-LabelAndTag](Image/Tags-LabelAndTag.png)
+
+至于Comment就更简单了，就是对文件的评论，解释。
+
+## 开启Label,Tag,Comment列
+
+-先备份当前列到\<xydata\>\Columns目录下。
+
+![ColumnLayout-Save-1](Image/ColumnLayout-Save-1.png)
+
+![ColumnLayout-Save-2](Image/ColumnLayout-Save-2.png)
+
+由于我有四列，**请按照列表顺序命名，方便区分和加载**，由此我的命名为Modified-Ext-Size-Created.txt。
+
+-添加新列Label, Tag, Comment
+
+![CustomColumn-Add-1](Image/CustomColumn-Add-1.png)
+
+命名为Modified-Ext-Size-Created-Label-Tags-Comment.txt保存到\<xydata\>\Columns目录。
+
+-加载布局Layout，按需加载布局。
+
+## 简易版按Tag搜索
+
+比如Anime-冰菓文件夹有一个“推理日漫”的Tag，我想要搜索这个标签，该如何做：
+
+![CurpathSearchByTags.xys](Image/CurpathSearchByTags.xys.gif)
+
+具体的Script名为`CurpathSearchByTags.xys`，我会放到Scripts文件夹中。在这里给出脚本内容：(注意前面都有一个<kbd>Tab</kbd>)
+
+```
+	$input="*".input("Search Items By Tags on the current path", “请输入Tags关键字”)."*"; 
+	goto "<curpath>?tags:"$input" /r";
+```
+
+关于怎么安装这个Script，请参考[用户自定义命名的使用](#user-defined_commands)中的设置快捷键调用Notepad的部分的设置方法。
+
+![Script-CurpathSearchByTags](Image/Script-CurpathSearchByTags.png)
+
+----
+
+脚本参考：[Function ID for 'Find by Tags'? - XYplorer Beta Club](https://www.xyplorer.com/xyfc/viewtopic.php?t=8670)
+
+> r= recurse subfolders. 
+> v = verbatim i.e. will ignore wildcards like * and ?. useful if you have  want to search tags which have * or ? in them. eg. "delete?" or  "important*" will be searched verbatim.
+>
+> Edit: see help>Main topics>find files and go to "Wildcards in Tags" section.
+
+----
+
+
+
+
+
+# 自定义列 | Custom Column
+
+![CustomColumn-1](Image/CustomColumn-1.png)
+
+所以文件统称为项目(Item)。
+
+XY界面的布局是什么意思？布局就是各种组件的位置摆放以及是否摆放。组件有状态栏，树，目录，自定义列等等。
+
+每个文件夹中所有items都有自己的项目列，这个列表取决于你如何设置Column Layout的参数。
+
+## 设置Column Layout
+
+### 添加列的方法
+
+![CustomColumn-Add-1](Image/CustomColumn-Add-1.png)
+
+### 定制自定义列
+
+参考[Overview of custom column snippets / scripts - XYplorer Beta Club](https://www.xyplorer.com/xyfc/viewtopic.php?f=7&t=18653)
+
+
+#### [案例1]Image size in inches
+
+1. 地址栏输入`::snippet`
+
+2. 在提示框中输入
+
+   ```
+   Snip: CustomColumn 1
+     XYplorer 18.90.0000, 22.03.2018 12:28:38
+   Action
+     ConfigureColumn
+   Caption
+     Size (inches)
+   Type
+     3
+   Definition
+         $dpi = get("Screen", "dpi");
+         $hSize = property('System.Image.HorizontalSize', <cc_item>);
+         $vSize = property('System.Image.VerticalSize', <cc_item>);
+         if (!$hSize || !$vSize) { return "<unknown size>"; }
+         return round(($hSize / $dpi), 2) . " x " . round(($vSize / $dpi), 2);
+   Format
+     1
+   Trigger
+     1
+   Item Type
+     0
+   Item Filter
+     {:Image}
+   
+   ```
+
+3. 这样就添加了名为Size (inches)的自定义列了，效果图如下
+
+   ![CustomColumn-Customize-1](Image/CustomColumn-Customize-1.png)
+
+   ![CustomColumn-Customize-2](Image/CustomColumn-Customize-2.png)
+
+4. 添加自定义列
+
+   ![CustomColumn-AddColumn-1](Image/CustomColumn-AddColumn-1.png)
+
+   ![CustomColumn-AddColumn-2](Image/CustomColumn-AddColumn-2.png)
+
+   ![CustomColumn-AddColumn-3](Image/CustomColumn-AddColumn-3.png)
+
+   ![CustomColumn-AddColumn-4](Image/CustomColumn-AddColumn-4.png)
+
+   这样就添加好了。
+
+   ![CustomColumn-AddColumn-5](Image/CustomColumn-AddColumn-5.png)
+
+   
+
+#### [案例2]DPI
+
+地址栏输入`::snippet`，在提示框中输入如下内容
+
+```
+Snip: CustomColumn 1
+  XYplorer 18.90.0000, 22.03.2018 12:28:38
+Action
+  ConfigureColumn
+Caption
+  DPI
+Type
+  3
+Definition
+      $hSize = property('System.Image.HorizontalSize', <cc_item>);
+      $vSize = property('System.Image.VerticalSize', <cc_item>);
+      if (!$hSize || !$vSize) { return "<unknown size>"; }
+      return $hSize." x " .$vSize;
+Format
+  1
+Trigger
+  1
+Item Type
+  0
+Item Filter
+  {:Image}
+
+```
+
+按照[Image size in inches]的方法添加DPI列到布局列中。
+
+![CustomColumn-AddColumn-DPI](Image/CustomColumn-AddColumn-DPI.png)
+
+
+
+
+
+## 保存和加载Column Layout
+
+为了定制自定义列用于显示不同类型的文件，比如视频文件的自定义列有播放时间，分辨率，Codecs等等；音频文件需要的自定义列有Codecs，播放时间，Sample Rate等等；图片文件需要自定义列有DPI，Album，照相机类型，拍摄时间等等。由此定制自定义列显得必要，我们需要保存自定义列，在需要的时候进行加载。
+
+-保存Column Layout
+
+![ColumnLayout-Save-1](Image/ColumnLayout-Save-1.png)
+
+![ColumnLayout-Save-2](Image/ColumnLayout-Save-2.png)
+
+Column Layout的文件命名应该符合以下的格式，才会清晰便于确定列的顺序：
+
+```
+第1列名-第2列名-...-第N列明.txt
+```
+
+
+
+-加载Column Layout
+
+在自定义列空白处右键->Load Column Layout...->选择想要的布局列。
+
+
+
+## 自定义列布局应用到特定文件夹
+
+假设你有StudyLib, PictureLib, Pothole, VideoLib这几个文件夹，分别装着同类的文件。如果你想让每个文件夹及其子文件都按需显示不同的自定义列，那么你就需要分别对StudyLib, PictureLib, Pothole, VideoLib的文件夹视图设置中勾选`Cloumn layout`，并且勾选`Include subfolders`：
+
+![CustomColumn-FolderViewSettings](Image/CustomColumn-FolderViewSettings.png)
+
+`Folder to apply the settings to`的匹配规则：
+
+```c
+F:\StudyLib	//匹配在F盘的StudyLib文件夹
+*\Images*	//匹配所有名为Images(不区分大小写)的文件夹
+*\Images*|*\Pics*	//匹配所有名为Images(不区分大小写)和Pics(不区分大小写)的文件夹
+```
+
+`Match case`: 勾选后，匹配时会区分文件大小写，比如\*\\Images\*不会匹配名为images的文件夹。
+
+
 
 
 
@@ -317,7 +560,7 @@ Alternative Solution 3(推荐): 你完全可以使用XYplorer集成的Windows文
 
 ---
 
-# 用户自定义命令的使用 | User-Defined Commands
+# <span id="user-defined_commands">用户自定义命令的使用 | User-Defined Commands</span>
 
 ## 设置快捷键调用Notepad
 
