@@ -44,13 +44,45 @@
 
 # <em>20200311 ~ Now</em>
 
-# [Pin]<span id="scripts">关于Scripts的一些事</span>
+# [Pin]<span id="scripts">关于XYplorer Scripting的一些事</span>
+
+## XYplorer Scripting简介
+
+XYplorer Scripting说白了就是用于XY的脚本文件。
+
+### 快速入门
+
+官网[XYplorer - Tour - Scripting](https://www.xyplorer.com/tour.php?page=scripting)给出一份快速入门（英语版），介绍了Scripting可以用来干什么，如何编写和测试，以及一些简单的测试实例。
+
+当然，初入使用XY的朋友们，你们不喜欢Scripting，可以先看下[XYplorer Native Variables]部分，因为这一部分在这份Markdown中会经常用到。
+
+### 用什么语言开发的？
 
 XY使用`Visual Basic 6`开发的，并且编译为本地代码(Native code)，以获取更快的运行速度[[?](https://www.xyplorer.com/xyfc/viewtopic.php?t=6350)]。
 
-`XYplorer Script`用什么程序语言写成的，我们不得而知，不过Script借用了许多来自php特性(比如字符串的连接可以<code>.</code>来完成)。就像我们学习新的语言一样，它应该有规则和例子供beginner来学习。
+`XYplorer Script`用什么程序语言写成的，我们不得而知，不过Script借用了许多来自php特性(比如字符串的连接可以<code>.</code>来完成)。
+
+### 完善的教程其实在帮助文档中
+
+就像我们学习新的语言一样，它应该有规则和例子供beginner来学习。
 
 具体用法和示例在`XYplorer.chm->Content选项卡->Advanced Topics`中的<span style="color:red">**Scripting**</span>和<span style="color:red">**Scripting Commands**</span>的部分。如何寻找这部分呢？在XYplorer菜单栏`Help->Cotents and Index(F1)`中，其中<kbd>F1</kbd>调用的是XYplorer目录下的`XYplorer.chm`(若无，可以在本GitHub Page中下载)，或者`Help->Help on Scripting Commands`切出帮助文档。
+
+在确保已经下载Xyplorer.chm，并将其放置于XY目录下，在地址栏输入以下内容也可以进入<span style="color:red">**Scripting**</span>部分：
+
+```
+rtfm "idh_scripting.htm";
+```
+
+地址栏输入如下内容，进入<span style="color:red">**Scripting Commands**</span>部分：
+
+```
+rtfm "idh_scripting_comref.htm";
+```
+
+## [Everybody]XYplorer Native Variables
+
+作为XY Scripting,这一部分会经常用到，即使不学Scripting也建议看完，挺简单的。
 
 下面是`XYplorer Native  Variables`的部分实例：
 
@@ -103,9 +135,20 @@ F:\PictureLib\a.png
 
 什么都不选中，则输出空白（即什么都没有）。
 
-更多XYplorer Native  Variables介绍，请参考`XYplorer.chm->左上方Inbox->输入XYplorer Native  Variables`。
+更多XYplorer Native  Variables介绍，请参考`XYplorer.chm->左上方Inbox->输入XYplorer Native  Variables`。或者XY地址栏输入：
+
+```
+rtfm "idh_variables.htm";
+```
+
+
 
 ---
+
+## 脚本资源
+
+Binocular222's all scripts - XYplorer Beta Club
+https://www.xyplorer.com/xyfc/viewtopic.php?f=7&t=9243#p82488
 
 
 
@@ -183,34 +226,77 @@ Oxford Advanced Learner's Dict给出的释义：
 
 ----
 
+### 使用
+
+脚本启动后，支持如下输入：(给出常用的匹配逻辑AND, OR)
+
+```
+*o*	//匹配包含o的Tag
+xy* | pro*		//匹配以xy开头 OR pro开头的Tag
+d*,u*		//匹配d开头 AND u开头的Tag
+```
+
+效果如下
+
+![Script-CurpathSearchByTags-2](Image/Script-CurpathSearchByTags-2.png)
+
+可以看到使用通配符`*`和`?`是十分必要的。若不使用通配符，比如输入apple,那么匹配Tag就必须是apple，如果有个Tag是apple2，那么也不会被匹配到。
+
+
+
+### 参考
+
 脚本参考：[Function ID for 'Find by Tags'? - XYplorer Beta Club](https://www.xyplorer.com/xyfc/viewtopic.php?t=8670)
 
-> r= recurse subfolders. 
-> v = verbatim i.e. will ignore wildcards like * and ?. useful if you have  want to search tags which have * or ? in them. eg. "delete?" or  "important*" will be searched verbatim.
->
-> Edit: see help>Main topics>find files and go to "Wildcards in Tags" section.
+地址栏如下内容以参考更多帮助：
+
+```c
+rtfm "idh_find.htm#idh_findfilesbytags";	//"Wildcards in Tags" section.
+```
+
+
 
 ----
 
 
 
-
-
 # 自定义列 | Custom Column
 
-![CustomColumn-1](Image/CustomColumn-1.png)
+## 基本术语
+
+### 什么是Column Layout?
+
+![ColumnLayout-1](Image/ColumnLayout-1.png)
 
 所以文件统称为项目(Item)。
 
 XY界面的布局是什么意思？布局就是各种组件的位置摆放以及是否摆放。组件有状态栏，树，目录，自定义列等等。
 
-每个文件夹中所有items都有自己的项目列，这个列表取决于你如何设置Column Layout的参数。
+每个文件夹中所有items都有自己的列，这个列表取决于你如何设置Column Layout的参数。
 
-## 设置Column Layout
+### 什么是Column, Custom Column, Extra Column?
+
+![Column-Term-1](Image/Column-Term-1.png)
+
+
+
+
+
+## 设置列布局 | Column Layout
 
 ### 添加列的方法
 
-![CustomColumn-Add-1](Image/CustomColumn-Add-1.png)
+![Column-AddColumn-1](Image/Column-AddColumn-1.png)
+
+### 列属性的类型
+
+一个列中可以载入三种类型的属性：Property, Special Property, Custom Column
+
+![Column-AddColumn-2](Image/Column-AddColumn-2.png)
+
+对于Custom Column可以配置它的载入属性还多出了三种：Script, Template, Mixed:
+
+![Column-Type-1](Image/Column-Type-1.png)
 
 ### 定制自定义列
 
@@ -259,7 +345,7 @@ XY界面的布局是什么意思？布局就是各种组件的位置摆放以及
 
    ![CustomColumn-AddColumn-1](Image/CustomColumn-AddColumn-1.png)
 
-   ![CustomColumn-AddColumn-2](Image/CustomColumn-AddColumn-2.png)
+   
 
    ![CustomColumn-AddColumn-3](Image/CustomColumn-AddColumn-3.png)
 
@@ -271,7 +357,7 @@ XY界面的布局是什么意思？布局就是各种组件的位置摆放以及
 
    
 
-#### [案例2]DPI
+#### [案例2]Resolution
 
 地址栏输入`::snippet`，在提示框中输入如下内容
 
@@ -300,9 +386,115 @@ Item Filter
 
 ```
 
-按照[Image size in inches]的方法添加DPI列到布局列中。
+按照[Image size in inches]的方法添加DPI列到列布局中。
 
 ![CustomColumn-AddColumn-DPI](Image/CustomColumn-AddColumn-DPI.png)
+
+## 文件数量过多时Column加载卡顿的解决方法
+
+文件数量过多会卡，这是XY应该背的锅吗，我认为责任应该对半分，因为这些文件要使用Shell Properties读取属性，然后将这些属性显示到Custom Column中，那么从软件层次考虑，速度取决于读取属性的速度(Windows侧)和载入到Custom Column(XY侧)的速度，XY侧再深入点讲，也要考虑到使用Script中涉及遍历的情况。可能会有人说，干吗不用到缓存技术，其实我也在想为什么不用到缓存技术呢，并不是XY没有使用到这一技术，只不过XY没有运用缓存技术到部分Custom Column上。因此，许多自定义列会卡的原因就在这里，也就是你打开文件夹，XY就开始扫描并载入属性到文件列这个过程卡，这取决你的文件数量。当然，我们可以利用Extra Tag进行模拟缓存（在下面会讲到），也或者改变载入自定义列的触发方式。
+
+### 方法一:改变载入Custom Column的触发方式
+
+-进入Custom Column配置界面。有两种方法
+
+方法一。如下图所示，
+
+![CustomColumn-Edit-1](Image/CustomColumn-Edit-1.png)
+
+方法二。F9呼出设置界面，按如下图所示进行操作，
+
+![CustomColumn-Edit-Trigger-1](Image/CustomColumn-Edit-Trigger-1.png)
+
+主要改变的是Trigger参数，这里有三个，各有优缺点，其中List和Click都可以避免大量文件时的卡顿。
+
+关于Click的运用场景就是：
+
+添加一个关键字包含"MD5"的Custom Column，而不是Column，然后配置其触发方式为Click，然后再需要使用的时候点击MD5对应的Custom Column，读取MD5
+
+![CustomColumn-Add-MD5-1](Image/CustomColumn-Add-MD5-1.png)
+
+Trigger参数介绍
+
+地址栏输入：
+
+```c
+rtfm "idh_customcolumns.htm";		//进入后，找到Trigger黑体字标题部分
+```
+
+可找到对应的英文解释，在这里给出：
+
+> Trigger
+>
+> Here you can select at which point the  script or process that generates the cell data is actually triggered. You have  three choices:
+>
+> - **Browse** [Default]: Column is triggered when the list is filled with  folder contents or search results.
+> - **List**:  Column is triggered when the items are listed. Only the currently visible items  are processed. This option will be much faster than "Browse" on long lists, but  the scrolling will be not as smooth.
+> - **Click**: Column is triggered when the symbol that is shown as a  placeholder is clicked (actually you can click anywhere in the cell). Maximum  speed, also when scrolling. All data are only shown on demand.
+>
+> Notes:
+>
+> - When you right-click a column header and select Refresh  Column then the whole column data will be generated/refreshed.
+> - Columns of type "Mixed" inherit the trigger per-cell from  the chosen sub-column.
+> - When Custom Columns of type Script are triggered by Click  and the script has no "return" command then the click symbol remains in the list  and can be clicked again and again.
+
+### 利用Extra Column手动模拟缓存
+
+下面模拟对所有文件列表加载DPI属性，效果如下，
+
+![CustomColumn-UseExtraColumn-1](Image/CustomColumn-UseExtraColumn-1.gif)
+
+这样做的好处是所有文件列需要DPI的属性都导入到Extra Column1中了，这样持久化的数据就避免了大量使用Shell Properties加载。
+
+该脚本的功能是扫描当前文件夹的图片，若有子文件是不会去遍历的。该脚本一旦开始，无法结束，也就是你只能等待脚本执行结束，否则选择强制结束进程。这不是意味着脚本使XY卡住了，而是大量IO读写，能处理多快与磁盘性能有关，若扫描的文件处于磁盘坏道或扇区上，会造成卡死。
+
+如果你一个文件夹有上万个图片，老实说我也不知道执行得有多慢。
+
+```
+	sel 1;
+	while (<curitem> != "") {
+		// msg <curitem>;
+		$dims = property("#image.dimensions", <cc_item>);
+		$width = gettoken($dims, 1, " x ");
+		$height = gettoken($dims, 2, " x ");
+		tag $width." x ".$height, <curitem>, "ex1";
+		sel + 1;
+	}
+```
+
+脚本已经贴出。
+
+添加到目录栏的方法是添加一个项目<kbd>Insert</kbd>到目录，其中Location填写如下内容
+
+```
+::load <xyscripts>."\名称.xys";	//脚本文件请放在XY/Data/Scripts文件夹
+```
+
+
+
+Extra Column的命名通过以下方式实现，
+
+![CustomColumn-UseExtraColumn-2](Image/CustomColumn-UseExtraColumn-2.png)
+
+#### 参考
+
+video folder with special custom columns opens slow - XYplorer Beta Club
+https://www.xyplorer.com/xyfc/viewtopic.php?t=18715
+
+Slow Loading of Large Folders - XYplorer Beta Club
+https://www.xyplorer.com/xyfc/viewtopic.php?t=19296
+
+Folders with a lot of files charge very slow - XYplorer Beta Club
+https://www.xyplorer.com/xyfc/viewtopic.php?f=3&t=19090&p=160050#p160050
+
+地址栏输入可阅读涉及主题的参考：
+
+```c
+rtfm "idh_customcolumns.htm#idh_ccscriptedcolumns";		// Scripted Columns
+rtfm "idh_scripting_comref.htm#idh_sc_property";		// property()
+rtfm "idh_variables.htm";		// XYplorer Native Variables
+http://msdn.microsoft.com/en-us/library/windows/desktop/dd561977%28v=vs.85%29.aspx		// the locale-independent Windows canonical properties
+```
 
 
 
@@ -328,7 +520,7 @@ Column Layout的文件命名应该符合以下的格式，才会清晰便于确�
 
 -加载Column Layout
 
-在自定义列空白处右键->Load Column Layout...->选择想要的布局列。
+在自定义列空白处右键->Load Column Layout...->选择想要的列布局。
 
 
 
@@ -348,7 +540,7 @@ F:\StudyLib	//匹配在F盘的StudyLib文件夹
 
 `Match case`: 勾选后，匹配时会区分文件大小写，比如\*\\Images\*不会匹配名为images的文件夹。
 
-
+这个地方我没法讲台细，等我用到就会补上一个具体案例，如果要讲解我会新起一个一级标题来讲"文件夹视图设置"。
 
 
 
@@ -1240,6 +1432,40 @@ RegExpPattern > ReplaceWith\    (case-sensitive)
 此外，XYplorer使用的是`VB5 regex engine`。
 
 > XY uses the VB5 regex engine.[[?](https://www.xyplorer.com/xyfc/viewtopic.php?t=5357)]
+
+
+
+
+
+# XYplorer最佳配套
+
+XYplorer+Listary+Everything，这个模式我在好久前就在使用。
+
+Everything以弥补XYplorer搜索的短板，但像要搜索XY中的Tags就需要使用XY
+
+## Listary集成XYplorer
+
+### 无法有效集成的解决方法
+
+为了保证Listary能集成到XY，请下载[Listary6](https://www.listary.com/download)。
+
+使用Listary5 Pro，有时不能集成到XY，而且对话框不能有效的基于XY当前目录进行切换。如果你还是要使用Listary5，我建议你将Listary按照非系统盘或者系统盘的两个Program Files文件夹以外且由你新创建的文件夹，比如C:\Listary。然后设置为管理员模式运行。
+
+如果还是不能集成到XY，我建议你使用Listary6
+
+### 添加快捷方式文件夹到索引
+
+Listary与XY搭配中，最棒的功能是：所有弹出的对话框可以基于XY当前目录进行快速切换。同时，Listary可以用于快速启动应用软件。
+
+![ListarySettings-1](Image/ListarySettings-1.png)
+
+以上是Listary6的设置方法，Listary5也是一样的设置方法。
+
+### 在XY中对当前目录匹配时Listary Popup Menu(Listary弹出窗口)并不是最佳选择
+
+<kbd>Ctrl + Alt + X</kbd>进入Live Filter Box输入，搜索关键字，即可筛选当前目录的文件。这部分可以参考[XYplorer的搜索]第3点
+
+当然Popup Menu还有收藏夹，还有快速匹配关键字的结果，这个结果优先是当前目录，然后是其他目录。正是因为结果集列出除当前目录以外的结果，因此才建议使用XY的Live Filter Box功能。
 
 
 
