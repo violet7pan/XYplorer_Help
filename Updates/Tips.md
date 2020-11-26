@@ -1534,7 +1534,49 @@ Listary与XY搭配中，最棒的功能是：所有弹出的对话框可以基�
 
 ## 自定义文件关联
 
-可以用于关联特定格式的应用
+在QuickStart/ReadMe.md已经讲过了。这里我们深入地讲下这个功能与另一个功能"打开方式(Open With...)"的搭配使用。
+
+复习一下，该功能是可以用于关联特定格式的应用。指定格式对应调用的应用规则：
+
+```
+格式名1;格式名2;...;格式名N>应用路径
+```
+
+
+
+
+
+## 打开方式 | Open With
+
+如下图，选中目标文件<kbd>Ctrl + Alt + Enter</kbd>，会弹出如下PopUp菜单：
+
+![](Image/OpenWith-1.png)
+
+这是怎么来的呢？
+
+我在自定义文件管理设置了三个视频播放器，并勾选：
+
+![FileAssociation-1](Image/FileAssociation-1.png)
+
+按顺序，如果直接双击打开，默认是最上面的Potplayer。如果要使用其他视频播放器打开，就可以用到"打开方式"这个功能，刚才讲过，通过<kbd>Ctrl + Alt + Enter</kbd>就可以调用这个功能。
+
+### 优点
+
+对同类格式文件需要用到不同应用软件以满足不同需求。比如对于.c和.h文件来说，有时我想要用notepad打开，有时想用VS Code打开，有时想用Dev-C++打开，通过将格式规则写到"自定义文件关联"就可以了。
+
+对比Windows文件管理器，它的右键打开就显得繁琐。
+
+基于这样的需求，我修改了我的"自定义文件关联"：
+
+![FileAssociation-2](Image/FileAssociation-2.png)
+
+
+
+![OpenWith-2](Image/OpenWith-2.png)
+
+### Generic File Type
+
+#### 有哪些Generic File Type呢
 
 ```
  {:Text}       *
@@ -1557,35 +1599,17 @@ Listary与XY搭配中，最棒的功能是：所有弹出的对话框可以基�
 rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 ```
 
-## 打开方式 | Open With
+#### 如何打印 某个Generic File Type呢
 
-如下图，选中目标文件<kbd>Ctrl + Alt + Enter</kbd>，会弹出如下PopUp菜单：
+如何查看Generic File Type类型的所有格式呢？菜单栏"脚本(Scripting)->运行脚本(Run Script...)"，输入如下内容：(这里我们就查看下{:Photo}的所有格式)
 
-![](Image/OpenWith-1.png)
-
-这是怎么来的呢？
-
-在自定义文件管理设置了三个视频播放器，并勾选：
-
-![FileAssociation-1](Image/FileAssociation-1.png)
-
-按顺序，如果直接双击打开，默认是最上面的Potplayer。如果要使用其他视频播放器打开，就可以用到"打开方式"这个功能，刚才讲过，通过<kbd>Ctrl + Alt + Enter</kbd>就可以调用这个功能。
-
-### 优点
-
-对同类格式文件需要用到不同应用软件以满足不同需求。比如对于.c和.h文件来说，有时我想要用notepad打开，有时想用VS Code打开，有时想用Dev-C++打开，通过将格式规则写到"自定义文件关联"就可以了。
-
-对比Windows文件管理器，它的右键打开就显得繁琐。
-
-基于这样的需求，我修改了我的"自定义文件关联"：
-
-![FileAssociation-2](Image/FileAssociation-2.png)
+```
+ echo get("genericfiletype", "{:Photo}", ";");
+```
 
 
 
-![OpenWith-2](Image/OpenWith-2.png)
-
-### 排除某个格式会被Generic File Type引入
+#### 排除某个格式会被Generic File Type引入
 
 过度使用Generic File Type虽然节省键入代表格式的字符的书写空间以及保持自定义文件关联规则的整洁，但也带来了把一些用户不想被关联的格式引入进来。
 
