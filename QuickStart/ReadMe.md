@@ -161,10 +161,15 @@ Settings To Color Filters1.png
 文件格式>文件路径
 比如不同图像格式之间用;隔开(注意;是英文标号的分号，不是中文分号)
 例如：
-~~ani;bmp;gif;ico;jpe;jpeg;jpg;pcx;png;psd;tga;tif;tiff;wmf>C:\Program Files\Honeyview\Honeyview.exe~~
 
 ```
 {:Image}>C:\Program Files\Honeyview\Honeyview.exe
+```
+
+或
+
+```
+ani;bmp;gif;ico;jpe;jpeg;jpg;pcx;png;psd;tga;tif;tiff;wmf>C:\Program Files\Honeyview\Honeyview.exe
 ```
 
 添加如下图：
@@ -180,13 +185,24 @@ Settings To Color Filters1.png
 
 
 类似可以添加的如下：
-文本：
-txt;rtf>C:\Program Files (x86)\Notepad++\notepad++.exe
+文本格式：
+
+(2020/11/26)
+
+```
+{:Text}>C:\Program Files (x86)\Notepad++\notepad++.exe
+```
+
 视频：
-~~3g2;3gp;3gp2;3gpp;amr;asf;avi;bdmv;bik;d2v;dat;divx;drc;dsa;dsm;dss;dsv;f4v;flc;fli;flic;flv;ifo;ivf;m1v;m2ts;m2v;m4b;m4p;m4v;mkv;mod;mov;mp2v;mp4;mpe;mpeg;mpg;mpv2;mts;ogm;pss;pva;qt;ram;ratdvd;rm;rmm;rmvb;roq;rpm;smk;swf;tp;tpr;ts;vob;vp6;webm;wm;wmp;wmv>C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe~~
 
 ```
 {:Video}>C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe
+```
+
+或
+
+```
+3g2;3gp;3gp2;3gpp;amr;asf;avi;bdmv;bik;d2v;dat;divx;drc;dsa;dsm;dss;dsv;f4v;flc;fli;flic;flv;ifo;ivf;m1v;m2ts;m2v;m4b;m4p;m4v;mkv;mod;mov;mp2v;mp4;mpe;mpeg;mpg;mpv2;mts;ogm;pss;pva;qt;ram;ratdvd;rm;rmm;rmvb;roq;rpm;smk;swf;tp;tpr;ts;vob;vp6;webm;wm;wmp;wmv>C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe
 ```
 
 其他：自己网上搜比如音乐文件的格式，还是其他文件的格式，然后往>前面添加就行了。
@@ -216,11 +232,16 @@ txt;rtf>C:\Program Files (x86)\Notepad++\notepad++.exe
 
 
 
-就是这种**默认格式重置问题**于是我添加了这样一条音乐格式
-~~aac;ac3;aif;aifc;aiff;amr;ape;au;cda;dts;fla;flac;gym;it;m1a;m2a;m3u;m4a;mid;midi;mka;mod;mp2;mp3;mpa;ogg;ogm;ra;rmi;snd;spc;umx;vgm;vgz;voc;wav;wma;xm>F:\Program Files\AIMP\AIMP.exe~~
+就是这种默认格式重置问题于是我添加了这样一条音乐格式
 
 ```
 {:Audio}>F:\Program Files\AIMP\AIMP.exe
+```
+
+或
+
+```
+aac;ac3;aif;aifc;aiff;amr;ape;au;cda;dts;fla;flac;gym;it;m1a;m2a;m3u;m4a;mid;midi;mka;mod;mp2;mp3;mpa;ogg;ogm;ra;rmi;snd;spc;umx;vgm;vgz;voc;wav;wma;xm>F:\Program Files\AIMP\AIMP.exe
 ```
 
 Perfect！就是这样。不管window设置中默认设置怎么变，这种window设置的默认是相对原生Explorer来说的，不会影响到XYplorer

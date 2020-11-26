@@ -13,7 +13,9 @@
 
 第二，更新频率和内容。不定期更新，也可能不更新。同时更新的内容大多都是个人长期使用过程中遇到的问题和需求。
 
-第三，解惑。可以Google或者参考官方帮助文档，按<kbd>F1</kbd>呼出，若无法呼出，请下载`XYplorer.chm`。
+第三，提问和解惑。可以Google或者参考官方帮助文档，按<kbd>F1</kbd>呼出，若无法呼出，请下载`XYplorer.chm`。
+
+提问的魔法进修课:point_right:[Stop-Ask-Questions-The-Stupid-Ways](https://github.com/dogfight360/Stop-Ask-Questions-The-Stupid-Ways/blob/master/README.md)。
 
 第四，本文参考来源主要包括Google搜索、XYplorer Beta Club、官网帮助文档。
 
@@ -706,7 +708,7 @@ run "C:\Windows\explorer.exe" <curpath>
 
 这个脚本不完善，仅限打开当前目录。需要功能更全的Explorer脚本，可以使用[设置快捷键调用Explorer](#explorer_ks)的脚本。
 
-`<xyicons>`介绍请参考[关于Scripts的一些事](#scripts)
+`<xyicons>`介绍请参考[关于XYplorer Scripting的一些事](#scripts)
 
 -END
 
@@ -1098,7 +1100,7 @@ Script中runret()可参考`XYplorer.chm`
 
 编写的脚本很简陋，其目的主要是为了打开Everything，并自动化地添加上当前目录。
 
-如果有兴趣的同学们可以自行研究下XYplorer Script(See [关于Scripts的一些事](#scripts))，熟悉流程控制语句和常用的Script Command就可以进行更高逻辑的功能实现了。
+如果有兴趣的同学们可以自行研究下XYplorer Script(See [关于XYplorer Scripting的一些事](#scripts))，熟悉流程控制语句和常用的Script Command就可以进行更高逻辑的功能实现了。
 
 # XYplorer的备份和还原 | Backup & Restore Configuration
 
@@ -1359,7 +1361,11 @@ before/now		//文件中含有的"before"替换为"now"
 
 ## 案例2 替换字符串中某个范围的内容
 
-比如有以下文件，需要把`「`和`」`之间的内容去掉，该如何操作
+这个案例讲解正则表达式的运用。
+
+### Example1
+
+Example1: 比如有以下文件，需要把`「`和`」`之间的内容去掉（包括边界「和」），该如何操作
 
 ```
 问题儿童都来自异世界？ -01 「問題児たちが箱庭にやって来たようですよ？」 BDrip x264-ank.kna.mkv_20201106_184156.071.jpg
@@ -1387,6 +1393,8 @@ RegExpPattern > ReplaceWith\    (case-sensitive)
 ```
 
 特别注意: <span style="color:red">**`>`前后都需要补一个空格**</span>，否则不管匹配的正则表达式是正确的，也会出错。
+
+正则表达式用于匹配符合规则的字符。匹配的规则就在正则表达式中，那么匹配时，会按正则表达式锁描述规则从头到尾扫描即将要匹配的字符串。
 
 可以先去[正则表达式在线测试 | 菜鸟工具](http://c.runoob.com/front-end/854)测试下匹配结果：
 
@@ -1423,7 +1431,52 @@ RegExpPattern > ReplaceWith\    (case-sensitive)
 
 ![RegExpRename-5](Image/RegExpRename-5.png)
 
-案例结束。
+替换结束。
+
+### Example2
+
+由于`「`和`」`比较特殊，我们考虑下面这种情况：
+
+Example2: 比如形如以下文件，我想要将`1`和第一个`B`之间的内容（包括边界1和B）替换空串
+
+```
+问题儿童都来自异世界？ -061問題児たちがお祭り騒ぎに参加するようですよ？BBDrip x264-ank.kna.mkv_20201108_220550.4781.jpg
+问题儿童都来自异世界？ -061問題児たちがお祭り騒ぎに参加するようですよ？BBDrip x264-ank.kna.mkv_20201108_220550.4782.jpg
+问题儿童都来自异世界？ -061問題児たちがお祭り騒ぎに参加するようですよ？BBDrip x264-ank.kna.mkv_20201108_220550.4783.jpg
+问题儿童都来自异世界？ -061問題児たちがお祭り騒ぎに参加するようですよ？BBDrip x264-ank.kna.mkv_20201108_220550.4784.jpg
+问题儿童都来自异世界？ -061問題児たちがお祭り騒ぎに参加するようですよ？BBDrip x264-ank.kna.mkv_20201108_220550.4785.jpg
+问题儿童都来自异世界？ -061問題児たちがお祭り騒ぎに参加するようですよ？BBDrip x264-ank.kna.mkv_20201108_220550.4786.jpg
+...
+```
+
+
+
+![RegExpRename-Example2-1](Image/RegExpRename-Example2-1.png)
+
+因此，XY RegExp Rename匹配规则如下
+
+```
+1[\s\S]+B(?=B) > 
+```
+
+### Example3
+
+Example3: 形如以下的文件，我想要将`[`和第一个`]`之间的内容（包括边界[和]）替换空串:
+
+```
+问题儿童都来自异世界？ -06 [問題児たちがお祭り騒ぎに参加するようですよ？]BDrip x264-ank.kna.mkv_20201108_220550.478.jpg
+...
+```
+
+
+
+![RegExpRename-Example3-1](Image/RegExpRename-Example3-1.png)
+
+因此，XY RegExp Rename匹配规则如下
+
+```
+\[[\s\S]+\] > 
+```
 
 你可以参考[菜单教程的正则表达式](https://www.runoob.com/regexp/regexp-tutorial.html)部分进行学习，并且该网站也提供了[正则表达式在线测试工具](http://c.runoob.com/front-end/854)。
 
@@ -1453,9 +1506,17 @@ Everything以弥补XYplorer搜索的短板，但像要搜索XY中的Tags就需�
 
 如果还是不能集成到XY，我建议你使用Listary6
 
+## 目录快速切换
+
+Listary与XY搭配中，最棒的功能是：所有弹出的对话框可以基于XY当前目录进行快速切换。
+
+
+
 ### 添加快捷方式文件夹到索引
 
-Listary与XY搭配中，最棒的功能是：所有弹出的对话框可以基于XY当前目录进行快速切换。同时，Listary可以用于快速启动应用软件。
+同时，Listary可以用于快速启动应用软件。为了快速检索应用软件，建议按图要求进行操作：
+
+
 
 ![ListarySettings-1](Image/ListarySettings-1.png)
 
@@ -1469,3 +1530,57 @@ Listary与XY搭配中，最棒的功能是：所有弹出的对话框可以基�
 
 
 
+# 文件管理 | File Association
+
+## 自定义文件关联
+
+可以用于关联特定格式的应用
+
+```
+ {:Text}       *
+ {:Image}      *
+ {:Photo}      *   = All image formats that may contain Exif data.
+ {:Audio}      *
+ {:Video}      *
+ {:Media}      *   = Audio & Video
+ {:Font}       *
+ {:Vector}
+ {:Web}        *
+ {:Office}     *
+ {:Archive}
+ {:Executable}
+```
+
+想参考关于Generic File Type，请在地址栏输入：
+
+```
+rtfm "idh_visualfilters.htm#idh_genericfiletypes";
+```
+
+## 打开方式 | Open With
+
+如下图，选中目标文件<kbd>Ctrl + Alt + Enter</kbd>，会弹出如下PopUp菜单：
+
+![](Image/OpenWith-1.png)
+
+这是怎么来的呢？
+
+在自定义文件管理设置了三个视频播放器，并勾选：
+
+![FileAssociation-1](Image/FileAssociation-1.png)
+
+按顺序，如果直接双击打开，默认是最上面的Potplayer。如果要使用其他视频播放器打开，就可以用到"打开方式"这个功能，刚才讲过，通过<kbd>Ctrl + Alt + Enter</kbd>就可以调用这个功能。
+
+### 优点
+
+对同类格式文件需要用到不同应用软件以满足不同需求。比如对于.c和.h文件来说，有时我想要用notepad打开，有时想用VS Code打开，有时想用Dev-C++打开，通过将格式规则写到"自定义文件关联"就可以了。
+
+对比Windows文件管理器，它的右键打开就显得繁琐。
+
+基于这样的需求，我修改了我的"自定义文件关联"：
+
+![FileAssociation-2](Image/FileAssociation-2.png)
+
+
+
+![OpenWith-2](Image/OpenWith-2.png)
