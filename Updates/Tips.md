@@ -1530,7 +1530,7 @@ Listary与XY搭配中，最棒的功能是：所有弹出的对话框可以基�
 
 
 
-# 文件管理 | File Association
+# 文件关联 | File Association
 
 ## 自定义文件关联
 
@@ -1584,3 +1584,30 @@ rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 
 
 ![OpenWith-2](Image/OpenWith-2.png)
+
+### 排除某个格式会被Generic File Type引入
+
+过度使用Generic File Type虽然节省键入代表格式的字符的书写空间以及保持自定义文件关联规则的整洁，但也带来了把一些用户不想被关联的格式引入进来。
+
+比如我的markdown文件(.md)双击按理应该调用系统默认应用(我的是Typora)，但是实际调用的是Notepad++，于是<kbd>Ctrl+Alt+Enter</kbd>调用了"打开方式":
+
+对于格式的系统默认应用，可以按如图所示辨别出来,
+
+![OpenWith-3](Image/OpenWith-3.png)
+
+要使用快捷键调用"打开方式"确实没双击应用调用默认应用来得快，这也是引入Generic File Type的弊端。好消息这一弊端可以修正的。
+
+我们可以指定某个格式不被Generic File Type引入，它的解决方法就是：使用`#`(The special variable #)。
+
+![FileAssociation-3](Image/FileAssociation-3.png)
+
+语法格式：
+
+```
+格式名1;格式名2;...;格式名N>#
+```
+
+注意这条语句的优先级应该设置为最高，放在最下面就根本不会使用到。比如调用.md格式的文件，先走`md>#`这条规则然后就调用.md格式的系统默认应用。若`md>#`放在所有规则的最下面，那么它就会走{:Text}规则，那么就会调用第一个"{:Text}>\<xydrive\>\PortableApps\Npp_Portable\notepad++.exe"规则，根本不会执行到`md>#`这条规则。
+
+
+
