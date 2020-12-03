@@ -260,6 +260,48 @@ rtfm "idh_find.htm#idh_findfilesbytags";	//"Wildcards in Tags" section.
 
 ----
 
+# 定制文件列表 | Customize List
+
+在菜单栏中可以找到，如下图所示：
+
+![CustomizeList-SubMenu-1](Image/CustomizeList-SubMenu-1.png)
+
+这是我为列表设置的参数，几个打钩的选项都是常用的。
+
+`Rename On Slow Double-Click`:推荐。双击可进行文件命名。注意，双击每次点击的时间间隔长一点。
+
+`Highlight Selected Row`：选项勾选后，其背景颜色由如下图决定：
+
+设置->Colors and Styles->Colors->Selected Rows
+
+![CustomizeList-SelectedRowsBackground-1](Image/CustomizeList-SelectedRowsBackground-1.png)
+
+`Full Row Select`:不推荐，选中一个文件后，那么整行都被选择，鼠标在整行范围内双击都是打开文件。而使用`Highlight Selected Rows`后，高亮背景色范围内双击是返回上一级路径。
+
+`Autosize Columns`:推荐，该选项可以让文件列表的所有列信息显示完整，也就是每个列都进行最大有效范围的拉伸。
+
+`Show Folder Size`:不推荐。因为开启后每次浏览需要读取文件夹大小。如果文件夹大小过大，会让加载速度变慢。
+
+加载速度有效改善的方法：
+
+设置->Tree and List->List->Cache folder sizes
+
+![CustomizeList-ShowFolderSizes-CacheFolderSizes-1](Image/CustomizeList-ShowFolderSizes-CacheFolderSizes-1.png)
+
+该选项可以加快浏览文件列表的速度，但是无法保证第一次计算的文件夹大小的准确性。再次计算文件夹大小可保证目标文件夹的有效性，操作如下图所示：
+
+![CustomizeList-ShowFolderSizes-CalculateFolderSizes-1](Image/CustomizeList-ShowFolderSizes-CalculateFolderSizes-1.png)
+
+关于`Cache folder sizes`的作用详细说明，请在地址栏输入：
+
+```
+rtfm "idh_settings.htm#idh_foldersizecaching";
+```
+
+
+
+----
+
 
 
 # 自定义列 | Custom Column
@@ -546,9 +588,9 @@ F:\StudyLib	//匹配在F盘的StudyLib文件夹
 
 
 
-# 文件夹图标 | File Icons
+# 定制化文件夹图标 | Customize File Icons(CFI)
 
-## 配置方法
+## CFI配置方法
 
 ![FileIcon-1](Image/FileIcon-1.png)
 
@@ -580,17 +622,49 @@ Count=17
 
 ![FileIcon-2](Image/FileIcon-2.png)
 
-使用基本语法：
+## CFI语法
+
+使用CFI定义可以对符合匹配规则的文件进行图标替换。
+
+### 参考
+
+更多参考CFI，请在XY地址栏输入：
+
+```
+rtfm "idh_cfi.htm";
+```
+
+### 定义
+
+CFI定义如下：
 
 ```x
-匹配规则>图标路径
+"Caption" Pattern(s)>Icon Source
 ```
+
+`"Caption"`[可选]:个人注释
+
+`Pattern(s)`[必须]:匹配规则
+
+`Icon Source`[必须]:图标目录。
 
 比如，
 
 ```
 txt;ini;xml>xxx.ico //图标位于<xyicons>/xxx.ico。匹配文件格式是.txt, .ini, .xml
 ```
+
+### 注释
+
+除了可以用双引号括起来并放置到最前面作为个人注释，还可以使用`//`。
+
+`//`：注释符。当匹配项目被执行时，注释符前面的空格都会被剔除。
+
+```
+*.txt>Houellebecq.ico //comment
+```
+
+### 用例
 
 从帮助文档(F1)摘出来的：
 
@@ -622,6 +696,10 @@ readme.txt    matches all files named "readme.txt"
 <xyicons>\*   matches all files in the default Icons folder
 \\Wagner\     matches server "Wagner"
 ```
+
+
+
+
 
 问：我的文件夹都已经自定义图标了，这个`File Icons`设置的图标会不会覆盖Window设置的图标呢？
 
@@ -1582,6 +1660,10 @@ Listary与XY搭配中，最棒的功能是：所有弹出的对话框可以基�
 
 ![OpenWith-2](Image/OpenWith-2.png)
 
+
+
+这是官网关于POM的介绍：[XYplorer - Tour - Portable Openwith Menu™](https://www.xyplorer.com/tour.php?page=pom)
+
 ### Generic File Type
 
 #### 有哪些Generic File Type呢
@@ -1712,3 +1794,6 @@ rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 发挥你们的想象力吧，这个功能的应用场景太多了。比如有些图片文件需要用PS打开，平时浏览图片却不用；有些音乐需要倍速播放，所有需要切换音频播放器，有时候则不用；视频同理；有些PDF需要识别OCR，需要使用ABBYY，有些时候用其他PDF软件；有些office文档需要用WPS打开，有些则用Microsoft Office打开；...
 
 有了POM功能，你只需要用对应软件，推荐软件尽量选择便携版；绿色版有时候不是一个很好的选择，因为部分应用需要使用bat进行注册相关服务等才可使用；安装版只局限了当前宿主系统。因此要区分Portable, Green, Setup。
+
+# 收藏
+
