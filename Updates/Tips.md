@@ -262,6 +262,10 @@ rtfm "idh_find.htm#idh_findfilesbytags";	//"Wildcards in Tags" section.
 
 # 定制文件列表 | Customize List
 
+以下内容讲解都是在视图方式为“详细”(Details)的情况下进行的，操作如下图所示:(菜单栏/工具栏进行视图设置，二选一)
+
+![CustomizeList-View-Details-1](Image/CustomizeList-View-Details-1.png)
+
 在菜单栏中可以找到，如下图所示：
 
 ![CustomizeList-SubMenu-1](Image/CustomizeList-SubMenu-1.png)
