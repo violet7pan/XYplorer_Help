@@ -1272,7 +1272,7 @@ Template创建时，需要为当前Template进行命名，命名后进行保存�
 
 各位可以试着复制上面的内容，然后在菜单栏"Scripting->Run Scripting..."呼出Run Scripting...，也可以通过键盘依次按下Alt->S->R呼出。把复制的脚本内容粘贴，然后运行这个脚本（前提是你有保存Search Template文件哦）。
 
-不够这个脚本受限于"loadsearch"函数不支持载入包含对Windows保留字符进行编码的文件名，所以我上面脚本基础上进行修改，将编码的保留字符还原为ANSII字符，修改好后的脚本如下：
+这个脚本受限于"loadsearch"函数，该函数不支持载入包含对Windows保留字符进行编码的文件名，所以我上面脚本基础上进行修改，将编码的保留字符还原为ASCII字符，修改好后的脚本如下：
 
 ```javascript
 	// Get the base filename of user-selected template file
@@ -1309,11 +1309,13 @@ Template创建时，需要为当前Template进行命名，命名后进行保存�
 
 2.`Edit->Quick Search(F3)`
 
-~~没什么用。~~功能很强大。需要结合匹配规则进行搜索，详细使用说明请在地址栏输入:
+功能很强大。需要结合匹配规则进行搜索，详细使用说明请在地址栏输入:
 
 ```
 rtfm "idh_quicknamesearch.htm";
 ```
+
+我写过的一个简易版按Tag搜索脚本就是参考以上内容才写出来的。
 
 ### Live Filter Box
 
@@ -1334,6 +1336,10 @@ rtfm "idh_quicknamesearch.htm";
 这是一次模拟筛选，该功能场景范围过窄但好用。
 
 ### 文件列表关键词匹配
+
+在浏览文件列表时，输入要匹配文件名关键词（必须从目标文件名的首位字母开始输入）可以快速查找文件，使用效果图如下：
+
+![QuickFileListMatching](Image/QuickFileListMatching.gif)
 
 ## Everything内容打开到XYplorer侧
 
