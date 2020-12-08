@@ -39,15 +39,18 @@ XYplorer是一款文件管理器，但绝对比Windows原生的Explorer要强得
 
 ## 关于Updates/Tips.md
 
-| Caption                                          | Date       | Description                       |
-| ------------------------------------------------ | ---------- | --------------------------------- |
-| 列布局，自定义列 \| Column Layout, Custom Column | 2020/11/23 | 介绍文件列表中列的布局和列的设置  |
-| 文件关联 \| File Association                     | 2020/11/26 | 自定义文件关联和打开方式          |
-| 定制文件列表 \| Customize List                   | 2020/12/03 | 文件列表(适用视图为Details的方式) |
-| 查找文件 \| Find Files                           | 2020/12/05 | 查找文件和Search Template的使用   |
+| Caption                                                 | Date       | Description                       |
+| ------------------------------------------------------- | ---------- | --------------------------------- |
+| 列布局，自定义列 \| Column Layout, Custom Column        | 2020/11/23 | 介绍文件列表中列的布局和列的设置  |
+| 文件关联 \| File Association                            | 2020/11/26 | 自定义文件关联和打开方式          |
+| 定制文件列表 \| Customize List                          | 2020/12/03 | 文件列表(适用视图为Details的方式) |
+| 查找文件 \| Find Files                                  | 2020/12/05 | 查找文件和Search Template的使用   |
+| 收藏文件夹、收藏文件 \| Favorite Folder & Favorite File | 2020/12/08 | 快速打开收藏文件夹列表脚本        |
 
 
 
 ## 关于Scripts/Scripts.md
 
 放置Scripting脚本有关的信息。
+
+Scripts/*.xys：脚本文件。
