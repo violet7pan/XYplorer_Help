@@ -1,0 +1,10 @@
+	sel 1;
+	while (<curitem> != "") {
+		// msg <curitem>;
+		$dims = property("#image.dimensions", <cc_item>);
+		$width = gettoken($dims, 1, " x ");
+		$height = gettoken($dims, 2, " x ");
+		tag $width." x ".$height, <curitem>, "ex1";
+		sel + 1;
+	}
+

@@ -1,0 +1,10 @@
+	$fav_folders = favs('d');
+	// If $fav_folders is "", then terminate the running script, and else nothing be done.
+	end $fav_folders == "";
+	$fav_folders_list =;
+	foreach($token, $fav_folders, "<crlf>") {
+		$fav_folders_list .= '|'.$token;
+	}
+	$selected = popupmenu($fav_folders_list);
+	end $selected == "";
+	goto $selected;

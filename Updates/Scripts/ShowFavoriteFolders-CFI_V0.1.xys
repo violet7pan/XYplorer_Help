@@ -1,0 +1,96 @@
+	// XY配置文件路径
+	$ini = "<xydata>\XYplorer.ini";
+	$section_count = getkey("Count", "FileIcons", $ini);
+	$iterator = 1;
+	$value_list = ;
+	while($iterator <= $section_count) {
+		$value_list .= getkey($iterator, "FileIcons", $ini)."<crlf>";
+		$iterator++;
+	}
+	if($value_list != "") {
+		// extract folder info for CFI
+		//echo $value_list;
+		$folder_info_list = ;
+
+		foreach($token, $value_list, "<crlf>") {
+			if(regexmatches($token, "\\>") != "") {
+				$folder_info_list .= $token."<crlf>";
+			}
+		}
+	}
+	
+	// 该函数支持匹配形如“[A-Z]:\Shortcuts\>Folders\User Links.ico|Term PS.ico”这样的CFI项目
+	// 该函数不适合纸文件夹的图标匹配
+	// @src: 收藏文件夹名(该字符串最末尾以'\'结尾)
+	// @cfi_list: 从.ini扫描到的CFI项目
+	// @return: src若与CFI其中一项匹配上,返回加上CFI图标路径的sep_item,否则返回Generic folder图标
+	function match_cfi($src, $cfi_list) {
+		// Fav folder e.g D:\Shortcuts\ 取出字符串最后面的'\'
+		$src_temp = substr($src, 0, -1);
+		foreach($token, $cfi_list, "<crlf>") { 
+			// [可选编程]先过滤掉一些规则
+			// token_pre="Selected State of Folder In Tree" **\
+			// "**\"
+			//echo regexmatches($token, "\*\*\\");
+			
+		
+			// CFI项目不包括图标路径的部分进行修改：将'\'改成"\\",并且去掉开头的'+'。这是前缀用于匹配
+			$token_pre = replace(substr($token, 1, strpos($token, ">")-2), "\", "\\");
+			
+			// Regex pattern 可能包含'*','?',需要进行转换为正确的pattern
+			$token_pre = replace($token_pre, "*", "\*");
+			$token_pre = replace($token_pre, "?", "[A-Z]");
+			
+			// CFI项目获得图标部分
+			$token_post = substr($token, strpos($token, ">")+1, strlen($token));
+			//echo "token_pre=".$token_pre."<crlf>"."token_post=".$token_post."<crlf>";
+			//echo "src=".$src."<crlf>"."src_temp=".$src_temp."<crlf>";
+			
+			// Match specified folder
+			if(regexmatches($src_temp, $token_pre) == $src_temp) {
+				$src = $src.";;".substr($token_post, 0, strpos($token_post, "|"));
+				return $src;
+			}
+		}
+		// 没有匹配到CFI就返回一般性文件图标的sep_item
+		return $src.";;Folders\Folder Yellow.ico";
+	}
+
+	
+	
+	if($folder_info_list != "") {
+		$fav_folders = favs('d');
+		// If $fav_folders is "", then terminate the running script, and else nothing be done.
+		end $fav_folders == "";
+		$fav_folders_list =;
+		foreach($token, $fav_folders, "<crlf>") {
+			// sep_item: "Caption;Data;Icon;State"
+			// is paper?
+			if(regexmatches($token, "^paper:") == "paper:") {
+				$token = $token.';;:paper';
+			}// is folder but not paper folder
+			elseif(exists($token) == 2) {
+				$token = match_cfi($token, $folder_info_list);
+			}
+			$fav_folders_list .= '|'.$token;
+		}
+	}
+	$selected = popupmenu($fav_folders_list);
+	end $selected == "";
+	goto $selected;
+	
+	// 假设变量值
+	// +"Selected State of Folder In Tree" **\>Term PS.ico
+	// +"Generic Folder" *\>Folders\Folder Yellow.ico
+	// +?:\Program Files\;?:\Program Files (x86)\>Folders\Folder Yellow.ico //
+	// +C:\Windows\>Folders\Folder Yellow Windows.ico
+	// +C:\Users\>System\Users.ico
+	// +C:\Windows\Fonts\>System\SysFo Fonts.ico
+	// +C:\Windows\zh-CN\;C:\Windows\en-US\>System\Languages.ico
+	// +[A-Z]:\Downloads\;[A-Z]:\BdDownloads\>Folders\User Downloads.ico|Term PS.ico
+	// +[A-Z]:\NutstoreSync\>Nustore.ico|Term PS.ico
+	// +[A-Z]:\Shortcuts\>Folders\User Links.ico|Term PS.ico
+	// +[A-Z]:\VideoLib\>Folders\Videos.ico|Term PS.ico
+	// +[A-Z]:\MusicLib\>Folders\User Music.ico|Term PS.ico
+	// +[A-Z]:\Game\>Folders\User Game.ico|Term PS.ico
+	// +[A-Z]:\PortableApps\>USB.ico|Term PS.ico

@@ -1,0 +1,20 @@
+	// Get the base filename of user-selected template file
+	$template = popupmenu(replace(listfolder("<xydata>\FindTemplates", "*.ini", 4), ".ini"));	
+	// If $template is "", then terminate the running script, and else nothing be done.
+	end $template == "";
+	$invalid_characters = "<,>,:,/,\,|,?,|,*"; // a filename that doesn’t contain any control characters or these characters as follows
+	$invalid_characters_ctr = 9;
+	$searchlist =;
+	$ctr = 1;
+	// Get searchlist of invalid_characters which use for replacelist function.
+	foreach($token, $invalid_characters, ",") {
+		if ($ctr < $invalid_characters_ctr) {
+			$temp = '%'.dectohex(asc($token)).',';
+		} else {
+			$temp = '%'.dectohex(asc($token));
+		}
+		$ctr += 1;
+		$searchlist .= $temp;
+	}
+	loadsearch replacelist($template, $searchlist, $invalid_characters, ",", 0, 0), x; //Load specified search template ini file
+	#260;	// This Command ID will invoke Find Files Tab

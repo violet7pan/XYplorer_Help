@@ -46,3 +46,8 @@ XYplorer是一款文件管理器，但绝对比Windows原生的Explorer要强得
 | 定制文件列表 \| Customize List                   | 2020/12/03 | 文件列表(适用视图为Details的方式) |
 | 查找文件 \| Find Files                           | 2020/12/05 | 查找文件和Search Template的使用   |
 
+
+
+## 关于Scripts/Scripts.md
+
+放置Scripting脚本有关的信息。

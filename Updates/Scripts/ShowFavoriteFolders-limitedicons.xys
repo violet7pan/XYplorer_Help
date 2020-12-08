@@ -1,0 +1,20 @@
+	$fav_folders = favs('d');
+	// If $fav_folders is "", then terminate the running script, and else nothing be done.
+	end $fav_folders == "";
+	$fav_folders_list =;
+	foreach($token, $fav_folders, "<crlf>") {
+		// sep_item: "Caption;Data;Icon;State"
+		// is paper?
+		if(regexmatches($token, "^paper:") == "paper:") {
+			$token = $token.';;:paper';
+		}// is folder but not paper folder
+		elseif(exists($token) == 2) {
+			//Please substitute the generic folder icon you want for "Folders\Folder Yellow.ico"
+			//$token = $token.";;Folders\Folder Yellow.ico";
+			$token = $token.";;G:\File Explorer.ico";
+		}
+		$fav_folders_list .= '|'.$token;
+	}
+	$selected = popupmenu($fav_folders_list);
+	end $selected == "";
+	goto $selected;
