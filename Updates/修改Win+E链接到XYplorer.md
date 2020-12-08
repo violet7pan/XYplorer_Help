@@ -1,5 +1,13 @@
 
 
+# 2020/12/8
+
+Google找到关于AHK的将Windows Exploer重定义到XY的方法：
+
+[AHK] redirecting Windows Explorer to XY - XYplorer Beta Club https://www.xyplorer.com/xyfc/viewtopic.php?f=7&t=10671
+
+目前没时间看，有兴趣的各位可以研究。
+
 # 2020/11/22
 
 <kbd>Win+E</kbd>替换成XY也可以参考[xyplorer的‘完美’设置 - 简书](https://www.jianshu.com/p/c0249f8d7593)，这种方式是通过注册表修改，很方便，但是请修改前备份此部分的注册表，还有一点，我没测试过~~~~
