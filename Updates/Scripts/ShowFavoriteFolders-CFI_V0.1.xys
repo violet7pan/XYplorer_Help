@@ -1,3 +1,4 @@
+	// 该脚本只适用CFI信息不为空时才可打开收藏文件夹列表
 	// XY配置文件路径
 	$ini = "<xydata>\XYplorer.ini";
 	$section_count = getkey("Count", "FileIcons", $ini);
@@ -10,11 +11,11 @@
 	if($value_list != "") {
 		// extract folder info for CFI
 		//echo $value_list;
-		$folder_info_list = ;
-
+		$cfi_list = ;
+		// 读取CFI信息到$cfi_list
 		foreach($token, $value_list, "<crlf>") {
 			if(regexmatches($token, "\\>") != "") {
-				$folder_info_list .= $token."<crlf>";
+				$cfi_list .= $token."<crlf>";
 			}
 		}
 	}
@@ -56,9 +57,8 @@
 		return $src.";;Folders\Folder Yellow.ico";
 	}
 
-	
-	
-	if($folder_info_list != "") {
+	// CFI信息为空
+	if($cfi_list != "") {
 		$fav_folders = favs('d');
 		// If $fav_folders is "", then terminate the running script, and else nothing be done.
 		end $fav_folders == "";
@@ -70,7 +70,7 @@
 				$token = $token.';;:paper';
 			}// is folder but not paper folder
 			elseif(exists($token) == 2) {
-				$token = match_cfi($token, $folder_info_list);
+				$token = match_cfi($token, $cfi_list);
 			}
 			$fav_folders_list .= '|'.$token;
 		}
@@ -78,19 +78,3 @@
 	$selected = popupmenu($fav_folders_list);
 	end $selected == "";
 	goto $selected;
-	
-	// 假设变量值
-	// +"Selected State of Folder In Tree" **\>Term PS.ico
-	// +"Generic Folder" *\>Folders\Folder Yellow.ico
-	// +?:\Program Files\;?:\Program Files (x86)\>Folders\Folder Yellow.ico //
-	// +C:\Windows\>Folders\Folder Yellow Windows.ico
-	// +C:\Users\>System\Users.ico
-	// +C:\Windows\Fonts\>System\SysFo Fonts.ico
-	// +C:\Windows\zh-CN\;C:\Windows\en-US\>System\Languages.ico
-	// +[A-Z]:\Downloads\;[A-Z]:\BdDownloads\>Folders\User Downloads.ico|Term PS.ico
-	// +[A-Z]:\NutstoreSync\>Nustore.ico|Term PS.ico
-	// +[A-Z]:\Shortcuts\>Folders\User Links.ico|Term PS.ico
-	// +[A-Z]:\VideoLib\>Folders\Videos.ico|Term PS.ico
-	// +[A-Z]:\MusicLib\>Folders\User Music.ico|Term PS.ico
-	// +[A-Z]:\Game\>Folders\User Game.ico|Term PS.ico
-	// +[A-Z]:\PortableApps\>USB.ico|Term PS.ico

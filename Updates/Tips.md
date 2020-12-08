@@ -2092,9 +2092,10 @@ rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 
 如果想要根据文件名和文件的扩展名获取来自Customize File Icons(CFI)的图标，在Scripting Commands中并没有类似getIcons()这样的函数，那么想要获取CFI图标信息，需要读取XY使用的配置文件。比如XY使用的配置文件是XYplorer.ini，那么CFI图标信息在配置文件的`[FileIcons]`中，可以通过文本编辑器自带的搜索功能搜索此关键词组。
 
-显示CFI图标的收藏文件夹列表的脚本(ShowFavoriteFolders-CFI_V0.1.xys)：
+显示CFI图标的收藏文件夹列表的脚本(ShowFavoriteFolders-CFI_V0.1.xys)：(该脚本只适用CFI信息不为空时才可打开收藏文件夹列表)
 
 ```
+	// 该脚本只适用CFI信息不为空时才可打开收藏文件夹列表
 	// XY配置文件路径
 	$ini = "<xydata>\XYplorer.ini";
 	$section_count = getkey("Count", "FileIcons", $ini);
@@ -2107,11 +2108,11 @@ rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 	if($value_list != "") {
 		// extract folder info for CFI
 		//echo $value_list;
-		$folder_info_list = ;
-
+		$cfi_list = ;
+		// 读取CFI信息到$cfi_list
 		foreach($token, $value_list, "<crlf>") {
 			if(regexmatches($token, "\\>") != "") {
-				$folder_info_list .= $token."<crlf>";
+				$cfi_list .= $token."<crlf>";
 			}
 		}
 	}
@@ -2153,9 +2154,8 @@ rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 		return $src.";;Folders\Folder Yellow.ico";
 	}
 
-	
-	
-	if($folder_info_list != "") {
+	// CFI信息为空
+	if($cfi_list != "") {
 		$fav_folders = favs('d');
 		// If $fav_folders is "", then terminate the running script, and else nothing be done.
 		end $fav_folders == "";
@@ -2167,7 +2167,7 @@ rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 				$token = $token.';;:paper';
 			}// is folder but not paper folder
 			elseif(exists($token) == 2) {
-				$token = match_cfi($token, $folder_info_list);
+				$token = match_cfi($token, $cfi_list);
 			}
 			$fav_folders_list .= '|'.$token;
 		}
@@ -2175,22 +2175,6 @@ rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 	$selected = popupmenu($fav_folders_list);
 	end $selected == "";
 	goto $selected;
-	
-	// 假设变量值
-	// +"Selected State of Folder In Tree" **\>Term PS.ico
-	// +"Generic Folder" *\>Folders\Folder Yellow.ico
-	// +?:\Program Files\;?:\Program Files (x86)\>Folders\Folder Yellow.ico //
-	// +C:\Windows\>Folders\Folder Yellow Windows.ico
-	// +C:\Users\>System\Users.ico
-	// +C:\Windows\Fonts\>System\SysFo Fonts.ico
-	// +C:\Windows\zh-CN\;C:\Windows\en-US\>System\Languages.ico
-	// +[A-Z]:\Downloads\;[A-Z]:\BdDownloads\>Folders\User Downloads.ico|Term PS.ico
-	// +[A-Z]:\NutstoreSync\>Nustore.ico|Term PS.ico
-	// +[A-Z]:\Shortcuts\>Folders\User Links.ico|Term PS.ico
-	// +[A-Z]:\VideoLib\>Folders\Videos.ico|Term PS.ico
-	// +[A-Z]:\MusicLib\>Folders\User Music.ico|Term PS.ico
-	// +[A-Z]:\Game\>Folders\User Game.ico|Term PS.ico
-	// +[A-Z]:\PortableApps\>USB.ico|Term PS.ico
 ```
 
 使用演示：
