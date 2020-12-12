@@ -227,3 +227,126 @@ How to use and execute a script ? - XYplorer Beta Club https://www.xyplorer.com/
 
 该脚本会匹配"C:"或"C:\"
 
+### 文件属性 | property()
+
+### 读取文件属性Detals的元数据
+
+比如读取"E:\TempUse\123.doc"文件属性Details的元数据，可通过对"E:\TempUse\123.doc"右键-属性查看。
+
+脚本如下：
+
+		$props = property("System.PropList.FullDetails",  "E:\TempUse\123.doc");
+		$props = replace($props, "prop:","");
+		$list = ;
+		foreach($token, $props, ";") {
+			$list .= "$token: ".property($token, "E:\TempUse\123.doc")."<crlf>";
+		}
+		echo $list;
+输出如下：
+
+```
+System.PropGroup.Description: 
+System.Title: 
+System.Subject: 
+System.Keywords: This is a tag
+System.Category: 
+System.Comment: 4444
+System.PropGroup.Origin: 
+System.Author: 孙洪娟(拟稿)
+System.Document.LastAuthor: 赵欣慧
+System.Document.RevisionNumber: 2
+System.Document.Version: 
+System.ApplicationName: Microsoft Office Word
+System.Company: 国家统计局
+System.Document.Manager: 
+System.Document.DateCreated: 11/26/2018 6:17:00
+System.Document.DateSaved: 11/26/2018 6:17:00
+System.Document.DatePrinted: 11/13/2018 5:58:00
+System.Document.TotalEditingTime: 0
+System.PropGroup.Content: 
+System.ContentStatus: 
+System.ContentType: 
+System.Document.PageCount: 1
+System.Document.WordCount: 18610
+System.Document.CharacterCount: 106078
+System.Document.LineCount: 883
+System.Document.ParagraphCount: 248
+System.Document.Template: Normal.dotm
+System.Document.Scale: False
+System.Document.LinksDirty: False
+System.Language: 
+System.PropGroup.FileSystem: 
+System.ItemNameDisplay: 123.doc
+System.ItemTypeText: Microsoft Word 97 - 2003 Document
+System.ItemFolderPathDisplay: E:\TempUse
+System.DateCreated: 12/12/2020 13:18:20
+System.DateModified: 12/12/2020 14:00:00
+System.Size: 4376576
+System.FileAttributes: A
+System.OfflineAvailability: 
+System.OfflineStatus: 
+System.SharedWith: 
+System.FileOwner: Administrators
+System.ComputerName: DESKTOP-M6EI91A
+```
+
+地址栏输入：
+
+```
+::rtfm "idh_scripting_comref.htm#idh_sc_property";	//property()
+```
+
+其中说明文档有如下内容：
+
+> Windows canonical properties (from Vista onwards  only!) Tip: The  command **property()** , the Find  Files selector **prop:**, and the  **<prop ...>** variable all supports the locale-independent  Windows canonical properties as listed here: 
+>
+> [http://msdn.microsoft.com/en-us/library/windows/desktop/dd561977%28v=vs.85%29.aspx](http://msdn.microsoft.com/en-us/library/windows/desktop/dd561977(v=vs.85).aspx)
+
+通过这个微软Doc的链接，我查询到了System.PropList.FullDetails这个项
+
+PropList - Win32 apps | Microsoft Docs https://docs.microsoft.com/en-us/windows/win32/properties/proplist-bumper
+
+> System.PropList.FullDetails		The list of properties to show in the infotip. Properties with empty values will not be displayed.
+
+
+
+### runret()
+
+#### runret()函数返回值中文乱码
+
+cmd窗口不会有中文简体还是繁体乱码(garbled):
+
+```
+G:\Downloads\魔法少女☆伊莉雅-Subs>chcp
+Active code page: 936
+
+G:\Downloads\魔法少女☆伊莉雅-Subs>dir /B
+Fate kaleid liner 魔法少女☆伊莉雅
+ReadMe.md
+[VCB-Studio] Fate_Kaleid Liner Prisma Illya _ 魔法少女☆伊莉雅 S1-S4 10-bit 1080p HEVC BDRip [Fin].torrent
+[魔法少女☆伊莉雅][BD][S01-S04][Sub][FLsnow]【1080P】[简繁]
+魔法少女☆伊莉雅 Prisma☆Phantasm【BD简繁字幕】
+魔法少女☆伊莉雅 百變嘉年華.BDrip
+魔法少女伊莉雅 百變嘉年華
+```
+
+在我的笔记本上，有些符号会乱码，我尝试将"code page"切换到936
+
+```
+::text runret("cmd /c chcp 936 &cmd /c DIR /B", <curpath>, 936); 
+```
+
+结果是
+
+```
+Active code page: 936
+Fate kaleid liner ?§·¨éù????òáàò??
+ReadMe.md
+[VCB-Studio] Fate_Kaleid Liner Prisma Illya _ ?§·¨éù????òáàò?? S1-S4 10-bit 1080p HEVC BDRip [Fin].torrent
+[?§·¨éù????òáàò??][BD][S01-S04][Sub][FLsnow]??1080P??[?ò·±]
+?§·¨éù????òáàò?? Prisma??Phantasm??BD?ò·±×?????
+?§·¨éù????òáàò?? °ù×????êèA.BDrip
+?§·¨éù??òáàò?? °ù×????êèA
+```
+
+RUNRET Cyrillic encoding problems - XYplorer Beta Club https://www.xyplorer.com/xyfc/viewtopic.php?t=21114

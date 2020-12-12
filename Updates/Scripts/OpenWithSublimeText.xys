@@ -1,0 +1,7 @@
+	//subl file    :: 使用 Sublime Text 打开 file 文件
+	//subl folder  :: 使用 Sublime Text 打开 folder 文件夹
+	//subl .       :: 使用 Sublime Text 当前文件夹
+	$sublime_text_dir = "D:\PortableApps\Notepad\SublimeText_x64_3211";
+	if(<curitem> != "") {
+		run("subl "."""<curitem>""", $sublime_text_dir);
+	}

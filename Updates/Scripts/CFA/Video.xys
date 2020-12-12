@@ -1,0 +1,14 @@
+	$potplayer_dir = "C:\Program Files\DAUM\PotPlayer";
+	$mpc_dir = "C:\Program Files\MPC-HC";
+	$mpv_dir = "C:\Users\vip57\scoop\apps\mpv-git\20201122";
+	$choice = popupnested("Open With: Potplayer|Open With: MPC|Open With: MPV");
+	end $choice == "";
+	if($choice == "Open With: Potplayer") {
+		run("cmd /c start PotPlayerMini64.exe ".quote(<curitem>), $potplayer_dir);
+	}
+	elseif($choice == "Open With: MPC") {
+		run("cmd /c start mpc.exe ".quote(<curitem>), $mpc_dir, 866);
+	}
+	elseif($choice == "Open With: MPV") {
+		run("cmd /c start mpv.exe ".quote(<curitem>), $mpv_dir, 866);
+	}

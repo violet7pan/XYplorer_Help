@@ -1,0 +1,61 @@
+	$utorrent204_dir = "D:\PortableApps\uTorrent\uTorrent_2.0.4_绿色完美设置版";
+	$utorrent35545828_dir = "D:\PortableApps\uTorrent\uTorrent_3.5.5.45828_Portable";
+	$thunder11_dir = "D:\PortableApps\Thunder\Thunder11\Program";
+	$thunderx_dir = "D:\PortableApps\Thunder\ThunderX\Program";
+	$thunders_dir = "D:\PortableApps\Thunder\ThunderS_20201121_Green\Program";
+	$thunder5_dir = "D:\PortableApps\Thunder\迅雷+v5.8.14.706+绿色共存版";
+	$qbittorrent4191_dir = "D:\PortableApps\qBittorrent_Portable\qBittorrent-v4.1.9.1";
+	$qbittorrentee41915_dir = "D:\PortableApps\qBittorrentEE_Portable\qBittorrentEE-v4.1.9.15";
+	$qbittorrentee43110_dir = "D:\PortableApps\qBittorrentEE_Portable\qBittorrentEE-v4.3.1.10";
+	$choice = popupnested("Open With: uTorrent| uTorrent_2.0.4| uTorrent_3.5.5.45828|Open With: Thunder| Thunder11| ThunderX| ThunderS| Thunder5|Open With: qBittorrent| qBittorrent-v4.1.9.1|Open With: qBittorrentEE| qBittorrentEE-v4.1.9.15| qBittorrentEE-v4.3.1.10");
+	end $choice == "";
+	switch($choice) {
+		case "uTorrent_2.0.4":
+			/* 
+				Some characters of UTF-8 Unicode(65001) are found garbled. For example, the character '／'(not '/') is mistakenly interpreted as "￡ˉ".
+			*/
+			run("cmd /c start uTorrent.exe ".quote(<curitem>), $utorrent204_dir);
+			break;
+		case "uTorrent_3.5.5.45828":
+			run("cmd /c start uTorrent.exe ".quote(<curitem>), $utorrent35545828_dir);
+			break;
+		case "Thunder11":
+			// 如果查询到进程有迅雷运行时
+			if(regexmatches(runret("cmd /c tasklist /v /fi ""IMAGENAME eq Thunder.exe"""), "Thunder") != "") {
+				// 请保证你Thunder11目录包含"Thunder11"的关键字
+				// 如果启动的是Thunder11
+				if(regexmatches(runret("cmd /c tasklist /v /fi ""IMAGENAME eq DownloadSDKServer.exe"""), "Thunder11") != "") {
+					run("cmd /c start Thunder.exe ".quote(<curitem>), $thunder11_dir);
+				}
+			} //否则重新启动Thunder11
+			else {
+				run("cmd /c start Thunder.exe ", $thunder11_dir);
+				// 5000=5秒,请微调该时间直至Thunder11完全打开
+				wait 5000;
+				run("cmd /c start Thunder.exe ".quote(<curitem>), $thunder11_dir);	
+			}
+			break;
+		case "ThunderX":
+			run("cmd /c start Thunder.exe ".quote(<curitem>), $thunderx_dir);
+			break;
+		case "ThunderS":
+			run("cmd /c start Thunder.exe ".quote(<curitem>), $thunders_dir);
+			break;
+		case "Thunder5":
+			// 迅雷5打开后,在主界面手动打开种子
+			run("cmd /c start 迅雷5.exe ".quote(<curitem>), $thunder5_dir);
+			run("cmd /c start 迅雷L3.exe", $thunder5_dir);
+			//run("explorer ".quote(<curpath>));
+			break;
+		case "qBittorrent-v4.1.9.1":
+			run("cmd /c start qbittorrent.exe ".quote(<curitem>), $qbittorrent4191_dir);
+			break;
+		case "qBittorrentEE-v4.1.9.15":
+			run("cmd /c start qbittorrent_x64.exe ".quote(<curitem>), $qbittorrentee41915_dir);
+			break;
+		case "qBittorrentEE-v4.3.1.10":
+			run("cmd /c start qbittorrent_x64.exe ".quote(<curitem>), $qbittorrentee43110_dir);
+			break;
+		default:
+			break;
+	}

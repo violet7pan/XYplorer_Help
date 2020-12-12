@@ -1,0 +1,15 @@
+	$sublime_text_dir = "D:\PortableApps\Notepad\SublimeText_x64_3211";
+	$npp_dir = "D:\PortableApps\Notepad\Npp_Portable";
+	$choice = popupnested("Run batch|Open with | Sublime Text| Notepad++");
+	end $choice == "";
+	if($choice == "Run batch") {
+		run "<curitem>";
+	}
+	elseif($choice == "Sublime Text") {
+		run $sublime_text_dir."\subl "."""<curitem>""";
+	}
+	elseif($choice == "Notepad++") {
+		run $npp_dir."\notepad++ "."""<curitem>""";
+	}
+
+

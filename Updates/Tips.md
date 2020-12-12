@@ -341,6 +341,18 @@ XY界面的布局是什么意思？布局就是各种组件的位置摆放以及
 
 ![Column-Type-1](Image/Column-Type-1.png)
 
+
+
+### 定制属性列 | Property
+
+#### [案例1]添加文件属性项列
+
+![CustomizeList-Property-Tags-1](Image/CustomizeList-Property-Tags-1.png)
+
+![CustomizeList-Property-Tags-2](Image/CustomizeList-Property-Tags-2.png)
+
+![CustomizeList-Property-Tags-3](Image/CustomizeList-Property-Tags-3.png)
+
 ### 定制自定义列
 
 参考[Overview of custom column snippets / scripts - XYplorer Beta Club](https://www.xyplorer.com/xyfc/viewtopic.php?f=7&t=18653)
@@ -1585,7 +1597,7 @@ Layout保存和加载通过`Window->Save Layout As... / Load Layout`。
 
 -用户快捷键位于ks.dat,妥善保存。
 
-## 还原
+## 还原(迁移)
 
 为了使原版本的数据信息同步到新版本，你可以有几类操作方法：
 
@@ -1607,7 +1619,13 @@ Layout保存和加载通过`Window->Save Layout As... / Load Layout`。
 
 如果直接将旧XY/Data/XYplorer.ini对新XY/Data/XYplorer.ini覆盖，会发生打开新XY出现许可证失效提示。不但如此，实际上，旧XY的数据也没有载入成功到新XY。
 
+如图中Diagram所示：
+
+![RestoreDiagram](Image/RestoreDiagram.png)
+
 方法2.直接在原版本XYplorer菜单栏`Help->Online Support->Check for Updates`进行升级。在21.20.0200以前版本每次升级都不会出现版本到期的现象，不过这一次升级到21.20.0200却出现了版本到期。因此使用方法1稳妥。
+
+
 
 -END
 
@@ -1844,19 +1862,160 @@ Listary与XY搭配中，最棒的功能是：所有弹出的对话框可以基�
 
 
 
-# 文件关联和便携式打开方式菜单 | File Association & Portable OpenWith Menu(POM)
+# 便携式(定制化)文件关联 | Customize File Association(CFA)
 
-## 自定义文件关联
+## 基本语法
 
-在QuickStart/ReadMe.md已经讲过了。这里我们深入地讲下这个功能与另一个功能"打开方式(Open With...)"的搭配使用。
-
-复习一下，该功能是可以用于关联特定格式的应用。指定格式对应调用的应用规则：
+该功能在在QuickStart/ReadMe.md已经讲过了。CFA是可以用于关联特定格式的应用。指定格式对应调用的应用规则：
 
 ```
 格式名1;格式名2;...;格式名N>应用路径
 ```
 
+## 花(高)式(阶)玩法:无需POM,使用Script定制CFA
 
+若你不了解POM，可以看关于POM章节的部分。这里讲解的是利用Script定制CFA。
+
+友情提示：这部分需要掌握Scripting哦。
+
+CFA中使用Scripting的示意图(以Batch文件为例)：
+
+![CustomizeFileAssociation-Scripting-Batch](Image/CustomizeFileAssociation-Scripting-Batch.gif)
+
+与下面POM进行比较：
+
+![CustomizeFileAssociation-Scripting-Batch-2](Image/CustomizeFileAssociation-Scripting-Batch-2.png)
+
+先选择"MakeRAR_V0.3.cmd"，然后"Ctrl+Alt+Enter"，最后选择想要的功能。
+
+对比两种方式，明显CFA中使用Scripting比使用POM要快捷多，其脚本(CFA/Batch.xys)如下：
+
+```
+	$sublime_text_dir = "D:\PortableApps\Notepad\SublimeText_x64_3211";
+	$npp_dir = "D:\PortableApps\Notepad\Npp_Portable";
+	$choice = popupnested("Run batch|Open with | Sublime Text| Notepad++");
+	end $choice == "";
+	if($choice == "Run batch") {
+		run "<curitem>";
+	}
+	elseif($choice == "Sublime Text") {
+		run $sublime_text_dir."\subl "."""<curitem>""";
+	}
+	elseif($choice == "Notepad++") {
+		run $npp_dir."\notepad++ "."""<curitem>""";
+	}
+```
+
+CFA中设置如下：
+
+![CustomizeFileAssociation-Scripting-Batch-3](Image/CustomizeFileAssociation-Scripting-Batch-3.png)
+
+更多的例子及其示意图如下：
+
+![CustomizeFileAssociation-Scripting-Torrent](Image/CustomizeFileAssociation-Scripting-Torrent.gif)
+
+![CustomizeFileAssociation-Scripting-Video](Image/CustomizeFileAssociation-Scripting-Video.gif)
+
+![CustomizeFileAssociation-Scripting-Video_Torrent](Image/CustomizeFileAssociation-Scripting-Video_Torrent.png)
+
+脚本如下:
+
+CFA/Torrent.xys:
+
+```
+	$utorrent204_dir = "D:\PortableApps\uTorrent\uTorrent_2.0.4_绿色完美设置版";
+	$utorrent35545828_dir = "D:\PortableApps\uTorrent\uTorrent_3.5.5.45828_Portable";
+	$thunder11_dir = "D:\PortableApps\Thunder\Thunder11\Program";
+	$thunderx_dir = "D:\PortableApps\Thunder\ThunderX\Program";
+	$thunders_dir = "D:\PortableApps\Thunder\ThunderS_20201121_Green\Program";
+	$thunder5_dir = "D:\PortableApps\Thunder\迅雷+v5.8.14.706+绿色共存版";
+	$qbittorrent4191_dir = "D:\PortableApps\qBittorrent_Portable\qBittorrent-v4.1.9.1";
+	$qbittorrentee41915_dir = "D:\PortableApps\qBittorrentEE_Portable\qBittorrentEE-v4.1.9.15";
+	$qbittorrentee43110_dir = "D:\PortableApps\qBittorrentEE_Portable\qBittorrentEE-v4.3.1.10";
+	$choice = popupnested("Open With: uTorrent| uTorrent_2.0.4| uTorrent_3.5.5.45828|Open With: Thunder| Thunder11| ThunderX| ThunderS| Thunder5|Open With: qBittorrent| qBittorrent-v4.1.9.1|Open With: qBittorrentEE| qBittorrentEE-v4.1.9.15| qBittorrentEE-v4.3.1.10");
+	end $choice == "";
+	switch($choice) {
+		case "uTorrent_2.0.4":
+			/* 
+				Some characters of UTF-8 Unicode(65001) are found garbled. For example, the character '／'(not '/') is mistakenly interpreted as "￡ˉ".
+			*/
+			run("cmd /c start uTorrent.exe ".quote(<curitem>), $utorrent204_dir);
+			break;
+		case "uTorrent_3.5.5.45828":
+			run("cmd /c start uTorrent.exe ".quote(<curitem>), $utorrent35545828_dir);
+			break;
+		case "Thunder11":
+			// 如果查询到进程有迅雷运行时
+			if(regexmatches(runret("cmd /c tasklist /v /fi ""IMAGENAME eq Thunder.exe"""), "Thunder") != "") {
+				// 请保证你Thunder11目录包含"Thunder11"的关键字
+				// 如果启动的是Thunder11
+				if(regexmatches(runret("cmd /c tasklist /v /fi ""IMAGENAME eq DownloadSDKServer.exe"""), "Thunder11") != "") {
+					run("cmd /c start Thunder.exe ".quote(<curitem>), $thunder11_dir);
+				}
+			} //否则重新启动Thunder11
+			else {
+				run("cmd /c start Thunder.exe ", $thunder11_dir);
+				// 5000=5秒,请微调该时间直至Thunder11完全打开
+				wait 5000;
+				run("cmd /c start Thunder.exe ".quote(<curitem>), $thunder11_dir);	
+			}
+			break;
+		case "ThunderX":
+			run("cmd /c start Thunder.exe ".quote(<curitem>), $thunderx_dir);
+			break;
+		case "ThunderS":
+			run("cmd /c start Thunder.exe ".quote(<curitem>), $thunders_dir);
+			break;
+		case "Thunder5":
+			// 迅雷5打开后,在主界面手动打开种子
+			run("cmd /c start 迅雷5.exe ".quote(<curitem>), $thunder5_dir);
+			run("cmd /c start 迅雷L3.exe", $thunder5_dir);
+			//run("explorer ".quote(<curpath>));
+			break;
+		case "qBittorrent-v4.1.9.1":
+			run("cmd /c start qbittorrent.exe ".quote(<curitem>), $qbittorrent4191_dir);
+			break;
+		case "qBittorrentEE-v4.1.9.15":
+			run("cmd /c start qbittorrent_x64.exe ".quote(<curitem>), $qbittorrentee41915_dir);
+			break;
+		case "qBittorrentEE-v4.3.1.10":
+			run("cmd /c start qbittorrent_x64.exe ".quote(<curitem>), $qbittorrentee43110_dir);
+			break;
+		default:
+			break;
+	}
+```
+
+CFA/Video.xys:
+
+```
+	$potplayer_dir = "C:\Program Files\DAUM\PotPlayer";
+	$mpc_dir = "C:\Program Files\MPC-HC";
+	$mpv_dir = "C:\Users\vip57\scoop\apps\mpv-git\20201122";
+	$choice = popupnested("Open With: Potplayer|Open With: MPC|Open With: MPV");
+	end $choice == "";
+	if($choice == "Open With: Potplayer") {
+		run("cmd /c start PotPlayerMini64.exe ".quote(<curitem>), $potplayer_dir);
+	}
+	elseif($choice == "Open With: MPC") {
+		run("cmd /c start mpc.exe ".quote(<curitem>), $mpc_dir, 866);
+	}
+	elseif($choice == "Open With: MPV") {
+		run("cmd /c start mpv.exe ".quote(<curitem>), $mpv_dir, 866);
+	}
+```
+
+
+
+
+
+
+
+# 便携式打开方式菜单 | File Association & Portable OpenWith Menu(POM)
+
+## POM使用前提
+
+在CFA中添加关联规则。才可有效使用本功能。
 
 
 
