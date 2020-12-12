@@ -310,6 +310,16 @@ PropList - Win32 apps | Microsoft Docs https://docs.microsoft.com/en-us/windows/
 
 
 
+## run()/runq()/runet()
+
+可以用于调用cmd.exe。
+
+提供一些Microsoft Doc参考：
+
+start | Microsoft Docs https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/start
+
+cmd | Microsoft Docs https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd
+
 ### runret()
 
 #### runret()函数返回值中文乱码
