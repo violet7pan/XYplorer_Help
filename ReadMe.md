@@ -27,7 +27,7 @@ XYplorer是一款文件管理器，但绝对比Windows原生的Explorer要强得
 
    
 
-原来除QuickStart以外的使用介绍都写在Updates/tips.md中，现在我把放到branch v0.1中了，目前master分支是重新组织的，结构化且按主题分类的Markdown。
+原来除QuickStart以外的使用介绍都写在Updates/tips.md中，现在我把原来的项目放到branch v0.1中了，目前master分支是重新组织的，结构化且按主题分类的Markdown。
 
 ## 关于QuickStart/ReadMe.md
 
