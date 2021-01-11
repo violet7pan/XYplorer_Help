@@ -13,7 +13,7 @@
 
 第二，更新频率和内容。不定期更新，也可能不更新。同时更新的内容大多都是个人长期使用过程中遇到的问题和需求。
 
-第三，提问和解惑。可以Google或者参考官方帮助文档，按<kbd>F1</kbd>呼出，若无法呼出，请下载`XYplorer.chm`。
+第三，提问和解惑。可以Google或者参考官方帮助文档，按<kbd>F1</kbd>呼出，若无法呼出，请下载`XYplorer.chm`后置于XYplorer目录。
 
 提问的魔法进修课:point_right:[Stop-Ask-Questions-The-Stupid-Ways](https://github.com/dogfight360/Stop-Ask-Questions-The-Stupid-Ways/blob/master/README.md)。
 
@@ -21,7 +21,7 @@
 
 有时，为了书写方便，我会把XYplorer简称为XY。
 
-第五，所有的图片都保存在Image文件夹，不上载到图传是因为鬼知道哪天图片服务器和存储器会不会突然坏掉。
+第五，所有的图片都保存在Image文件夹，不上载到图传是因为鬼知道哪天图片服务器会不会突然坏掉。
 
 # <em>20191011 </em>
 
@@ -862,10 +862,15 @@ Alternative Solution 3(推荐): 你完全可以使用XYplorer集成的Windows文
 
 ## 设置快捷键调用Notepad
 
+### Notepad
+
 创建`OpenWithNotepad.xys`存放在XYplorer/Data/Scripts目录下，内容如下，
 
 ```
-	if (<curitem> != "" && filetype(<curitem>) != "Nofile") {
+	// 当前选中项目不为空
+	end <curitem> == "";
+	// 当前选中项目不是文件夹
+	if (filetype(<curitem>) != "Nofile") {
 		run notepad "<curitem>";
 	}
 ```
@@ -882,6 +887,14 @@ Scripts Files:<xyscripts>\OpenWithNotepad.xys
 ```
 
 使用方法：选中文件，<kbd>Alt + 3</kbd>速度调用`notepad`打开文本。
+
+### Sublime Text
+
+脚本文件名为OpenWithSublimeText.xys存放在Scripts目录下了。
+
+### Notepad2
+
+脚本文件名为OpenWithNotepad2.xys存放在Scripts目录下了。
 
 ## <span id="explorer_ks">设置快捷键调用Explorer</span>
 
@@ -1083,7 +1096,7 @@ D:\Work\GitWorks\XYplorer_Help\Updates\Image\Catalog-8.png
 
 # XYplorer的搜索及最佳搜索替换工具Everything | Search | Find
 
-## XYplorer的搜索
+## <span id="xyplorer_search">XYplorer的搜索</span>
 
 ### 搜索功能有哪些
 
@@ -1242,7 +1255,7 @@ Template创建时，需要为当前Template进行命名，命名后进行保存�
 
 所以文件名就不应该出现这些保留字符，不然就会出现文件名非法的情况。然而XY允许使用这些被Windows作为保留字符的字符。为了避免Windows文件名非法，XY采用了"% & Hex(charcode)"的方案来转换这些字符。
 
-在地址栏输入:\<xydata\>\FindTemplates,看到我(作者)保存的Search Template文件:
+在地址栏输入:\<xydata\>\FindTemplates,看到我保存的Search Template文件:
 
 ![FindFilesTab-SearchTemplate-Save-2](Image/FindFilesTab-SearchTemplate-Save-2.png)
 
@@ -1838,6 +1851,8 @@ Everything以弥补XYplorer搜索的短板，但像要搜索XY中的Tags就需�
 
 如果还是不能集成到XY，我建议你使用Listary6
 
+还有一种方法我还没试过：取消XY以管理器权限运行，然后Listary以管理员权限运行。大家可以尝试下。
+
 ## 目录快速切换
 
 Listary与XY搭配中，最棒的功能是：所有弹出的对话框可以基于XY当前目录进行快速切换。
@@ -1856,7 +1871,7 @@ Listary与XY搭配中，最棒的功能是：所有弹出的对话框可以基�
 
 ### 在XY中对当前目录匹配时Listary Popup Menu(Listary弹出窗口)并不是最佳选择
 
-<kbd>Ctrl + Alt + X</kbd>进入Live Filter Box输入，搜索关键字，即可筛选当前目录的文件。这部分可以参考[XYplorer的搜索]第3点
+<kbd>Ctrl + Alt + X</kbd>进入Live Filter Box输入，搜索关键字，即可筛选当前目录的文件。这部分可以参考[XYplorer的搜索](#xyplorer_search)的Live Filter Box部分。
 
 当然Popup Menu还有收藏夹，还有快速匹配关键字的结果，这个结果优先是当前目录，然后是其他目录。正是因为结果集列出除当前目录以外的结果，因此才建议使用XY的Live Filter Box功能。
 
@@ -2347,3 +2362,64 @@ rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 当然你也可以设置为"[A-Z]:\A\B>xxx.ico"这样的多级目录试一试。
 
 这个脚本比上面两个脚本执行速度要慢得多。
+
+
+
+# 自定义事件动作 | Custom Event Actions(CEA)
+
+这是XY 21.40.0100加入的新特性。该特性在配置->General->Custom Event Actions中。如下图所示
+
+![CustomEventActions-1](Image/CustomEventActions-1.png)
+
+可以看到大部分事件都是与鼠标动作有关，如左键双击，滚轮(中键)双击等等。
+
+关于鼠标双击空白处怎么没办法返回上一级的解决方法：在上图的"Clicking on White"中找到"Double-click on white in file list"，选择Actions为"Go up"就可解决该问题。
+
+什么是"mouse back button"和"mouse forward button"：
+
+![MouseBackAndForwardButton](Image/MouseBackAndForwardButton.png)
+
+一般来说，很普通的鼠标只有鼠标左中右键，是没有鼠标前进后退键，这些鼠标宏按键在游戏鼠标中很常见。上图鼠标红圈就是宏按键，我一般都将这两个按键设置为前进和后退功能。
+
+以下为我的CEA使用建议:
+
+| Event                                   | Action                  | Script          | Description                                                  |
+| --------------------------------------- | ----------------------- | --------------- | ------------------------------------------------------------ |
+| Double-click on white in file list      | Go up                   |                 | 双击文件列表空白处可以返回上一级目录                         |
+| Double-click on white in tab bar        | New tab                 |                 | 双击tab bar可以新建标签页                                    |
+| Double-click on white in breadcrumb bar | Run Script              | goto %computer% | 双击breadcrumb bar空白处可以返回"我的电脑"(更多环境变量的信息可以在地址栏输入`::#728;`) |
+| Right-click on white in folder tree     | Pop up favorite folders |                 | 右键树空白处可以弹出收藏文件夹                               |
+| Right-click on white in folder list     | Pop up Edit menu        |                 | 右键文件列表空白处可以打开编辑菜单(我也不知道folder list和file list的区别,但是在文件列表空白处你也是可以右键打开编辑菜单的) |
+| Double-click on tab                     | Close tab               |                 | 双击标签页关闭标签(这与某国内浏览器标签页关闭手势一致啊)     |
+| Double-click on status bar              | Toggle info panel       |                 | 双击状态栏可以弹出信息面板(由于我把信息面板设置在底部所以双击可方便打开,这样你可以不用使用<kbd>F12</kbd>呼出该面板了) |
+| Release mouse back button               | Back                    |                 | 对于有宏按键的鼠标来说，按下后退键就是在历史路径中选择上一个路径进行后退 |
+| Release mouse forward button            | Forward                 |                 | 对于有宏按键的鼠标来说，按下前进键就是在历史路径中选择下一个路径进行后退(若下一个路径不存在,什么也不会发生) |
+
+帮助文档：地址栏输入
+
+```
+::rtfm "idh_settings.htm#idh_settings_cea";
+```
+
+
+
+
+
+# 为什么桌面的文件无法拖到XY里(管理员权限问题)
+
+从[Can't drag folder from Widnows Explorer or Everything to XYporer - XYplorer Beta Club](https://www.xyplorer.com/xyfc/viewtopic.php?p=169149#p169149)帖子中得知由于XYplorer.exe提升到管理员权限后是无法将桌面文件拖到XY中。由此解决方法就是取消"管理员权限运行"。
+
+具体步骤就是
+
+![Fix-CannotDragFromDesktop](Image/Fix-CannotDragFromDesktop.png)
+
+
+
+# 多个Column的文件列表浏览建议
+
+直接上GIF
+
+![FileListNavigatingTips](Image/FileListNavigatingTips.gif)
+
+从GIF中可以看到当Column变多了，通过加入Shift可以让左右滑动变得更快捷。
+

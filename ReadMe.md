@@ -47,6 +47,7 @@ XYplorer是一款文件管理器，但绝对比Windows原生的Explorer要强得
 | 查找文件 \| Find Files                                  | 2020/12/05 | 查找文件和Search Template的使用       |
 | 收藏文件夹、收藏文件 \| Favorite Folder & Favorite File | 2020/12/08 | 快速打开收藏文件夹列表脚本            |
 | 自定义列,便携式文件关联,还原(迁移)                      | 2020/12/12 | 添加文件属性列，CFA高阶玩法，还原图解 |
+| 自定义动作事件 \| Custom Event Actions                  | 2021/1/11  | 增加鼠标动作事件                      |
 
 
 
