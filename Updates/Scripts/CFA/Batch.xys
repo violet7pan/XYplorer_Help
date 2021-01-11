@@ -3,7 +3,7 @@
 	$choice = popupnested("Run batch|Open with | Sublime Text| Notepad++");
 	end $choice == "";
 	if($choice == "Run batch") {
-		run "<curitem>";
+		run """<curitem>""";
 	}
 	elseif($choice == "Sublime Text") {
 		run $sublime_text_dir."\subl "."""<curitem>""";

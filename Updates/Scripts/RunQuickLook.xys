@@ -1,3 +1,4 @@
+	// 当前选中项目不为空
 	if (<curitem> != "") {
 		run "<xypath>\..\QuickLook\QuickLook.exe" "<curitem>";
 	}

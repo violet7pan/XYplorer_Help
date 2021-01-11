@@ -1,4 +1,6 @@
-	// 当前项目不为空,且不是文件夹
-	if (<curitem> != "" && filetype(<curitem>) != "Nofile") {
+	// 当前选中项目不为空
+	end <curitem> == "";
+	// 当前选中项目不是文件夹
+	if (filetype(<curitem>) != "Nofile") {
 		run notepad "<curitem>";
 	}

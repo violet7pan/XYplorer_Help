@@ -1,5 +1,7 @@
 	$notepad2_dir = "D:\PortableApps\Notepad\Notepad2";
-	// 当前项目不为空,且不是文件夹
-	if (<curitem> != "" && filetype(<curitem>) != "Nofile") {
+	// 当前选中项目不为空
+	end <curitem> == "";
+	// 当前选中项目不是文件夹
+	if (filetype(<curitem>) != "Nofile") {
 		run('Notepad2 '."""<curitem>""", $notepad2_dir);
 	}

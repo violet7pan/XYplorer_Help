@@ -27,20 +27,138 @@ Popup Menu Items - XYplorer Beta Club https://www.xyplorer.com/xyfc/viewtopic.ph
 
 
 
+## QuickStart
+
+### 书写语句
+
+只要是不在地址栏输入的，编写脚本每一行开头最好有一个空格或一个<kbd>Tab</kbd>，否则可能无法执行Script。保证每条语句有一个`;`。
+
+```
+	语句1;
+	语句2;
+	...
+	语句N;
+```
+
+当然，你也可以写在一行，但都必须有`;`分割开每条语句：
+
+```
+	语句1; 语句2; ...; 语句N;
+```
+
+良好的缩进，匹配代码块，比如:
+
+```
+	$condition = "Ok";
+	if($condition != "Ok") {
+		echo "if";
+	}
+	else {
+		echo "else";
+	}
+```
+
+当然你也可以这样写：
+
+```
+	$condition = "Ok"; if($condition != "Ok") { echo "if";} else { echo "else";}
+```
+
+### 变量
+
+想参考变量的使用说明，请在XY地址栏输入：
+
+```
+::rtfm "idh_scripting.htm#idh_scripting_variables";
+```
+
+变量也是有范围的：
+
+```
+	function fun($c) {
+		$c = 1;
+	}
+	$a = 2;
+	fun($a);
+	echo 'outside the function:a='.$a.' and c='.$c;
+```
+
+输出如下：
+
+```
+outside the function:a=2 and c=$c
+```
+
+函数内的局部变量$c在调用时生成，执行完销毁，所以$c就会被当做字符串"$c"输出。对于$a只是把它的值复制一份给了$c而已。
+
+
+
+## 数字处理
+
+```
+::rtfm "idh_scripting_comref.htm#idh_sc_abs";	//abs() - Returns the absolute value of a number.
+::rtfm "idh_scripting_comref.htm#idh_sc_ceil";	//ceil() - Rounds fractions up.
+::rtfm "idh_scripting_comref.htm#idh_sc_dectohex";	//dectohex(), hex() - Converts a signed decimal integer into hexadecimal.
+::rtfm "idh_scripting_comref.htm#idh_sc_floor";	//floor() - Rounds fractions down.
+::rtfm "idh_scripting_comref.htm#idh_sc_hexdump";	//hexdump() - Returns a string as hex dump.
+::rtfm "idh_scripting_comref.htm#idh_sc_hextodec";	//hextodec() - Converts a hexadecimal number into a signed decimal number.
+::rtfm "idh_scripting_comref.htm#idh_sc_incr";	//incr - Increments a numerical value.
+::rtfm "idh_scripting_comref.htm#idh_sc_rand";	//rand() - Generates an integer random number.
+::rtfm "idh_scripting_comref.htm#idh_sc_round";	//round() - Rounds a number.
+```
+
+
+
+## 日期处理
+
+```
+::rtfm "idh_scripting_comref.htm#idh_sc_datediff";	//datediff() - 
+::rtfm "idh_scripting_comref.htm#idh_sc_datepicker";	//datepicker() - Pops a Date Picker dialog and returns the selected date.
+::rtfm "idh_scripting_comref.htm#idh_sc_now";	//now() - Returns the current date/time.
+::rtfm "idh_scripting_comref.htm#idh_sc_format";	//format() - Returns a string formatted. 
+::rtfm "idh_scripting_comref.htm#idh_sc_formatdate";	//formatdate() - Returns a date/time expression in a specific format, optionally shifted by a specific interval.
+```
+
+
+
+
+
 ## 字符串处理
 
 与字符串处理有关的
 
 ```
-::rtfm "idh_scripting_comref.htm#idh_sc_compare";	//compare()
-
+::rtfm "idh_scripting_comref.htm#idh_sc_asc";	//asc() - Returns the ASCII value of a character.
+::rtfm "idh_scripting_comref.htm#idh_sc_base64decode";	//base64decode() - Decodes a Base64-encoded string or file.
+::rtfm "idh_scripting_comref.htm#idh_sc_base64encode";	//base64encode() - Encodes a string or file content in Base64.
+::rtfm "idh_scripting_comref.htm#idh_sc_charview";	//charview - Shows the characters of a string in a vertical list in various encodings and notations.
+::rtfm "idh_scripting_comref.htm#idh_sc_chr";	//chr() - Returns a specific character. This function complements asc().
+::rtfm "idh_scripting_comref.htm#idh_sc_base64encode";	//base64encode() - Encodes a string or file content in Base64.
+::rtfm "idh_scripting_comref.htm#idh_sc_compare";	//compare() - Compares two strings. 
+::rtfm "idh_scripting_comref.htm#idh_sc_eval";	//eval() - Evaluates an expression. 
+::rtfm "idh_scripting_comref.htm#idh_sc_format";	//format() - Returns a string formatted. 
+::rtfm "idh_scripting_comref.htm#idh_sc_formatlist";	//formatlist() - Formats a list of items. 
+::rtfm "idh_scripting_comref.htm#idh_sc_gettoken";	//gettoken() - Returns a substring by index. 
+::rtfm "idh_scripting_comref.htm#idh_sc_gettokenindex";	//gettokenindex() - Returns the first index of a token in a token list, or the count of its occurrences. 
+::rtfm "idh_scripting_comref.htm#idh_sc_isunicode";	//isunicode() - Analyzes a text string for the presence of wide characters. 
+::rtfm "idh_scripting_comref.htm#idh_sc_lax";	//lax() - Allows to define a string in a lax way. 
+::rtfm "idh_scripting_comref.htm#idh_sc_quote";	//quote() - Double-quotes a string. 
+::rtfm "idh_scripting_comref.htm#idh_sc_recase";	//recase() - Changes the case of a string. 
+::rtfm "idh_scripting_comref.htm#idh_sc_regexmatches";	//regexmatches() - Returns a list of all matches of a regular expression pattern in a given string. 
+::rtfm "idh_scripting_comref.htm#idh_sc_regexreplace";	//regexreplace() - Replaces parts of a string, using a regular expression pattern. 
+::rtfm "idh_scripting_comref.htm#idh_sc_replace";	//replace() - Replace parts of a string. 
+::rtfm "idh_scripting_comref.htm#idh_sc_replacelist";	//replacelist() - Replaces substrings by list.
+::rtfm "idh_scripting_comref.htm#idh_sc_strlen";	//strlen() - Return the length of a string.
+::rtfm "idh_scripting_comref.htm#idh_sc_strpos";	//strpos() - Return position of first occurrence of a string.
+::rtfm "idh_scripting_comref.htm#idh_sc_strrepeat";	//strrepeat() - Repeats a string.
+::rtfm "idh_scripting_comref.htm#idh_sc_strreverse";	//strreverse() - Reverses a string.
+::rtfm "idh_scripting_comref.htm#idh_sc_substr";	//substr() - Return part of a string.
+::rtfm "idh_scripting_comref.htm#idh_sc_trim";	//trim() - Strips spaces (or other characters) from the beginning and/or end of a string.
+::rtfm "idh_scripting_comref.htm#idh_sc_urldecode";	//urldecode() - Decodes URL-encoded string.
+::rtfm "idh_scripting_comref.htm#idh_sc_urlencode";	//urlencode() - URL-encodes string.
+::rtfm "idh_scripting_comref.htm#idh_sc_utf8decode";	//utf8decode() - Decodes UTF-8 encoded string.
+::rtfm "idh_scripting_comref.htm#idh_sc_utf8encode";	//utf8encode() - Encodes a string to UTF-8.
 ```
-
-
-
-
-
-### 
 
 
 
