@@ -38,7 +38,7 @@
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [XYplorer-布局篇](./XYplorer-布局篇.md)                      | 主要介绍XYplorer界面上元素的使用                             |
 | [XYplorer-用户自定义命令篇(UDC)](./XYplorer-用户自定义命令篇(UDC).md) | 用户自定义命令的使用，主要是让快捷键绑定命令或脚本文件       |
-| [XYplorer-标签集(Tags)](./XYplorer-标签集(Tags).md)          | 标签页的使用                                                 |
+| [XYplorer-标签集(Tags)](./XYplorer-标签集(Tags).md)          | 标签集的使用                                                 |
 | [XYplorer-便携式文件关联(CFA)+打开方式(POM)](./XYplorer-便携式文件关联(CFA)+打开方式(POM).md) | 指定规则后，让XYplorer中的文件可以以指定的应用进行打开       |
 | [XYplorer-便携式文件图标(CFI)](XYplorer-便携式文件图标(CFI).md) | 指定规则后，让XYplorer在不同文件显示不同的个性化图标         |
 | [XYplorer-搜索篇(Search)](./XYplorer-搜索篇(Search).md)      | XYplorer搜索的使用                                           |
