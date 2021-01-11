@@ -13,10 +13,6 @@ Can this right - button menu be customizable? - XYplorer Beta Club https://www.x
 
 Popup Menu Items - XYplorer Beta Club https://www.xyplorer.com/xyfc/viewtopic.php?t=18979
 
-
-
-
-
 ```
 ::rtfm "idh_scripting_comref.htm#idh_sc_exists";	//exists()
 ::rtfm "idh_scripting_comref.htm#idh_sc_favs";	//favs()
@@ -27,9 +23,9 @@ Popup Menu Items - XYplorer Beta Club https://www.xyplorer.com/xyfc/viewtopic.ph
 
 
 
-## QuickStart
+## 快速入门 | QuickStart
 
-### 书写语句
+### 1.书写语句
 
 只要是不在地址栏输入的，编写脚本每一行开头最好有一个空格或一个<kbd>Tab</kbd>，否则可能无法执行Script。保证每条语句有一个`;`。
 
@@ -64,7 +60,7 @@ Popup Menu Items - XYplorer Beta Club https://www.xyplorer.com/xyfc/viewtopic.ph
 	$condition = "Ok"; if($condition != "Ok") { echo "if";} else { echo "else";}
 ```
 
-### 变量
+### 2.变量
 
 想参考变量的使用说明，请在XY地址栏输入：
 
@@ -90,6 +86,31 @@ outside the function:a=2 and c=$c
 ```
 
 函数内的局部变量$c在调用时生成，执行完销毁，所以$c就会被当做字符串"$c"输出。对于$a只是把它的值复制一份给了$c而已。
+
+### 3.运行Script
+
+方法1：按下Alt -> S -> R呼出"Run Script"面板，输入脚本内容。
+
+方法2：按下Alt -> S -> L呼出"Load Script File"选择以.xys结尾的脚本文件
+
+方法3：按下Alt -> T -> F呼出"Customize File Associations"，新建一条新的规则，规则如下：
+
+```
+xys>::load <curitem>
+```
+
+以后可以编写脚本到.xys文件中，然后双击运行即可。
+
+方法4：F8呼出"Navigation Panels"，按下Ctrl+F8呼出"Catalogue"，新建一个项目，内容如下
+
+```php
+// Caption
+TestScript
+// Location
+::load "Test\test.xys";	//加载的脚本文件名称自己命名，Test\test.xys表示在<xyscripts>\Test\test.xys
+```
+
+
 
 
 
@@ -458,13 +479,13 @@ ReadMe.md
 魔法少女伊莉雅 百變嘉年華
 ```
 
-在我的笔记本上，有些符号会乱码，我尝试将"code page"切换到936
+但是在XY中使用runret调用cmd却会出现一些符号会乱码，我尝试将"code page"切换到936
 
 ```
 ::text runret("cmd /c chcp 936 &cmd /c DIR /B", <curpath>, 936); 
 ```
 
-结果是
+结果毫无用处，这算不算一个缺陷，好像官网也没解决这个问题，需要各位不要踩到这个坑。
 
 ```
 Active code page: 936
@@ -478,3 +499,4 @@ ReadMe.md
 ```
 
 RUNRET Cyrillic encoding problems - XYplorer Beta Club https://www.xyplorer.com/xyfc/viewtopic.php?t=21114
+
