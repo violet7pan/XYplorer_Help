@@ -12,7 +12,7 @@ Scripting = 脚本编写 + 运行该脚本内容
 
 当然，初入使用XY的朋友们，你们不喜欢Scripting，可以先看下[XYplorer Native Variables]部分，因为这一部分在这份Markdown中会经常用到。
 
-如果对Scripting感兴趣，可以看下本Markdown的[XYplorer Native Variables]部分，并且参考[Scripts/Scripting](./Scripts/Scripting.md)-QuickStart进行快速入门。
+如果对Scripting感兴趣，可以看下本Markdown的[XYplorer Native Variables]部分，并且参考[Scripts/Scripting-QuickStart](./Scripts/Scripting.md)进行快速入门。
 
 ### 用什么语言开发的？
 

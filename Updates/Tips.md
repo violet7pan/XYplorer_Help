@@ -19,6 +19,10 @@
 
 
 
+重要提示：上述图中两个原因所述的危险操作执行前，请确保XY的数据已经备份。因为崩溃后，本次会话的XY数据会全丢失。
+
+
+
 # 2.批量命名 | Rename Special
 
 ## 案例1 寻找指定字符串进行替换
@@ -240,3 +244,52 @@ Example3: 形如以下的文件，我想要将`[`和第一个`]`之间的内容�
 
 从GIF中可以看到当Column变多了，通过加入Shift可以让左右滑动变得更快捷。
 
+# 5.右键新建文件
+
+在XY地址栏输入进入"新建项目"的目录
+
+```
+<xydata>/NewItems
+```
+
+在cmd中使用Windows的dir命令查询当前目录的文件
+
+```
+D:\PortableApps\XYplorer\Data\NewItems>dir /b
+Makefile
+New Batch File.bat
+New Batch File.cmd
+New C Header.h
+New C.c
+New Configuration.ini
+New Cpp.cpp
+New folder
+New Markdown.md
+New Microsoft Excel Worksheet.xlsx
+New Microsoft Word Document.docx
+New Mindjet MindManager Document-兼容2019版.mmap
+New MindManager Document-2020版.mmap
+New Rich Text Document.rtf
+New Text Document.txt
+New XYplorer Script.xys
+New.html
+```
+
+以上输出结果都是文件，这些文件都是用于右键菜单"New Items"：
+
+![Tips-NewItems](Image/Tips-NewItems.png)
+
+这些文件跟Windows邮件菜单的新建还不一样，因为存放在"\<xydata\>/NewItems"中的文件都是模板文件，这意味这你可以按照你的需求进行定制。我举个例子吧：
+
+New C.c模板文件中我写入以下内容：
+
+```
+#include <stdio.h>
+
+int main() {
+    
+    return 0;
+}
+```
+
+以后我右键创建.c文件里面的内容都是按照这个模板文件来的。

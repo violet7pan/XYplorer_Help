@@ -228,7 +228,7 @@ rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 
 #### 排除某个格式会被Generic File Type引入
 
-过度使用Generic File Type虽然节省键入代表格式的字符的书写空间以及保持自定义文件关联规则的整洁，但也带来了把一些用户不想被关联的格式引入进来。
+过度使用Generic File Type虽然节省键入代表格式的字符的书写空间以及保持自定义文件关联规则的整洁，但也带来了把一些用户不想被关联的格式引入进来的问题。
 
 比如我的markdown文件(.md)双击按理应该调用系统默认应用(我的是Typora)，但是实际调用的是Notepad++，于是<kbd>Ctrl+Alt+Enter</kbd>调用了"打开方式":
 
@@ -321,3 +321,4 @@ rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 发挥你们的想象力吧，这个功能的应用场景太多了。比如有些图片文件需要用PS打开，平时浏览图片却不用；有些音乐需要倍速播放，所有需要切换音频播放器，有时候则不用；视频同理；有些PDF需要识别OCR，需要使用ABBYY，有些时候用其他PDF软件；有些office文档需要用WPS打开，有些则用Microsoft Office打开；...
 
 有了POM功能，你只需要用对应软件，推荐软件尽量选择便携版；绿色版有时候不是一个很好的选择，因为部分应用需要使用bat进行注册相关服务等才可使用；安装版只局限了当前宿主系统。因此要区分Portable, Green, Setup。
+

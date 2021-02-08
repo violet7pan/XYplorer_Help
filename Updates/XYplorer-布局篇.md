@@ -426,7 +426,7 @@ http://msdn.microsoft.com/en-us/library/windows/desktop/dd561977%28v=vs.85%29.as
 Column Layout的文件命名应该符合以下的格式，才会清晰便于确定列的顺序：
 
 ```
-第1列名-第2列名-...-第N列明.txt
+第1列名-第2列名-...-第N列名.txt
 ```
 
 
