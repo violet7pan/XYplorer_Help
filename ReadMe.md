@@ -8,7 +8,7 @@
 
 [https://violet7pan.github.io/categories/XYplorer/](https://violet7pan.github.io/categories/XYplorer/)
 
-《XYplorer快速入门指南》用于快速入门，《XYplorer》使用指南为集合贴。
+《XYplorer快速入门指南》用于快速入门，《XYplorer使用指南》为集合贴。
 
 
 
