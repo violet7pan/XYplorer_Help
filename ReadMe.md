@@ -1,6 +1,16 @@
-# XYplorer Help - By MMengyiyu
+# XYplorer Help
 
 本文起源于[【首发+原创教程】XYplorer日常使用完美代替Win10原生文件管理](https://www.52pojie.cn/thread-843769-1-1.html)，并进行不断完善。
+
+文档使用说明我也放到了我的个人博客：
+
+[https://violet7pan.gitee.io/categories/XYplorer/](https://violet7pan.gitee.io/categories/XYplorer/)
+
+[https://violet7pan.github.io/categories/XYplorer/](https://violet7pan.github.io/categories/XYplorer/)
+
+《XYplorer快速入门指南》用于快速入门，《XYplorer》使用指南为集合贴。
+
+
 
 ## XYplorer下载
 
