@@ -1,0 +1,11 @@
+	$cmder_dir = "D:\PortableApps\1-Terminal\Cmder";
+	if(<curitem> == "") {
+		run 'Cmder /start '.quote(<curpath>),  $cmder_dir;
+	} else {
+		if (filetype(<curitem>) == "Nofile") {	//选中的是目录
+			run 'Cmder /start '.quote(<curitem>),  $cmder_dir;
+		}
+		else {	
+			run 'Cmder /start '.quote(<curpath>),  $cmder_dir;
+		}
+	}

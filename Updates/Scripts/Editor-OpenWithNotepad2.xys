@@ -1,4 +1,4 @@
-	$notepad2_dir = "D:\PortableApps\Notepad\Notepad2";
+	$notepad2_dir = "D:\PortableApps\1-Editor\Notepad2";
 	// 当前选中项目不为空
 	end <curitem> == "";
 	// 当前选中项目不是文件夹

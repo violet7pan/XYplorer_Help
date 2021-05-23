@@ -1,0 +1,8 @@
+    // 脚本功能：进入Hexo博客根目录
+
+    $wt_dir = "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.6.10571.0_x64__8wekyb3d8bbwe";
+    // Windows Terminal CLI请参阅 https://docs.microsoft.com/en-us/windows/terminal/command-line-arguments?tabs=windows
+    $hexo_blog_dir = "D:\WorkLib\HexoBlogSource";
+    // $profile = "Command Prompt";
+    $profile = "命令提示符";
+    run 'wt -d '.quote($hexo_blog_dir).' -p '.quote($profile),  $wt_dir;

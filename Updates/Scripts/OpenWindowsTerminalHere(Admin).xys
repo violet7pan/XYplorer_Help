@@ -1,0 +1,14 @@
+	// Windows Terminal CLI请参阅 https://docs.microsoft.com/en-us/windows/terminal/command-line-arguments?tabs=windows
+	// start 请参阅 https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/start
+	//$wt_dir = "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.6.10571.0_x64__8wekyb3d8bbwe";
+	$wt_dir = "<xyscripts>\AppShortcuts\";
+	if(<curitem> == "") {
+		run 'wt.exe.lnk -d '.quote(<curpath>),  $wt_dir;
+	} else {
+		if (filetype(<curitem>) == "Nofile") {	//选中的是目录
+			run 'wt.exe.lnk -d '.quote(<curitem>),  $wt_dir;
+		}
+		else {	
+			run 'wt.exe.lnk -d '.quote(<curpath>),  $wt_dir;
+		}
+	}
