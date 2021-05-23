@@ -15,7 +15,7 @@
 
 </br>
 
-许多更新内容我都放在博客中，博客的阅读方法：
+博客的阅读方法：
 
 在分类页面中，XYplorer快速入门指南》用于快速入门，《XYplorer使用指南》为集合贴。
 
@@ -39,7 +39,7 @@ GitHub项目的阅读方法：
 | Updates             | XYplorer使用指南。新手快速入门文档看完后，可进一步参考[Updates/ReadMe.md](./Updates/ReadMe.md)，该文档包含XY功能的阅读指引。 |
 | Updates/Scripts     | XYplorer自用脚本和脚本语法。[Updates/Scripts/Scripting.md](./Updates/Scripts.Scripting.md)中提供学习Scripting的帮助。 |
 | Updates/Scripts/CFA | 使用在XYplorer便携式文件关联(CFA)功能上的脚本。              |
+| Updates/tips.md     | 根据网友反馈，提供一些使用过程的小问题和小技巧。             |
 | ./Image             | 图片资源文件夹。                                             |
 | *.xys               | 脚本文件。可用于学习，或者为CFA，UDC，Toolbar Button，Category功能所用。 |
-| Updates/tips.md     | 一些使用过程的小问题和小技巧                                 |
 
