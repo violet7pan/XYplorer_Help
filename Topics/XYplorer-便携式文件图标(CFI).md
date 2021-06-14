@@ -2,7 +2,7 @@
 
 ## CFI配置方法
 
-![FileIcon-1](Image/FileIcon-1.png)
+![FileIcon-1](XYplorer-便携式文件图标(CFI)/FileIcon-1.png)
 
 File Icons的配置在`XYplorer.ini`中：以下内容就摘自此文件
 
@@ -30,7 +30,7 @@ Count=17
 
 效果大概就是这样子的：
 
-![FileIcon-2](Image/FileIcon-2.png)
+![FileIcon-2](XYplorer-便携式文件图标(CFI)/FileIcon-2.png)
 
 ## CFI语法
 
@@ -117,9 +117,9 @@ readme.txt    matches all files named "readme.txt"
 
 在帮助文档中已经给出了答案：
 
-![FileIcon-3](Image/FileIcon-3.png)
+![FileIcon-3](XYplorer-便携式文件图标(CFI)/FileIcon-3.png)
 
-![FileIcon-4](Image/FileIcon-4.png)
+![FileIcon-4](XYplorer-便携式文件图标(CFI)/FileIcon-4.png)
 
 ## 图标资源
 

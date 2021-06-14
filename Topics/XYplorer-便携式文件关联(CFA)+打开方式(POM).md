@@ -16,11 +16,11 @@
 
 CFA中使用Scripting的示意图(以Batch文件为例)：
 
-![CustomizeFileAssociation-Scripting-Batch](Image/CustomizeFileAssociation-Scripting-Batch.gif)
+![CustomizeFileAssociation-Scripting-Batch](XYplorer-便携式文件关联(CFA)+打开方式(POM)/CustomizeFileAssociation-Scripting-Batch.gif)
 
 与下面POM进行比较：
 
-![CustomizeFileAssociation-Scripting-Batch-2](Image/CustomizeFileAssociation-Scripting-Batch-2.png)
+![CustomizeFileAssociation-Scripting-Batch-2](XYplorer-便携式文件关联(CFA)+打开方式(POM)/CustomizeFileAssociation-Scripting-Batch-2.png)
 
 先选择"MakeRAR_V0.3.cmd"，然后"Ctrl+Alt+Enter"，最后选择想要的功能。
 
@@ -44,15 +44,15 @@ CFA中使用Scripting的示意图(以Batch文件为例)：
 
 CFA中设置如下：
 
-![CustomizeFileAssociation-Scripting-Batch-3](Image/CustomizeFileAssociation-Scripting-Batch-3.png)
+![CustomizeFileAssociation-Scripting-Batch-3](XYplorer-便携式文件关联(CFA)+打开方式(POM)/CustomizeFileAssociation-Scripting-Batch-3.png)
 
 更多的例子及其示意图如下：
 
-![CustomizeFileAssociation-Scripting-Torrent](Image/CustomizeFileAssociation-Scripting-Torrent.gif)
+![CustomizeFileAssociation-Scripting-Torrent](XYplorer-便携式文件关联(CFA)+打开方式(POM)/CustomizeFileAssociation-Scripting-Torrent.gif)
 
-![CustomizeFileAssociation-Scripting-Video](Image/CustomizeFileAssociation-Scripting-Video.gif)
+![CustomizeFileAssociation-Scripting-Video](XYplorer-便携式文件关联(CFA)+打开方式(POM)/CustomizeFileAssociation-Scripting-Video.gif)
 
-![CustomizeFileAssociation-Scripting-Video_Torrent](Image/CustomizeFileAssociation-Scripting-Video_Torrent.png)
+![CustomizeFileAssociation-Scripting-Video_Torrent](XYplorer-便携式文件关联(CFA)+打开方式(POM)/CustomizeFileAssociation-Scripting-Video_Torrent.png)
 
 脚本如下:
 
@@ -159,13 +159,13 @@ CFA/Video.xys:
 
 如下图，选中目标文件<kbd>Ctrl + Alt + Enter</kbd>，会弹出如下PopUp菜单：
 
-![](Image/OpenWith-1.png)
+![](XYplorer-便携式文件关联(CFA)+打开方式(POM)/OpenWith-1.png)
 
 上图就是便携式打开方式菜单的"打开方式"。可以看到这个"打开方式"菜单有三个视频播放，这是如何设置的呢？
 
 我在自定义文件管理设置了三个视频播放器，并勾选：
 
-![FileAssociation-1](Image/FileAssociation-1.png)
+![FileAssociation-1](XYplorer-便携式文件关联(CFA)+打开方式(POM)/FileAssociation-1.png)
 
 按顺序，如果直接双击打开，默认是最上面的Potplayer。如果要使用其他视频播放器打开，就可以用到"打开方式"这个功能，刚才讲过，通过<kbd>Ctrl + Alt + Enter</kbd>就可以调用这个功能。
 
@@ -181,11 +181,11 @@ CFA/Video.xys:
 
 基于这样的需求，我修改了我的"自定义文件关联"：
 
-![FileAssociation-2](Image/FileAssociation-2.png)
+![FileAssociation-2](XYplorer-便携式文件关联(CFA)+打开方式(POM)/FileAssociation-2.png)
 
 
 
-![OpenWith-2](Image/OpenWith-2.png)
+![OpenWith-2](XYplorer-便携式文件关联(CFA)+打开方式(POM)/OpenWith-2.png)
 
 
 
@@ -234,13 +234,13 @@ rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 
 对于格式的系统默认应用，可以按如图所示辨别出来,
 
-![OpenWith-3](Image/OpenWith-3.png)
+![OpenWith-3](XYplorer-便携式文件关联(CFA)+打开方式(POM)/OpenWith-3.png)
 
 要使用快捷键调用"打开方式"确实没双击应用调用默认应用来得快，这也是引入Generic File Type的弊端。好消息这一弊端可以修正的。
 
 我们可以指定某个格式不被Generic File Type引入，它的解决方法就是：使用`#`(The special variable #)。
 
-![FileAssociation-3](Image/FileAssociation-3.png)
+![FileAssociation-3](XYplorer-便携式文件关联(CFA)+打开方式(POM)/FileAssociation-3.png)
 
 语法格式：
 
@@ -254,9 +254,9 @@ rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 
 下面会用一个案例进行讲解。比如广大蓝光大佬，XXX资源分享大佬，亦或者是广大热爱收藏蓝光或者各种基于蓝光的经视频处理技术后重新编码的各种rip都需要用到BT下载器。PT网站要求不一，对BT下载器的版本要求不一，所以下载某些资源都需要切换版本。
 
-![PortableOpenWithMenu-Torrent-1](Image/PortableOpenWithMenu-Torrent-1.png)
+![PortableOpenWithMenu-Torrent-1](XYplorer-便携式文件关联(CFA)+打开方式(POM)/PortableOpenWithMenu-Torrent-1.png)
 
-![PortableOpenWithMenu-Torrent-2](Image/PortableOpenWithMenu-Torrent-2.png)
+![PortableOpenWithMenu-Torrent-2](XYplorer-便携式文件关联(CFA)+打开方式(POM)/PortableOpenWithMenu-Torrent-2.png)
 
 根本无法辨别qBittorrent版本，这时候就需要修改POM"打开方式"菜单中某项的标题
 
@@ -265,14 +265,12 @@ rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 其中`"`是在输入法英文下打出来的双引号。
 
 ```
-"qBittorrentEE-v4.3.1.10" torrent>D:\PortableApps\qBittorrentEE_Portable\qBittorrentEE-v4.3.1.10\qbittorrent_x64.exe
-"qBittorrentEE-v4.1.9.15" torrent>D:\PortableApps\qBittorrentEE_Portable\qBittorrentEE-v4.1.9.15\qbittorrent_x64.exe
-"qBittorrent-v4.1.9.1" torrent>D:\PortableApps\qBittorrent_Portable\qBittorrent-v4.1.9.1\qbittorrent.exe
+"qBittorrentEE-v4.3.1.10" torrent>D:\PortableApps\qBittorrentEE_Portable\qBittorrentEE-v4.3.1.10\qbittorrent_x64.exe"qBittorrentEE-v4.1.9.15" torrent>D:\PortableApps\qBittorrentEE_Portable\qBittorrentEE-v4.1.9.15\qbittorrent_x64.exe"qBittorrent-v4.1.9.1" torrent>D:\PortableApps\qBittorrent_Portable\qBittorrent-v4.1.9.1\qbittorrent.exe
 ```
 
 这时就可以区分qBittorrent各个版本了：
 
-![PortableOpenWithMenu-Torrent-3](Image/PortableOpenWithMenu-Torrent-3.png)
+![PortableOpenWithMenu-Torrent-3](XYplorer-便携式文件关联(CFA)+打开方式(POM)/PortableOpenWithMenu-Torrent-3.png)
 
 
 
@@ -298,7 +296,7 @@ rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 
 这样就完成了修改了，效果如下：
 
-![PortableOpenWithMenu-Torrent-4](Image/PortableOpenWithMenu-Torrent-4.png)
+![PortableOpenWithMenu-Torrent-4](XYplorer-便携式文件关联(CFA)+打开方式(POM)/PortableOpenWithMenu-Torrent-4.png)
 
 #### 定制分割线
 
@@ -310,11 +308,11 @@ rtfm "idh_visualfilters.htm#idh_genericfiletypes";
 
 为各个BT工具加分割线，如图所示：
 
-![PortableOpenWithMenu-Torrent-5](Image/PortableOpenWithMenu-Torrent-5.png)
+![PortableOpenWithMenu-Torrent-5](XYplorer-便携式文件关联(CFA)+打开方式(POM)/PortableOpenWithMenu-Torrent-5.png)
 
 效果图如下：
 
-![PortableOpenWithMenu-Torrent-6](Image/PortableOpenWithMenu-Torrent-6.png)
+![PortableOpenWithMenu-Torrent-6](XYplorer-便携式文件关联(CFA)+打开方式(POM)/PortableOpenWithMenu-Torrent-6.png)
 
 
 

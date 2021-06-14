@@ -117,7 +117,7 @@ FindTemplates目录[可选]		Paper目录[可选]
 
 强调一遍，<span style="color:red">**喜欢使用标签的同学们，一定要保存好tag.dat，里面装了你使用标签的数据信息，切记！**</span>
 
-![BackupTags-1](Image/BackupTags-1.png)
+![BackupTags-1](XYplorer-备份还原篇(Backup+Restore)/BackupTags-1.png)
 
 ## 单项用户数据保存和载入
 
@@ -147,7 +147,7 @@ FindTemplates目录[可选]		Paper目录[可选]
 
 -如何载入Catalog信息？
 
-![LoadCatalog-1](Image/LoadCatalog-1.png)
+![LoadCatalog-1](XYplorer-备份还原篇(Backup+Restore)/LoadCatalog-1.png)
 
 a或b都可用于载入Catalog信息。
 
@@ -183,7 +183,7 @@ Layout保存和加载通过`Window->Save Layout As... / Load Layout`。
 
 -打开新XY，在新XY菜单栏`File->Settings Special->Load Configuration...`，通过载入配置选项来载入MyXYConfig.ini。
 
-![RestoreConfiguration-1](Image/RestoreConfiguration-1.png)
+![RestoreConfiguration-1](XYplorer-备份还原篇(Backup+Restore)/RestoreConfiguration-1.png)
 
 现在开始解释为什么要这么做：
 
@@ -191,7 +191,7 @@ Layout保存和加载通过`Window->Save Layout As... / Load Layout`。
 
 如图中Diagram所示：
 
-![RestoreDiagram](Image/RestoreDiagram.png)
+![RestoreDiagram](XYplorer-备份还原篇(Backup+Restore)/RestoreDiagram.png)
 
 方法2.直接在原版本XYplorer菜单栏`Help->Online Support->Check for Updates`进行升级。每次升级有一定概率出现许可证到期的问题。若出现该问题，转而使用方法1即可。
 

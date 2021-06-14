@@ -28,7 +28,7 @@ Listary与XY搭配中，最棒的功能是：所有弹出的对话框可以基�
 
 
 
-![ListarySettings-1](Image/ListarySettings-1.png)
+![ListarySettings-1](XYplorer-配合其他效率工具/ListarySettings-1.png)
 
 以上是Listary6的设置方法，Listary5也是一样的设置方法。
 

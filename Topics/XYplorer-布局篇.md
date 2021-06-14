@@ -2,13 +2,13 @@
 
 布局篇介绍布局元素的使用，通过下面三张图片，我们来了解下XYplorer有哪些布局元素：
 
-![XYplorerLayoutElement-1](Image/XYplorerLayoutElement-1.png)
+![XYplorerLayoutElement-1](XYplorer-布局篇/XYplorerLayoutElement-1.png)
 
-![XYplorerLayoutElement-2](Image/XYplorerLayoutElement-2.png)
+![XYplorerLayoutElement-2](XYplorer-布局篇/XYplorerLayoutElement-2.png)
 
 在自定义动作事件(CEA)中，我看到"Folder List"出现过，在功能使用上，我认为它指的是"File List"(就目前而言)。
 
-![XYplorerLayoutElement-3](Image/XYplorerLayoutElement-3.png)
+![XYplorerLayoutElement-3](XYplorer-布局篇/XYplorerLayoutElement-3.png)
 
 
 
@@ -18,21 +18,21 @@
 
 F8->Ctrl+F8即可打开。
 
-![Catalog-1](Image/Catalog-1.png)
+![Catalog-1](XYplorer-布局篇/Catalog-1.png)
 
 ## 2.添加目录
 
 Catalog栏是空白的，需要右键`Add New Category...`
 
-![Catalog-2](Image/Catalog-2.png)
+![Catalog-2](XYplorer-布局篇/Catalog-2.png)
 
 自定义名称
 
-![Catalog-3](Image/Catalog-3.png)
+![Catalog-3](XYplorer-布局篇/Catalog-3.png)
 
 确认右边栏就会变成这样
 
-![Catalog-4](Image/Catalog-4.png)
+![Catalog-4](XYplorer-布局篇/Catalog-4.png)
 
 ## 3.添加项目
 
@@ -42,7 +42,7 @@ Catalog栏是空白的，需要右键`Add New Category...`
 
 比如我把一张图片(Catalog-4.png)拖到目录名上，就会出现如下内容，
 
-![Catalog-5](Image/Catalog-5.png)
+![Catalog-5](XYplorer-布局篇/Catalog-5.png)
 
 ### 3.2自定义式添加项目
 
@@ -56,7 +56,7 @@ Catalog栏是空白的，需要右键`Add New Category...`
 
 脚本内容如下，
 
-![Catalog-6](Image/Catalog-6.png)
+![Catalog-6](XYplorer-布局篇/Catalog-6.png)
 
 Caption: `Copy Path With Forward-slash to Clipboard `
 
@@ -78,15 +78,15 @@ Location:
 
 打开纸文件夹的语法格式:`paper:纸文件夹名`
 
-![Catalog-7](Image/Catalog-7.png)
+![Catalog-7](XYplorer-布局篇/Catalog-7.png)
 
-![Catalog-8](Image/Catalog-8.png)
+![Catalog-8](XYplorer-布局篇/Catalog-8.png)
 
 -添加项目到纸文件夹
 
-![Catalog-9](Image/Catalog-9.png)
+![Catalog-9](XYplorer-布局篇/Catalog-9.png)
 
-![Catalog-10](Image/Catalog-10.png)
+![Catalog-10](XYplorer-布局篇/Catalog-10.png)
 
 -请尽情探索纸文件夹
 
@@ -102,7 +102,7 @@ D:\Work\GitWorks\XYplorer_Help\Updates\Image\Catalog-8.png
 
 -定位当前目录的数据文件
 
-![Catalog-11](Image/Catalog-11.png)
+![Catalog-11](XYplorer-布局篇/Catalog-11.png)
 
 -数据文件保存位置
 
@@ -114,11 +114,11 @@ D:\Work\GitWorks\XYplorer_Help\Updates\Image\Catalog-8.png
 
 以下内容讲解都是在视图方式为“详细”(Details)的情况下进行的，操作如下图所示:(菜单栏/工具栏进行视图设置，二选一)
 
-![CustomizeList-View-Details-1](Image/CustomizeList-View-Details-1.png)
+![CustomizeList-View-Details-1](XYplorer-布局篇/CustomizeList-View-Details-1.png)
 
 在菜单栏中可以找到，如下图所示：
 
-![CustomizeList-SubMenu-1](Image/CustomizeList-SubMenu-1.png)
+![CustomizeList-SubMenu-1](XYplorer-布局篇/CustomizeList-SubMenu-1.png)
 
 这是我为列表设置的参数，几个打钩的选项都是常用的。
 
@@ -128,7 +128,7 @@ D:\Work\GitWorks\XYplorer_Help\Updates\Image\Catalog-8.png
 
 设置->Colors and Styles->Colors->Selected Rows
 
-![CustomizeList-SelectedRowsBackground-1](Image/CustomizeList-SelectedRowsBackground-1.png)
+![CustomizeList-SelectedRowsBackground-1](XYplorer-布局篇/CustomizeList-SelectedRowsBackground-1.png)
 
 `Full Row Select`:不推荐，选中一个文件后，那么整行都被选择，鼠标在整行范围内双击都是打开文件。而使用`Highlight Selected Rows`后，高亮背景色范围内双击是返回上一级路径。
 
@@ -140,11 +140,11 @@ D:\Work\GitWorks\XYplorer_Help\Updates\Image\Catalog-8.png
 
 设置->Tree and List->List->Cache folder sizes
 
-![CustomizeList-ShowFolderSizes-CacheFolderSizes-1](Image/CustomizeList-ShowFolderSizes-CacheFolderSizes-1.png)
+![CustomizeList-ShowFolderSizes-CacheFolderSizes-1](XYplorer-布局篇/CustomizeList-ShowFolderSizes-CacheFolderSizes-1.png)
 
 该选项可以加快浏览文件列表的速度，但是无法保证第一次计算的文件夹大小的准确性。再次计算文件夹大小可保证目标文件夹的有效性，操作如下图所示：
 
-![CustomizeList-ShowFolderSizes-CalculateFolderSizes-1](Image/CustomizeList-ShowFolderSizes-CalculateFolderSizes-1.png)
+![CustomizeList-ShowFolderSizes-CalculateFolderSizes-1](XYplorer-布局篇/CustomizeList-ShowFolderSizes-CalculateFolderSizes-1.png)
 
 关于`Cache folder sizes`的作用详细说明，请在地址栏输入：
 
@@ -160,7 +160,7 @@ rtfm "idh_settings.htm#idh_foldersizecaching";
 
 ### 1.1什么是Column Layout?
 
-![ColumnLayout-1](Image/ColumnLayout-1.png)
+![ColumnLayout-1](XYplorer-布局篇/ColumnLayout-1.png)
 
 所以文件统称为项目(Item)。
 
@@ -170,7 +170,7 @@ XY界面的布局是什么意思？布局就是各种组件的位置摆放以及
 
 ### 1.2什么是Column, Custom Column, Extra Column?
 
-![Column-Term-1](Image/Column-Term-1.png)
+![Column-Term-1](XYplorer-布局篇/Column-Term-1.png)
 
 
 
@@ -180,17 +180,17 @@ XY界面的布局是什么意思？布局就是各种组件的位置摆放以及
 
 ### 添加列的方法
 
-![Column-AddColumn-1](Image/Column-AddColumn-1.png)
+![Column-AddColumn-1](XYplorer-布局篇/Column-AddColumn-1.png)
 
 ### 列属性的类型
 
 一个列中可以载入三种类型的属性：Property, Special Property, Custom Column
 
-![Column-AddColumn-2](Image/Column-AddColumn-2.png)
+![Column-AddColumn-2](XYplorer-布局篇/Column-AddColumn-2.png)
 
 对于Custom Column可以配置它的载入属性还多出了三种：Script, Template, Mixed:
 
-![Column-Type-1](Image/Column-Type-1.png)
+![Column-Type-1](XYplorer-布局篇/Column-Type-1.png)
 
 
 
@@ -198,11 +198,11 @@ XY界面的布局是什么意思？布局就是各种组件的位置摆放以及
 
 #### [案例1]添加文件属性项列
 
-![CustomizeList-Property-Tags-1](Image/CustomizeList-Property-Tags-1.png)
+![CustomizeList-Property-Tags-1](XYplorer-布局篇/CustomizeList-Property-Tags-1.png)
 
-![CustomizeList-Property-Tags-2](Image/CustomizeList-Property-Tags-2.png)
+![CustomizeList-Property-Tags-2](XYplorer-布局篇/CustomizeList-Property-Tags-2.png)
 
-![CustomizeList-Property-Tags-3](Image/CustomizeList-Property-Tags-3.png)
+![CustomizeList-Property-Tags-3](XYplorer-布局篇/CustomizeList-Property-Tags-3.png)
 
 ### 定制自定义列
 
@@ -243,23 +243,23 @@ XY界面的布局是什么意思？布局就是各种组件的位置摆放以及
 
 3. 这样就添加了名为Size (inches)的自定义列了，效果图如下
 
-   ![CustomColumn-Customize-1](Image/CustomColumn-Customize-1.png)
+   ![CustomColumn-Customize-1](XYplorer-布局篇/CustomColumn-Customize-1.png)
 
-   ![CustomColumn-Customize-2](Image/CustomColumn-Customize-2.png)
+   ![CustomColumn-Customize-2](XYplorer-布局篇/CustomColumn-Customize-2.png)
 
 4. 添加自定义列
 
-   ![CustomColumn-AddColumn-1](Image/CustomColumn-AddColumn-1.png)
+   ![CustomColumn-AddColumn-1](XYplorer-布局篇/CustomColumn-AddColumn-1.png)
 
    
 
-   ![CustomColumn-AddColumn-3](Image/CustomColumn-AddColumn-3.png)
+   ![CustomColumn-AddColumn-3](XYplorer-布局篇/CustomColumn-AddColumn-3.png)
 
-   ![CustomColumn-AddColumn-4](Image/CustomColumn-AddColumn-4.png)
+   ![CustomColumn-AddColumn-4](XYplorer-布局篇/CustomColumn-AddColumn-4.png)
 
    这样就添加好了。
 
-   ![CustomColumn-AddColumn-5](Image/CustomColumn-AddColumn-5.png)
+   ![CustomColumn-AddColumn-5](XYplorer-布局篇/CustomColumn-AddColumn-5.png)
 
    
 
@@ -294,7 +294,7 @@ Item Filter
 
 按照[Image size in inches]的方法添加DPI列到列布局中。
 
-![CustomColumn-AddColumn-DPI](Image/CustomColumn-AddColumn-DPI.png)
+![CustomColumn-AddColumn-DPI](XYplorer-布局篇/CustomColumn-AddColumn-DPI.png)
 
 ## 3.文件数量过多时Column加载卡顿的解决方法
 
@@ -306,11 +306,11 @@ Item Filter
 
 方法一。如下图所示，
 
-![CustomColumn-Edit-1](Image/CustomColumn-Edit-1.png)
+![CustomColumn-Edit-1](XYplorer-布局篇/CustomColumn-Edit-1.png)
 
 方法二。F9呼出设置界面，按如下图所示进行操作，
 
-![CustomColumn-Edit-Trigger-1](Image/CustomColumn-Edit-Trigger-1.png)
+![CustomColumn-Edit-Trigger-1](XYplorer-布局篇/CustomColumn-Edit-Trigger-1.png)
 
 主要改变的是Trigger参数，这里有三个，各有优缺点，其中List和Click都可以避免大量文件时的卡顿。
 
@@ -318,7 +318,7 @@ Item Filter
 
 添加一个关键字包含"MD5"的Custom Column，而不是Column，然后配置其触发方式为Click，然后再需要使用的时候点击MD5对应的Custom Column，读取MD5
 
-![CustomColumn-Add-MD5-1](Image/CustomColumn-Add-MD5-1.png)
+![CustomColumn-Add-MD5-1](XYplorer-布局篇/CustomColumn-Add-MD5-1.png)
 
 Trigger参数介绍
 
@@ -348,7 +348,7 @@ rtfm "idh_customcolumns.htm";		//进入后，找到Trigger黑体字标题部分
 
 下面模拟对所有文件列表加载DPI属性，效果如下，
 
-![CustomColumn-UseExtraColumn-1](Image/CustomColumn-UseExtraColumn-1.gif)
+![CustomColumn-UseExtraColumn-1](XYplorer-布局篇/CustomColumn-UseExtraColumn-1.gif)
 
 这样做的好处是所有文件列需要DPI的属性都导入到Extra Column1中了，这样持久化的数据就避免了大量使用Shell Properties加载。
 
@@ -387,7 +387,7 @@ rtfm "idh_customcolumns.htm";		//进入后，找到Trigger黑体字标题部分
 
 Extra Column的命名通过以下方式实现，
 
-![CustomColumn-UseExtraColumn-2](Image/CustomColumn-UseExtraColumn-2.png)
+![CustomColumn-UseExtraColumn-2](XYplorer-布局篇/CustomColumn-UseExtraColumn-2.png)
 
 #### 参考
 
@@ -403,10 +403,7 @@ https://www.xyplorer.com/xyfc/viewtopic.php?f=3&t=19090&p=160050#p160050
 地址栏输入可阅读涉及主题的参考：
 
 ```c
-rtfm "idh_customcolumns.htm#idh_ccscriptedcolumns";		// Scripted Columns
-rtfm "idh_scripting_comref.htm#idh_sc_property";		// property()
-rtfm "idh_variables.htm";		// XYplorer Native Variables
-http://msdn.microsoft.com/en-us/library/windows/desktop/dd561977%28v=vs.85%29.aspx		// the locale-independent Windows canonical properties
+rtfm "idh_customcolumns.htm#idh_ccscriptedcolumns";		// Scripted Columnsrtfm "idh_scripting_comref.htm#idh_sc_property";		// property()rtfm "idh_variables.htm";		// XYplorer Native Variableshttp://msdn.microsoft.com/en-us/library/windows/desktop/dd561977%28v=vs.85%29.aspx		// the locale-independent Windows canonical properties
 ```
 
 
@@ -419,9 +416,9 @@ http://msdn.microsoft.com/en-us/library/windows/desktop/dd561977%28v=vs.85%29.as
 
 -保存Column Layout
 
-![ColumnLayout-Save-1](Image/ColumnLayout-Save-1.png)
+![ColumnLayout-Save-1](XYplorer-布局篇/ColumnLayout-Save-1.png)
 
-![ColumnLayout-Save-2](Image/ColumnLayout-Save-2.png)
+![ColumnLayout-Save-2](XYplorer-布局篇/ColumnLayout-Save-2.png)
 
 Column Layout的文件命名应该符合以下的格式，才会清晰便于确定列的顺序：
 
@@ -441,14 +438,12 @@ Column Layout的文件命名应该符合以下的格式，才会清晰便于确�
 
 假设你有StudyLib, PictureLib, Pothole, VideoLib这几个文件夹，分别装着同类的文件。如果你想让每个文件夹及其子文件都按需显示不同的自定义列，那么你就需要分别对StudyLib, PictureLib, Pothole, VideoLib的文件夹视图设置中勾选`Cloumn layout`，并且勾选`Include subfolders`：
 
-![CustomColumn-FolderViewSettings](Image/CustomColumn-FolderViewSettings.png)
+![CustomColumn-FolderViewSettings](XYplorer-布局篇/CustomColumn-FolderViewSettings.png)
 
 `Folder to apply the settings to`的匹配规则：
 
 ```c
-F:\StudyLib	//匹配在F盘的StudyLib文件夹
-*\Images*	//匹配所有名为Images(不区分大小写)的文件夹
-*\Images*|*\Pics*	//匹配所有名为Images(不区分大小写)和Pics(不区分大小写)的文件夹
+F:\StudyLib	//匹配在F盘的StudyLib文件夹*\Images*	//匹配所有名为Images(不区分大小写)的文件夹*\Images*|*\Pics*	//匹配所有名为Images(不区分大小写)和Pics(不区分大小写)的文件夹
 ```
 
 `Match case`: 勾选后，匹配时会区分文件大小写，比如\*\\Images\*不会匹配名为images的文件夹。
@@ -471,13 +466,13 @@ F:\StudyLib	//匹配在F盘的StudyLib文件夹
 
 `Tools->Customize Tree->Tree Path Tracking`：开启树追踪标记
 
-![TreeUse-1](Image/TreeUse-1.png)
+![TreeUse-1](XYplorer-布局篇/TreeUse-1.png)
 
 `View->Lock Tree`：开启后，记住（冻结为）上一次树结构的状态，接下来无论怎样浏览目录，树的追踪记录都看不到。开启期间，应该是不会有目录追踪记录的。当关闭后，恢复树的追踪记录功能，并更新为当前目录的树结构。使用建议：需要树功能，XYplorer运行卡的情况下可锁定。
 
 我的使用方法：关闭Mini Tree，Reset Tree，Lock Tree。把Tree的侧边栏空间压缩，只保留很小的地方，如图
 
-![TreeUse-1](Image/TreeUse-2.png)
+![TreeUse-1](XYplorer-布局篇/TreeUse-2.png)
 
 之所以这样做，是因为我需要快速浏览C/D/E/F，对显示树结构的目录需求不是很大，并且在Tree侧边栏**右键**可以弹出**收藏夹列表**。
 
@@ -491,7 +486,7 @@ F:\StudyLib	//匹配在F盘的StudyLib文件夹
 
 一个合理的工具栏按钮摆放，可以提高使用效率。这是我的工具栏按钮摆放(2020/11/10)：
 
-![ToolbarPArrangement-1](Image/ToolbarPArrangement-1.png)
+![ToolbarPArrangement-1](XYplorer-布局篇/ToolbarPArrangement-1.png)
 
 我的电脑 | 前、后退、上一级、撤销等 | 收藏、添加Tags | 文件属性、打开方式、是否显示系统文件，隐藏文件 |  Visual过滤 | Pane | Color过滤器 | 设置 夜间模式 | View功能 | 用户按钮
 
@@ -503,30 +498,28 @@ F:\StudyLib	//匹配在F盘的StudyLib文件夹
 
 -使用效果如下，
 
-![](Image/Explorer-1.png)-具体方法如下，
+![](XYplorer-布局篇/Explorer-1.png)-具体方法如下，
 
 1.提取图标。提取工具[IcoFX3(下载地址若失效，自行下载)](https://ghpym.lanzous.com/b00zelckd)[可选]
 
-![IcoFx-1](Image/IcoFx-1.png)
+![IcoFx-1](XYplorer-布局篇/IcoFx-1.png)
 
-![IcoFx-1](Image/IcoFx-2.png)
+![IcoFx-1](XYplorer-布局篇/IcoFx-2.png)
 
-![IcoFx-1](Image/IcoFx-3.png)
+![IcoFx-1](XYplorer-布局篇/IcoFx-3.png)
 
 2.添加按钮
 
-![AddButton-1](Image/AddButton-1.png)
+![AddButton-1](XYplorer-布局篇/AddButton-1.png)
 
-![AddButton-2](Image/AddButton-2.png)
+![AddButton-2](XYplorer-布局篇/AddButton-2.png)
 
-![AddButton-3](Image/AddButton-3.png)
+![AddButton-3](XYplorer-布局篇/AddButton-3.png)
 
 内容信息如下
 
 ``` 
-Explorer
-<xyicons>\Explorer.ico
-run "C:\Windows\explorer.exe" <curpath>
+Explorer<xyicons>\Explorer.icorun "C:\Windows\explorer.exe" <curpath>
 ```
 
 这个脚本不完善，仅限打开当前目录。需要功能更全的Explorer脚本，可以使用[XYplorer-用户自定义命令篇(UDC)](./XYplorer-用户自定义命令篇(UDC).md)中的[设置快捷键调用Explorer]部分的脚本。
@@ -539,35 +532,16 @@ XY官网已经把**Cmd的按钮集成到工具栏了**，并且提供了热键<k
 
 你现在可以在自定义工具栏中的列表中找到它，
 
-![Cmd-2](Image/Cmd-2.png)
+![Cmd-2](XYplorer-布局篇/Cmd-2.png)
 
 不过下面我还是给出用户自定义Cmd按钮的方法。
 
-![Cmd-1](Image/Cmd-1.png)
+![Cmd-1](XYplorer-布局篇/Cmd-1.png)
 
 按钮信息如下，
 
 ```
-Cmd as Admin
-<xyicons>\Cmd.ico
-
-$comspec = ("%osbitness%" == 64) ? "%windir%\System32\cmd.exe" : "%windir%\SysWOW64\cmd.exe";
-    $cscript = ("%osbitness%" == 64) ? "%windir%\System32\cscript.exe" : "%windir%\SysWOW64\cscript.exe";
-
-    $vbsFile = "%TEMP%\~OpenElevatedCMD.vbs";
-
-    $vbsContent = <<<>>>
-        Set UAC = CreateObject("Shell.Application")
-        UAC.ShellExecute "$comspec", "/k pushd ""<curpath>""", "", "runas", 1
->>>;
-
-    writefile($vbsFile, trim($vbsContent));
-
-    if (get("trigger") == "1") { // Left click -> Admin
-        run """$cscript"" ""$vbsFile"" //nologo", , 0, 0;
-    } elseif (get("trigger") == "2") { // Right click -> No admin
-        run """$comspec"" /k pushd ""<curpath>""";
-    }
+Cmd as Admin<xyicons>\Cmd.ico$comspec = ("%osbitness%" == 64) ? "%windir%\System32\cmd.exe" : "%windir%\SysWOW64\cmd.exe";    $cscript = ("%osbitness%" == 64) ? "%windir%\System32\cscript.exe" : "%windir%\SysWOW64\cscript.exe";    $vbsFile = "%TEMP%\~OpenElevatedCMD.vbs";    $vbsContent = <<<>>>        Set UAC = CreateObject("Shell.Application")        UAC.ShellExecute "$comspec", "/k pushd ""<curpath>""", "", "runas", 1>>>;    writefile($vbsFile, trim($vbsContent));    if (get("trigger") == "1") { // Left click -> Admin        run """$cscript"" ""$vbsFile"" //nologo", , 0, 0;    } elseif (get("trigger") == "2") { // Right click -> No admin        run """$comspec"" /k pushd ""<curpath>""";    }
 ```
 
 按钮的添加方法在“按钮的高级用法”[[?](#further_use_of_button)]部分有讲到。

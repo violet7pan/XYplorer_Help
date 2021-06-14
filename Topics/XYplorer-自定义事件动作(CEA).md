@@ -2,7 +2,7 @@
 
 这是XY 21.40.0100加入的新特性。该特性在配置->General->Custom Event Actions中。如下图所示
 
-![CustomEventActions-1](Image/CustomEventActions-1.png)
+![CustomEventActions-1](XYplorer-自定义事件动作(CEA)/CustomEventActions-1.png)
 
 可以看到大部分事件都是与鼠标动作有关，如左键双击，滚轮(中键)双击等等。
 
@@ -10,7 +10,7 @@
 
 什么是"mouse back button"和"mouse forward button"：
 
-![MouseBackAndForwardButton](Image/MouseBackAndForwardButton.png)
+![MouseBackAndForwardButton](XYplorer-自定义事件动作(CEA)/MouseBackAndForwardButton.png)
 
 一般来说，很普通的鼠标只有鼠标左中右键，是没有鼠标前进后退键，这些鼠标宏按键在游戏鼠标中很常见。上图鼠标红圈就是宏按键，我一般都将这两个按键设置为前进和后退功能。
 

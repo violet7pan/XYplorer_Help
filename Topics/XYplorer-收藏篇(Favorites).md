@@ -2,7 +2,7 @@
 
 我们都知道在开启树的左侧栏后，在其空白处右键可以打开收藏文件夹列表，示意图如下：
 
-![ShowFavoriteFolders-InTree](Image/ShowFavoriteFolders-InTree.gif)
+![ShowFavoriteFolders-InTree](XYplorer-收藏篇(Favorites)/ShowFavoriteFolders-InTree.gif)
 
 但如果我们把树左侧栏关闭后，这个快速打开收藏文件夹列表的功能就用不了了。为了快速打开收藏文件夹列表，我写了脚本专门用于设置快捷键后，从鼠标出呼出收藏文件夹列表。
 
@@ -51,7 +51,7 @@
 
 "ShowFavoriteFolders-limitedicons.xys"效果演示：(我设置的快捷键是<kbd>Shift+F</kbd>，关于如何设置脚本与快捷键关联请参考[XYplorer-用户自定义命令篇(UDC)](./XYplorer-用户自定义命令篇(UDC).md))
 
-![ShowFavoriteFolders-limitedicons](Image/ShowFavoriteFolders-limitedicons.gif)
+![ShowFavoriteFolders-limitedicons](XYplorer-收藏篇(Favorites)/ShowFavoriteFolders-limitedicons.gif)
 
 
 
@@ -146,11 +146,11 @@
 
 使用演示：
 
-![ShowFavoriteFolders-CFI_V0.1](Image/ShowFavoriteFolders-CFI_V0.1.gif)
+![ShowFavoriteFolders-CFI_V0.1](XYplorer-收藏篇(Favorites)/ShowFavoriteFolders-CFI_V0.1.gif)
 
 这个脚本目前如图所示这样的规则：
 
-![ShowFavoriteFolders-CFI_V0.1-2](Image/ShowFavoriteFolders-CFI_V0.1-2.png)
+![ShowFavoriteFolders-CFI_V0.1-2](XYplorer-收藏篇(Favorites)/ShowFavoriteFolders-CFI_V0.1-2.png)
 
 当然你也可以设置为"[A-Z]:\A\B>xxx.ico"这样的多级目录试一试。
 

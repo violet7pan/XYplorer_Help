@@ -33,7 +33,7 @@
 
 `Assign Keyboard Shortcut... `，我设置的<kbd>Alt + 3</kbd>。
 
-![UserDefinedCommands-2](Image/UserDefinedCommands-2.png)
+![UserDefinedCommands-2](XYplorer-用户自定义命令篇(UDC)/UserDefinedCommands-2.png)
 
 ```
 Caption:Open With Notepad
@@ -90,7 +90,7 @@ run "你的QuickLook目录\QuickLook.exe" "<curitem>";
 
 2.然后，按下图完成设置，
 
-![](Image/QuickLook-1.png)
+![](XYplorer-用户自定义命令篇(UDC)/QuickLook-1.png)
 
 我这里分配的按键<kbd>Alt+1</kbd>
 
@@ -102,11 +102,11 @@ Script File内容如下
 
 3.最后，请关闭语法检查，具体方法如下，
 
-![](Image/QuickLook-2.png)
+![](XYplorer-用户自定义命令篇(UDC)/QuickLook-2.png)
 
 若未关闭语法检查，使用QuickLook配合快捷键会出现这样的错误，
 
-![](Image/QuickLook-3.png)
+![](XYplorer-用户自定义命令篇(UDC)/QuickLook-3.png)
 
 4.方法介绍完了，使用时，先选中要预览的文件，然后<kbd>Alt+1</kbd>即可。
 

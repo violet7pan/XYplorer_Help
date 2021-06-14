@@ -9,7 +9,7 @@
 2. 更新频率和内容。更新时间不确定。这大概是我写过最详细的一份帮助类说明文档了，现在考虑时间投入收益，投入到这份文档上的时间只会越来越少，要是我有时间，能完善就完善吧。
 
 3. 提问和解惑。可以Google或者参考官方帮助文档，按<kbd>F1</kbd>呼出，若无法呼出，请下载`XYplorer.chm`后置于XYplorer目录。由于深入使用XY需要有较扎实的英文基础和对计算机技术用语(Computing Glossary)比较熟悉，所以参阅英文帮助文档可能会遇到障碍，这里我提供一个翻译网站:[DeepL Translate](https://www.deepl.com/translator)。
-   
+
 
    提问的魔法进修课:point_right:[Stop-Ask-Questions-The-Stupid-Ways](https://github.com/dogfight360/Stop-Ask-Questions-The-Stupid-Ways/blob/master/README.md)。
 
@@ -18,6 +18,7 @@
 5. 有时，为了书写方便，我会把XYplorer简称为XY。
 
 6. 所有的图片都保存在Image文件夹，不会因为图片服务器挂掉导致本项目的图片无法查看的情况，但是相应地，本项目存储大小中图片占比较大。
+
 7. 希望引用到本文档内容的，可以说明下引用出处，尊重下作者的劳动成果。
 
 
@@ -26,7 +27,7 @@
 
 极大部分的功能(命令)都是可以通过"List All Commands..."进行查找和使用的！这点很重要，因为你不知道一些命令时，可以通过关键词进行搜索，从搜索结果可以推出该命令是位于哪个菜单栏中的。
 
-![ListAllCommands-1](Image/ListAllCommands-1.png)
+![ListAllCommands-1](ReadMe/ListAllCommands-1.png)
 
 
 

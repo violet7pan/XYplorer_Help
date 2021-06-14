@@ -4,7 +4,7 @@
 
 出现崩溃现象效果如下图
 
-![](Image/Crack.jpg)
+![](Tips/Crack.jpg)
 
 会出现一个Coffee的俯视图。
 
@@ -69,11 +69,11 @@ F:\Downloads\[VCB-Studio] Shokugeki no Souma][Ma10p_1080p][x265_flac]Subtitles�
 
 具体操作如下:
 
-![SearchAndReplace-1](Image/SearchAndReplace-1.png)
+![SearchAndReplace-1](Tips/SearchAndReplace-1.png)
 
 你还可以预览下结果:
 
-![SearchAndReplace-2](Image/SearchAndReplace-2.png)
+![SearchAndReplace-2](Tips/SearchAndReplace-2.png)
 
 语法格式：
 
@@ -124,7 +124,7 @@ RegExpPattern > ReplaceWith\    (case-sensitive)
 
 可以先去[正则表达式在线测试 | 菜鸟工具](http://c.runoob.com/front-end/854)测试下匹配结果：
 
-![RegExpRename-1](Image/RegExpRename-1.png)
+![RegExpRename-1](Tips/RegExpRename-1.png)
 
 接着，我们进行使用`RegExp Rename...`进行替换:
 
@@ -137,15 +137,15 @@ RegExpPattern > ReplaceWith\    (case-sensitive)
 //「[\s\S]+」匹配以'「'开头和'」'结尾以及它们之间的所有字符
 ```
 
-![RegExpRename-2](Image/RegExpRename-2.png)
+![RegExpRename-2](Tips/RegExpRename-2.png)
 
 预览结果：
 
-![RegExpRename-3](Image/RegExpRename-3.png)
+![RegExpRename-3](Tips/RegExpRename-3.png)
 
 成功完成替换：
 
-![RegExpRename-4](Image/RegExpRename-4.png)
+![RegExpRename-4](Tips/RegExpRename-4.png)
 
 在BDrip前面加上-：
 
@@ -155,7 +155,7 @@ RegExpPattern > ReplaceWith\    (case-sensitive)
 
 结果如下：
 
-![RegExpRename-5](Image/RegExpRename-5.png)
+![RegExpRename-5](Tips/RegExpRename-5.png)
 
 替换结束。
 
@@ -177,7 +177,7 @@ Example2: 比如形如以下文件，我想要将`1`和第一个`B`之间的内�
 
 
 
-![RegExpRename-Example2-1](Image/RegExpRename-Example2-1.png)
+![RegExpRename-Example2-1](Tips/RegExpRename-Example2-1.png)
 
 因此，XY RegExp Rename匹配规则如下
 
@@ -190,13 +190,12 @@ Example2: 比如形如以下文件，我想要将`1`和第一个`B`之间的内�
 Example3: 形如以下的文件，我想要将`[`和第一个`]`之间的内容（包括边界[和]）替换空串:
 
 ```
-问题儿童都来自异世界？ -06 [問題児たちがお祭り騒ぎに参加するようですよ？]BDrip x264-ank.kna.mkv_20201108_220550.478.jpg
-...
+问题儿童都来自异世界？ -06 [問題児たちがお祭り騒ぎに参加するようですよ？]BDrip x264-ank.kna.mkv_20201108_220550.478.jpg...
 ```
 
 
 
-![RegExpRename-Example3-1](Image/RegExpRename-Example3-1.png)
+![RegExpRename-Example3-1](Tips/RegExpRename-Example3-1.png)
 
 因此，XY RegExp Rename匹配规则如下
 
@@ -234,7 +233,7 @@ Example3: 形如以下的文件，我想要将`[`和第一个`]`之间的内容�
 
 具体步骤就是
 
-![Fix-CannotDragFromDesktop](Image/Fix-CannotDragFromDesktop.png)
+![Fix-CannotDragFromDesktop](Tips/Fix-CannotDragFromDesktop.png)
 
 
 
@@ -242,7 +241,7 @@ Example3: 形如以下的文件，我想要将`[`和第一个`]`之间的内容�
 
 直接上GIF
 
-![FileListNavigatingTips](Image/FileListNavigatingTips.gif)
+![FileListNavigatingTips](Tips/FileListNavigatingTips.gif)
 
 从GIF中可以看到当Column变多了，通过加入Shift可以让左右滑动变得更快捷。
 
@@ -257,41 +256,19 @@ Example3: 形如以下的文件，我想要将`[`和第一个`]`之间的内容�
 在cmd中使用Windows的dir命令查询当前目录的文件
 
 ```
-D:\PortableApps\XYplorer\Data\NewItems>dir /b
-Makefile
-New Batch File.bat
-New Batch File.cmd
-New C Header.h
-New C.c
-New Configuration.ini
-New Cpp.cpp
-New folder
-New Markdown.md
-New Microsoft Excel Worksheet.xlsx
-New Microsoft Word Document.docx
-New Mindjet MindManager Document-兼容2019版.mmap
-New MindManager Document-2020版.mmap
-New Rich Text Document.rtf
-New Text Document.txt
-New XYplorer Script.xys
-New.html
+D:\PortableApps\XYplorer\Data\NewItems>dir /bMakefileNew Batch File.batNew Batch File.cmdNew C Header.hNew C.cNew Configuration.iniNew Cpp.cppNew folderNew Markdown.mdNew Microsoft Excel Worksheet.xlsxNew Microsoft Word Document.docxNew Mindjet MindManager Document-兼容2019版.mmapNew MindManager Document-2020版.mmapNew Rich Text Document.rtfNew Text Document.txtNew XYplorer Script.xysNew.html
 ```
 
 以上输出结果都是文件，这些文件都是用于右键菜单"New Items"：
 
-![Tips-NewItems](Image/Tips-NewItems.png)
+![Tips-NewItems](Tips/Tips-NewItems.png)
 
 这些文件跟Windows右键菜单的新建还不一样，因为存放在"\<xydata\>/NewItems"中的文件都是模板文件，这意味这你可以按照你的需求进行定制。我举个例子吧：
 
 New C.c模板文件中我写入以下内容：
 
 ```
-#include <stdio.h>
-
-int main() {
-    
-    return 0;
-}
+#include <stdio.h>int main() {        return 0;}
 ```
 
 以后我右键创建.c文件里面的内容都是按照这个模板文件来的。
